@@ -1,4 +1,4 @@
-body {background: #37474F;}
+body {background: #263238;}
 header {
     padding: 3rem 2rem 2rem;
     text-align: center;
@@ -70,7 +70,7 @@ section > div > p > strong {
     border-radius: 2px;
 }
 
-.details {background: #263238;}
+.details {background: #1e272c;}
 .details ul {
     display: -webkit-flex;
     display: -moz-flex;
