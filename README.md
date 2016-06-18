@@ -36,4 +36,4 @@ Por defecto, Before Tooltips siempre se muestra arriba del objeto. Para cambiar 
 
 ## Limitaciones
 
-* Before Tooltips no funciona con etiquetas de auto cierre. Ejemplo: `<img/>` `<input/>`
+* Before Tooltips no funciona con etiquetas de auto cierre. Ejemplo: `<img/>` `<input/>`. Pero estas etiquetas pueden ser encerradas para hacer uso de **Before Tooltips** de la siguiente manera: `<a class="btips"><img/></a>`
