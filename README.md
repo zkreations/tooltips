@@ -29,10 +29,10 @@ Before Tooltips no se limita únicamente a los enlaces, funciona con cualquier e
 
 Por defecto, Before Tooltips siempre se muestra arriba del objeto. Para cambiar la orientación se agrega la class **l**, **r** o **b**:
 
-* Arriba (por defecto): `<a class="btips" title="Arriba">Arriba</a>`
-* Abajo: `<a class="btips b" title="Abajo">Abajo</a>`
-* Izquierda: `<a class="btips l" title="Izquierda">Izquierda</a>`
-* Derecha: `<a class="btips r" title="Derecha">Derecha</a>`
+* Arriba (por defecto): `<a class="btips"></a>`
+* Abajo: `<a class="btips b"></a>`
+* Izquierda: `<a class="btips l"></a>`
+* Derecha: `<a class="btips r"></a>`
 
 ## Limitaciones
 
