@@ -1,0 +1,309 @@
+/*! before Tooltips 2.0.0 | Daniel Abel - http://zkreations.com | Free to use under terms of MIT license */
+
+[class*="btips"], 
+.btips {
+    position: relative;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    height: 100%;
+}
+
+[class*="btips"]::before, 
+.btips::before {
+    content: attr(data-title);
+    white-space: nowrap;
+    top: -10px;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1em;
+    padding: 0.8em 1em;
+    background: #050505;
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.3), 0 1px 0px 0px rgba(0, 0, 0, 0.05);
+    pointer-events: none;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+[class*="btips"]::after,
+[class*="btips"]::before,
+.btips::after,
+.btips::before {
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    z-index: 100;
+    transform: translate(-50%, -100%);
+    user-select: none;
+    transform-origin: top;
+}
+/*creamos un indicador*/
+[class*="btips"]::after, 
+.btips::after {
+    content: "";
+    border-style: solid;
+    border-color: rgba(0,0,0,0.9) transparent transparent transparent;
+    border-width: 10px 10px;
+    top: 8px;
+}
+/*mostramos todo*/
+[class*="btips"]:hover::after, 
+[class*="btips"]:hover::before, 
+.btips:hover::after, 
+.btips:hover::before {
+    opacity: 1;
+}
+
+/*left*/
+[data-btips=left]::after, 
+[data-btips=left]::before {
+    top: 50%;
+    right: auto;
+    transform: translate(-100%, -50%);
+}
+[data-btips=left]::before {
+    left: -10px;
+}
+[data-btips=left]::after {
+    left: 8px;
+    border-color: transparent transparent transparent rgba(0,0,0,0.8);
+}
+
+/*right*/
+[data-btips=right]::after, 
+[data-btips=right]::before {
+    top: 50%;
+    left: auto;
+    transform: translate(100%, -50%);
+}
+[data-btips=right]::before {
+    right: -10px;
+}
+[data-btips=right]::after {
+    right: 8px;
+    border-color: transparent rgba(0,0,0,0.8) transparent transparent;
+}
+
+/*bottom*/
+[data-btips=bottom]::after, 
+[data-btips=bottom]::before {
+    top: auto;
+    transform: translate(-50%, 100%);
+}
+[data-btips=bottom]::before {
+    bottom: -10px;
+}
+[data-btips=bottom]::after {
+    bottom: 8px;
+    border-color: transparent transparent rgba(0,0,0,0.8) transparent;
+}
+
+/*
+  => Animations
+*/
+
+/*Reset all animations*/
+
+/*if => default*/
+[class*="btips--"]::before,
+[class*="btips--"]::after {
+    transition: transform .2s, opacity .2s;
+}
+
+[class*="btips--"]:hover::before,
+[class*="btips--"]:hover::after {
+    transition: transform ease .5s, opacity .3s;
+}
+[class*="btips--"]::before {
+    transform-origin: bottom;
+}
+[class*="btips--"]::after {
+   transform-origin: top;
+}
+
+/*if => left*/
+[data-btips=left][class*="btips--"]::before {
+    transform-origin: right;
+}
+[data-btips=left][class*="btips--"]::after {
+   transform-origin: left;
+}
+/*if => botton*/
+[data-btips=bottom][class*="btips--"]::before {
+    transform-origin: top;
+}
+[data-btips=bottom][class*="btips--"]::after {
+   transform-origin: bottom;
+}
+/*if => right*/
+[data-btips=right][class*="btips--"]::before {
+    transform-origin: left;
+}
+[data-btips=right][class*="btips--"]::after {
+   transform-origin: right;
+}
+/*
+  =>Fade
+*/
+.btips--fade:hover::before,
+.btips--fade:hover::after {
+    transition: opacity .5s;
+}
+/*
+  => Slide
+*/
+
+[class*="btips--slide"]:hover::before,
+[class*="btips--slide"]:hover::after {
+    transform: translate(-50%, -100%);
+}
+
+/*if => left*/
+[data-btips=left][class*="btips--slide"]:hover::before,
+[data-btips=left][class*="btips--slide"]:hover::after {
+    transform: translate(-100%, -50%);
+}
+/*if => botton*/
+[data-btips=bottom][class*="btips--slide"]:hover::before,
+[data-btips=bottom][class*="btips--slide"]:hover::after {
+    transform: translate(-50%, 100%);
+}
+/*if => right*/
+[data-btips=right][class*="btips--slide"]:hover::before,
+[data-btips=right][class*="btips--slide"]:hover::after {
+    transform: translate(100%, -50%);
+}
+
+/*
+  => Slide In
+*/
+.btips--slide-in::before,
+.btips--slide-in::after {
+    transform: translate(-50%, -50%);
+}
+/*if => left*/
+
+[data-btips=left].btips--slide-in::before, 
+[data-btips=left].btips--slide-in::after   {
+    transform: translate(-90%, -50%);
+}
+
+/*if => botton*/
+[data-btips=bottom].btips--slide-in::before, 
+[data-btips=bottom].btips--slide-in::after   {
+    transform: translate(-50%, 50%);
+}
+
+/*if => right*/
+
+[data-btips=right].btips--slide-in::before, 
+[data-btips=right].btips--slide-in::after   {
+    transform: translate(90%, -50%);
+}
+
+/*
+  => Slide Out
+*/
+.btips--slide-out::before,
+.btips--slide-out::after {
+    transform: translate(-50%, -120%);
+}
+
+/*if => left*/
+[data-btips=left].btips--slide-out::before {
+    transform: translate(-110%, -50%);
+}
+
+[data-btips=left].btips--slide-out::after {
+    transform: translate(-200%, -50%);
+}
+
+/*if => botton*/
+[data-btips=bottom].btips--slide-out::before, 
+[data-btips=bottom].btips--slide-out::after   {
+    transform: translate(-50%, 120%);
+}
+
+/*if => right*/
+[data-btips=right].btips--slide-out::before  {
+    transform: translate(110%, -50%);
+}
+[data-btips=right].btips--slide-out::after  {
+    transform: translate(200%, -50%);    
+}
+
+/*
+  => Bounce
+*/
+[class*="btips--bounce"]:hover::before,
+[class*="btips--bounce"]:hover::after {
+    transition: transform cubic-bezier(.66,-2,.36,2) .5s, opacity .3s;
+    transform: translate(-50%, -100%) scale(1);
+}
+
+/*if => left*/
+[data-btips=left][class*="btips--bounce"]:hover::before,
+[data-btips=left][class*="btips--bounce"]:hover::after {
+    transform: translate(-100%, -50%) scale(1);
+}
+/*if => botton*/
+[data-btips=bottom][class*="btips--bounce"]:hover::before,
+[data-btips=bottom][class*="btips--bounce"]:hover::after {
+    transform: translate(-50%, 100%) scale(1);
+}
+/*if => right*/
+[data-btips=right][class*="btips--bounce"]:hover::before,
+[data-btips=right][class*="btips--bounce"]:hover::after {
+    transform: translate(100%, -50%) scale(1);
+}
+
+/*
+  => Bounce In
+*/
+.btips--bounce-in::before,
+.btips--bounce-in::after {
+    transform: translate(-50%, -100%) scale(.8);
+}
+
+/*if => left*/
+[data-btips=left].btips--bounce-in::before, 
+[data-btips=left].btips--bounce-in::after   {
+    transform: translate(-100%, -50%) scale(.8);
+}
+
+/*if => botton*/
+[data-btips=bottom].btips--bounce-in::before, 
+[data-btips=bottom].btips--bounce-in::after   {
+    transform: translate(-50%, 100%) scale(.8);
+}
+
+/*if => right*/
+[data-btips=right].btips--bounce-in::before, 
+[data-btips=right].btips--bounce-in::after   {
+    transform: translate(100%, -50%) scale(.8);
+}
+
+/*
+  => Bounce Out
+*/
+.btips--bounce-out::before,
+.btips--bounce-out::after {
+    transform: translate(-50%, -100%) scale(1.1);
+}
+
+/*if => left*/
+[data-btips=left].btips--bounce-out::before, 
+[data-btips=left].btips--bounce-out::after   {
+    transform: translate(-100%, -50%) scale(1.1);
+}
+
+/*if => botton*/
+[data-btips=bottom].btips--bounce-out::before, 
+[data-btips=bottom].btips--bounce-out::after   {
+    transform: translate(-50%, 100%) scale(1.1);
+}
+
+/*if => right*/
+[data-btips=right].btips--bounce-out::before, 
+[data-btips=right].btips--bounce-out::after   {
+    transform: translate(100%, -50%) scale(1.1);
+}

@@ -4,58 +4,115 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <title>Before Tooltips</title>	
-<!-- Before Tooltips 1.00 | Daniel Abel - http://zkreations.com | Free to use under terms of MIT license -->
 	<link type="image/x-icon" rel="icon" href="http://www.zkreations.com/favicon.ico" />
-	<!--reset y aspecto-->
-	<link type="text/css" rel="stylesheet" href="libs/css/estilos.min.css"/>
-	<link type="text/css" rel="stylesheet" href="libs/css/display.css"/>
+	
+	<!--whale.css y aspecto-->
+	<link type="text/css" rel="stylesheet" href="libs/css/whale.min.css"/>
+	<link type="text/css" rel="stylesheet" href="libs/css/estilos.css"/>
 	
 	<!--before tooltips-->
-	<link type="text/css" rel="stylesheet" href="btooltips.css"/>
+	<link type="text/css" rel="stylesheet" href="dist/btips.min.css"/>
 </head>
 
 <body>
-<main>
+
 <header>
     <h1>Before Tooltips</h1>
-    <span>Globo informativo mediante css puro</span>
+    <span>Globo Informativo Mediante Css Puro</span>
 </header>
-<section>
-<div>
+<div class="main box">
 
 <h2>Imagen</h2>
 
-<div class="demo1">
-<a class="btips" title="Elaiza Ikeda" href="#img1"><img src="img/img-01.jpg" alt="Elaiza Ikeda"/></a>
-<a class="btips l" title="Vía férrea" href="#img2"><img src="img/img-02.jpg" alt="Vía férrea"/></a>
-<a class="btips b" title="Buscar imagen en google" href="#img3"><img src="img/img-03.jpg" alt="Buscar imagen en google"/></a>
+<div class="demo flex align-items-center justify-content-between">
+<a class="btips--slide-in" data-title="Starry Eyes" href="#img1"><img src="img/img-01.jpg" alt="Elaiza Ikeda"/></a>
+<a class="btips--bounce-in" data-btips="left" data-title="railway photographs" href="#img2"><img src="img/img-02.jpg" alt="Vía férrea"/></a>
+<a class="btips--slide-out" data-btips="bottom" data-title="Reality surpasses fiction" href="#img3"><img src="img/img-03.jpg" alt="Buscar imagen en google"/></a>
 </div>
     
 <h2>Texto en línea</h2>
-<p>No hay felicidad o infelicidad en este <a class="btips" title="Solo soy un tooltip" href="#url">mundo</a>; solo hay comparación de un estado con otro. Solo un hombre que ha sentido la máxima desesperación es capaz de sentir la máxima <a class="btips" title="Sigue leyendo" href="#url">felicidad</a>. Es necesario haber deseado <strong class="btips" data-title="Funciono con cualquier etiqueta">morir</strong> para saber lo bueno que es vivir. -El conde de Monte Cristo de Alexandre Dumas.</p>
+<p>No hay felicidad o infelicidad en este <a class="btips--slide-in" data-title="tooltip" href="#url">mundo</a>; solo hay comparación de un estado con otro. Solo un hombre que ha sentido la máxima desesperación es capaz de sentir la máxima <a class="btips--slide-in" data-title="Sigue leyendo" href="#url">felicidad</a>. Es necesario haber deseado <strong class="btips--slide-in" data-title="Funciono con cualquier etiqueta">morir</strong> para saber lo bueno que es vivir. -El conde de Monte Cristo de Alexandre Dumas.</p>
 
 <h2>Orientación</h2>
-<div class="demo center">
-    <a class="btn btips l" title="Texto a la izquierda" href="#url">izquierda</a>
-    <a class="btn btips" title="Texto hacia arriba" href="#url">arriba</a>
-    <a class="btn btips b" title="Texto hacia abajo" href="#url">abajo</a>
-    <a class="btn btips r" title="Texto a la derecha" href="#url">derecha</a>
+<div class="demo centext">
+    <a class="button btips" data-btips="left" data-title="Texto a la izquierda" href="#url">Izquierda</a>
+    <a class="button btips" data-title="Texto hacia arriba" href="#url">Arriba</a>
+    <a class="button btips" data-btips="bottom" data-title="Texto hacia abajo" href="#url">Abajo</a>
+    <a class="button btips" data-btips="right" data-title="Texto a la derecha" href="#url">Derecha</a>
+</div>
+
+<pre class="code">&lt;span class=&quot;button btips&quot; data-title=&quot;Texto&quot;&gt;Arriba&lt;/a&gt;
+&lt;span class=&quot;button btips&quot; data-btips=&quot;left&quot; data-title=&quot;Texto&quot;&gt;Izquierda&lt;/a&gt;
+&lt;span class=&quot;button btips&quot; data-btips=&quot;bottom&quot; data-title=&quot;Texto&quot;&gt;Abajo&lt;/a&gt;
+&lt;span class=&quot;button btips&quot; data-btips=&quot;right&quot; data-title=&quot;Texto&quot;&gt;Derecha&lt;/a&gt;
+</pre>
+   
+<h2>Animaciones - Default</h2>
+    <div class="demo centext">
+        <a class="button btips" data-title="btips Left" data-btips="left" href="#url">Default left</a>
+        <a class="button btips" data-title="btips Up" href="#url">Default up</a>
+        <a class="button btips" data-title="btips Bottom" data-btips="bottom" href="#url">Default bottom</a>
+        <a class="button btips" data-title="btips right" data-btips="right" href="#url">Default right</a>
+    </div>
+    
+<pre class="code">&lt;span class=&quot;btips&quot; data-title=&quot;Texto&quot;&gt;Default&lt;/a&gt;</pre>
+       
+    <h2>Fade</h2>
+    <div class="demo centext">
+        <a class="button btips--fade" data-title="btips--fade Left" data-btips="left" href="#url">Fade left</a>
+        <a class="button btips--fade" data-title="btips--fade Up" href="#url">Fade up</a>
+        <a class="button btips--fade" data-title="btips--fade Bottom" data-btips="bottom" href="#url">Fade bottom</a>
+        <a class="button btips--fade" data-title="btips--fade right" data-btips="right" href="#url">Fade right</a>
+    </div>
+    
+<pre class="code">&lt;span class=&quot;btips--fade&quot; data-title=&quot;Texto&quot;&gt;Fade&lt;/a&gt;</pre>
+       
+    <h2>Slide In</h2>
+    <div class="demo centext">       
+        <a class="button btips--slide-in" data-title="btips--slide-in Left" data-btips="left" href="#url">Slide In left</a>
+        <a class="button btips--slide-in" data-title="btips--slide-in Up" href="#url">Slide In up</a>
+        <a class="button btips--slide-in" data-title="btips--slide-in Bottom" data-btips="bottom" href="#url">Slide In bottom</a>
+        <a class="button btips--slide-in" data-title="btips--slide-in right" data-btips="right" href="#url">Slide In right</a>
+    </div>
+    
+<pre class="code">&lt;span class=&quot;btips--slide-in&quot; data-title=&quot;Texto&quot;&gt;Slide In&lt;/a&gt;</pre>
+
+    <h2>Slide Out</h2>
+    <div class="demo centext">
+        <a class="button btips--slide-out" data-title="btips--slide-out left" data-btips="left" href="#url">Slide Out left</a>
+        <a class="button btips--slide-out" data-title="btips--slide-out Up" href="#url">Slide Out up</a>
+        <a class="button btips--slide-out" data-title="btips--slide-out Bottom" data-btips="bottom" href="#url">Slide Out bottom</a>
+        <a class="button btips--slide-out" data-title="btips--slide-out right" data-btips="right" href="#url">Slide Out right</a>        
+    </div>
+    
+<pre class="code">&lt;span class=&quot;btips--slide-out&quot; data-title=&quot;Texto&quot;&gt;Slide Out&lt;/a&gt;</pre>
+    
+    <h2>Bounce In</h2>
+    <div class="demo centext">
+        <a class="button btips--bounce-in" data-title="btips--bounce-in left" data-btips="left" href="#url">Bounce In left</a>
+        <a class="button btips--bounce-in" data-title="btips--bounce-in Up" href="#url">Bounce In up</a>
+        <a class="button btips--bounce-in" data-title="btips--bounce-in Bottom" data-btips="bottom" href="#url">Bounce In bottom</a>
+        <a class="button btips--bounce-in" data-title="btips--bounce-in right" data-btips="right" href="#url">Bounce In right</a>      
+    </div>
+    
+<pre class="code">&lt;span class=&quot;btips--bounce-in&quot; data-title=&quot;Texto&quot;&gt;Bounce In&lt;/a&gt;</pre>
+    
+    <h2>Bounce Out</h2>
+    <div class="demo centext">
+        <a class="button btips--bounce-out" data-title="btips--bounce-out left" data-btips="left" href="#url">Bounce Out left</a>
+        <a class="button btips--bounce-out" data-title="btips--bounce-out Up" href="#url">Bounce Out up</a>
+        <a class="button btips--bounce-out" data-title="btips--bounce-out Bottom" data-btips="bottom" href="#url">Bounce Out bottom</a>
+        <a class="button btips--bounce-out" data-title="btips--bounce-out right" data-btips="right" href="#url">Bounce Out right</a>      
+    </div>
+    
+<pre class="code">&lt;span class=&quot;btips--bounce-out&quot; data-title=&quot;Texto&quot;&gt;Bounce Out&lt;/a&gt;</pre>
+      
 </div>
     
-</div>
-</section>
 
-<section class="details">
-<div>
-    <ul>
-        <li><i class="material-icons">&#xE87E;</i><h3>Sin Javascript</h3><span>Desarrollado con CSS Puro sin utilizar javascript.</span></li>
-        <li><i class="material-icons">&#xE80B;</i><h3>Compatible</h3><span>Google Chrome, Opera, Firefox, IE 9+, Edge, Safari.</span></li>
-    </ul>
-</div>
-</section>
-</main>
+
 <footer>
-   <a href="https://github.com/zkreations/Before-Tooltips" title="repositorio github"><img src="libs/github.png" width="64" height="64"></a>
+    <p>Created by <a href="http://www.zkreations.com">zkreations</a> - Made with <strong class="love">♥</strong> <a href="https://github.com/zkreations/imgload.css">by Github</a></p>
 </footer>
 
 
