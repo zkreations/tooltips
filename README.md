@@ -102,10 +102,18 @@ Con las variables puede crear sus propios temas:
 ```css
 .tts-custom {
   --tts-bg: #607D8B;
-  --tts-color: #ffffff;
   --tts-duration: .5s;
   --tts-shadow: 0 2px 10px rgb(0 0 0 / 20%);
   --tts-radius: 1em;
+}
+```
+
+O puede establecer estilos globales:
+
+```css
+:root {
+  --tts-bg: #607D8B;
+  --tts-duration: .5s;
 }
 ```
 
