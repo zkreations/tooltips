@@ -1,7 +1,7 @@
 <div align="center">
   <img src="/static/tts-logo.svg?sanitize=true" width="200" alt="Canvas.xml Logo">
   <h1>Tooltips.css</h1>
-  <p>Tiny and powerful tooltips with pure css</p>
+  <p>Tiny and powerful tooltips with pure css ~ 0.8kb gzipped</p>
   
   <a href="https://www.jsdelivr.com/package/gh/zkreations/tooltips">
     <img src="https://img.shields.io/jsdelivr/gh/hm/zkreations/tooltips?color=D69E2E&style=for-the-badge"/>
