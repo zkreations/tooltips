@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="/static/tts-logo.svg?sanitize=true" width="280" alt="Canvas.xml Logo">
+  <img src="/static/tts-logo.svg?sanitize=true" width="200" alt="Canvas.xml Logo">
   <h1>Tooltips.css</h1>
   <p>Tiny and powerful tooltips with pure css</p>
   
