@@ -16,13 +16,13 @@
 
 ## Installation
 
-### CDN
+#### CDN
 
 ```html
 <link href="//cdn.jsdelivr.net/gh/zkreations/tooltips@3/tooltips.min.css" rel="stylesheet">
 ```
 
-### Manual
+#### Manual
 Descargue **tooltips.min.css** de este repositorio e incluya el archivo en su código HTML:
 
 ```html
@@ -31,13 +31,12 @@ Descargue **tooltips.min.css** de este repositorio e incluya el archivo en su c�
 
 ## Usage
 
-### Default
-Agregue clase ``tts`` y el atributo ``aria-label`` a un elemento html:
+Agregue clase `tts` y el atributo `aria-label` a un elemento html:
 
 ```html
 <span class="tts" aria-label="Hola mundo!">Tooltip</span>
 ```
-### Positioning
+#### Positioning
 
 Para cambiar la dirección agregue dos puntos seguido de una posición:
 
@@ -48,9 +47,9 @@ Para cambiar la dirección agregue dos puntos seguido de una posición:
 <span class="tts:down" aria-label="Hacia la abajo">Tooltip</span>
 ```
 
-### Animations
+#### Animations
 
-Escoja entre ``tts-slideIn``, ``tts-slideOut``, ``tts-zoomIn`` y ``tts-zoomOut`` ejemplo:
+Escoja entre `tts-slideIn`, `tts-slideOut`, `tts-zoomIn` y `tts-zoomOut` ejemplo:
 
 ```html
 <span class="tts" aria-label="Fade (defualt)">Tooltip</span>
@@ -60,25 +59,54 @@ Escoja entre ``tts-slideIn``, ``tts-slideOut``, ``tts-zoomIn`` y ``tts-zoomOut``
 <span class="tts tts-zoomOut" aria-label="Zoom Out">Tooltip</span>
 ```
 
-### Always Visible
-Agregue la clase ``tts-visible`` para que el tooltip se muestre siempre visible:
+## Options
+
+#### Always Visible
+Agregue la clase `tts-visible` para que el tooltip se muestre siempre visible:
 
 ```html
 <span class="tts tts-visible" aria-label="Siempre visible">Tooltip</span>
 ```
 
-### Line Break
-Por defecto el tooltip contiene la propiedad ``nowrap``. Agregue la clase ``tts-wrap`` para respetar los saltos de linea:
+#### Line Break
+Por defecto el tooltip contiene la propiedad `nowrap`. Agregue la clase `tts-wrap` para respetar los saltos de linea:
 
 ```html
 <span class="tts tts-wrap" aria-label="Los saltos de linea se respetan">Tooltip</span>
 ```
 
-### Is it a block?
-Por defecto se aplica la propiedad display ``inline-block`` a todos los elementos con tooltip, si no quiere que esto ocurra, agregue la clase ``tts-block`` para retirar las propieades ``inline-block`` del elemento:
+#### Is it a block?
+Por defecto se aplica la propiedad display `inline-block` a todos los elementos con tooltip, si no quiere que esto ocurra, agregue la clase `tts-block` para retirar las propieades `inline-block` del elemento:
 
 ```html
 <div class="tts tts-block" aria-label="Adiós inline-block">Tooltip</div>
+```
+
+## Customizing  
+
+Puede modificar facilmente los estilos del tooltip mediante variables css:
+
+
+| Variable                | Default   | Description                   |
+| ----------------------- | ----------| ----------------------------- |
+| `--tts-size`            | `14px`    | Tamaño de texto y relleno |
+| `--tts-arrow`           | `6px`     | Tamaño del indiador |
+| `--tts-bg`              | `rgb(0 0 0 / 90%)`     | Color de fondo |
+| `--tts-color`           | `#fff`     | Color del texto |
+| `--tts-duration`        | `.3s`     | Duracion de la animación |
+| `--tts-shadow`          | `0 2px 3px rgb(0 0 0 / 40%)`     | Sombra |
+| `--tts-radius`          | `.25em`     | Bordes redondeados |
+
+Con las variables puede crear sus propios temas:
+
+```css
+.tts-custom {
+  --tts-bg: #607D8B;
+  --tts-color: #ffffff;
+  --tts-duration: .5s;
+  --tts-shadow: 0 2px 10px rgb(0 0 0 / 20%);
+  --tts-radius: 1em;
+}
 ```
 
 ## License
