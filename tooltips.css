@@ -1,5 +1,5 @@
 /*!
- * Tooltips v3.0
+ * Tooltips v3.0.0
  * Copyright 2020 zkreations
  * Daniel Abel M. (fb.com/danieI.abel)
  * Licensed under MIT (github.com/zkreations/tooltips/blob/master/LICENSE)
@@ -10,6 +10,8 @@
   --tts-bg: rgb(0 0 0 / 90%);
   --tts-color: #fff;
   --tts-duration: .3s;
+  --tts-shadow: 0 2px 3px rgb(0 0 0 / 40%);
+  --tts-radius: .25em;
   --tts-pos: calc(100% - var(--tts-space, 0px));
   position: relative;
 }
@@ -32,8 +34,8 @@
   font-weight: 400;
   padding: 0.5em .75em;
   background-color: var(--tts-bg);
-  border-radius: .25em;
-  box-shadow: 0 2px 3px rgb(0 0 0 / 40%);
+  border-radius: var(--tts-radius);
+  box-shadow: var(--tts-shadow);
 }
 [class*=tts]::after {
   content: "";
