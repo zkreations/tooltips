@@ -46,7 +46,6 @@ Agregue clase `tts` y el atributo `aria-label` a un elemento html:
 Para cambiar la dirección agregue dos puntos seguido de una posición:
 
 ```html
-<span class="tts" aria-label="Hacia arriba por defecto">Tooltip</span>
 <span class="tts:left" aria-label="Hacia la izquierda">Tooltip</span>
 <span class="tts:right" aria-label="Hacia la derecha">Tooltip</span>
 <span class="tts:down" aria-label="Hacia la abajo">Tooltip</span>
@@ -54,10 +53,9 @@ Para cambiar la dirección agregue dos puntos seguido de una posición:
 
 #### Animations
 
-Escoja entre `tts-slideIn`, `tts-slideOut`, `tts-zoomIn` y `tts-zoomOut` ejemplo:
+Escoja entre `tts-slideIn`, `tts-slideOut`, `tts-zoomIn` y `tts-zoomOut`, ejemplo:
 
 ```html
-<span class="tts" aria-label="Fade (defualt)">Tooltip</span>
 <span class="tts tts-slideIn" aria-label="Slide In">Tooltip</span>
 <span class="tts tts-slideOut" aria-label="Slide Out">Tooltip</span>
 <span class="tts tts-zoomIn" aria-label="Zoom In">Tooltip</span>
@@ -87,7 +85,7 @@ Por defecto se aplica la propiedad display `inline-block` a todos los elementos 
 <div class="tts tts-block" aria-label="Adiós inline-block">Tooltip</div>
 ```
 
-## Customizing  
+## Customizing
 
 Puede modificar facilmente los estilos del tooltip mediante variables css:
 
