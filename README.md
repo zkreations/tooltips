@@ -16,7 +16,7 @@
 
 ## Demo
 
-gh-pages: https://zkreations.github.io/tooltips/
+gh-pages: https://zkreations.github.io/tooltips/  
 Codepen: https://codepen.io/zkreations/full/NWNXYaE
 
 ## Installation
