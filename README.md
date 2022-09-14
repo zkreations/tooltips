@@ -1,8 +1,7 @@
 <div align="center">
-  <img src="/static/tts-logo.svg?sanitize=true" width="200" alt="Canvas.xml Logo">
+  <img src=".github/tooltips.svg?sanitize=true" width="120" alt="tts-tooltips">
   <h1>Tooltips.css</h1>
-  <p>Tiny and powerful tooltips with pure css ~ 0.8kb gzipped</p>
-  
+  <p>Ligero y poderoso tooltips sin javascript ~ 0.9kb gzipped</p>
   <a href="https://www.jsdelivr.com/package/gh/zkreations/tooltips">
     <img src="https://img.shields.io/jsdelivr/gh/hm/zkreations/tooltips?color=D69E2E&style=for-the-badge"/>
   </a>
@@ -14,113 +13,141 @@
   </a>
 </div>
 
-## Demo
+## Instalar
 
-gh-pages: https://zkreations.github.io/tooltips/  
-Codepen: https://codepen.io/zkreations/full/NWNXYaE
-
-## Installation
-
-#### CDN
+### CDN
 
 ```html
-<link href="//cdn.jsdelivr.net/gh/zkreations/tooltips@3/tooltips.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/zkreations/tooltips@4/tooltips.min.css" rel="stylesheet"/>
 ```
 
-#### Manual
-Descargue **tooltips.min.css** de este repositorio e incluya el archivo en su código HTML:
+## Modo de uso
+
+Agrega los atributos `data-tts` y `aria-label` a un elemento html:
 
 ```html
-<link href="tooltips.min.css" rel="stylesheet">
+<span data-tts aria-label="Hola mundo!">Tooltip</span>
 ```
 
-## Usage
+### Orientación
 
-Agregue clase `tts` y el atributo `aria-label` a un elemento html:
+Si no se especifica una orientación se usara el valor por defecto (up):
 
 ```html
-<span class="tts" aria-label="Hola mundo!">Tooltip</span>
+<span data-tts="up" aria-label="Arriba">Top</span>
+<span data-tts="left" aria-label="Izquierda">Left</span>
+<span data-tts="right" aria-label="Derecha">Right</span>
+<span data-tts="down" aria-label="Abajo">Bottom</span>
 ```
-#### Positioning
 
-Para cambiar la dirección agregue dos puntos seguido de una posición:
+Las orientaciones **"up"** y **"down"** se pueden combinar con **"left"** y **"right"**:
 
 ```html
-<span class="tts:left" aria-label="Hacia la izquierda">Tooltip</span>
-<span class="tts:right" aria-label="Hacia la derecha">Tooltip</span>
-<span class="tts:down" aria-label="Hacia la abajo">Tooltip</span>
+<span data-tts="up-left" aria-label="Inicio">Inicio</span>
+<span data-tts="up-right" aria-label="Esquina">Esquina</span>
+<span data-tts="down-left" aria-label="Inferior">Inferior</span>
+<span data-tts="down-right" aria-label="Final">Final</span>
 ```
 
-#### Animations
+### Animaciones
 
-Escoja entre `tts-slideIn`, `tts-slideOut`, `tts-zoomIn` y `tts-zoomOut`, ejemplo:
+Las animaciones pueden crearse con **variables css** que afectan al estado inicial:
+
+| Variable                |  Default | Descripción
+| ----------------------- | -------- | ------------
+| `--tts-start-scale`     | `1`      | Escala inicial
+| `--tts-end-scale`       | `1`      | Escala final
+| `--tts-start-translate` | `0px`    | Posición inicial 
+| `--tts-end-translate`   | `0px`    | Posición Final 
+
+Con ellas podemos recrear las animaciones, por ejemplo:
+
+```css
+.tts-slideIn {
+  --tts-start-translate: -1rem;
+}
+.tts-slideOut {
+  --tts-start-translate: 1rem;
+}
+.tts-zoomIn {
+  --tts-start-scale: .9;
+}
+.tts-zoomOut {
+  --tts-start-scale: 1.1;
+}
+```
+
+Ahora solo agrega las clases de tus animaciones:
 
 ```html
-<span class="tts tts-slideIn" aria-label="Slide In">Tooltip</span>
-<span class="tts tts-slideOut" aria-label="Slide Out">Tooltip</span>
-<span class="tts tts-zoomIn" aria-label="Zoom In">Tooltip</span>
-<span class="tts tts-zoomOut" aria-label="Zoom Out">Tooltip</span>
+<span data-tts class="tts-slideIn" aria-label="Slide In">SlideIn</span>
+<span data-tts class="tts-slideOut" aria-label="Slide Out">SlideOut</span>
+<span data-tts class="tts-zoomIn" aria-label="Zoom In">ZoomIn</span>
+<span data-tts class="tts-zoomOut" aria-label="Zoom Out">ZoomOut</span>
 ```
 
-## Options
+También puedes definir una **animación por defecto** para todos los tooltips, sin usar clases:
 
-#### Always Visible
-Agregue la clase `tts-visible` para que el tooltip se muestre siempre visible:
+```css
+[data-tts] {
+  --tts-start-translate: 1rem;
+  --tts-start-scale: .75;
+}
+```
+
+### Mostrar tooltip programable
+
+Agrega el atributo clase `data-tts-visible` para mostrar en cualquier momento el tooltip sin la necesidad de que el usuario interactue con el elemento. Puedes agregar fácilmente este atributo utilizando Javascript.
 
 ```html
-<span class="tts tts-visible" aria-label="Siempre visible">Tooltip</span>
+<span data-tts data-tts-visible aria-label="Visible programado">Hola mundo</span>
 ```
 
-#### Line Break
-Por defecto el tooltip contiene la propiedad `nowrap`. Agregue la clase `tts-wrap` para respetar los saltos de linea:
+## Personalizar
 
-```html
-<span class="tts tts-wrap" aria-label="Los saltos de linea se respetan">Tooltip</span>
-```
+Define nuevos valores para las variables css del tooltip para cambiar su aspecto. Las variables de diseño disponibles son:
 
-#### Is it a block?
-Por defecto se aplica la propiedad display `inline-block` a todos los elementos con tooltip, si no quiere que esto ocurra, agregue la clase `tts-block` para retirar las propieades `inline-block` del elemento:
+| Variable              | Default              | Descripción
+| --------------------- | -------------------- | -------------
+| `--tts-background`    | rgb(0 0 0 / 90%)     | Color de fondo
+| `--tts-arrow`         | 6px                  | Tamaño del indicador
+| `--tts-arrow-offset`  | 6px                  | Espacios laterales (solo para orientación combinada)
+| `--tts-duration`      | 0.3s                 | Duración de animación
+| `--tts-font-size`     | 14px                 | Tamaño de fuente
+| `--tts-font-family`   | Roboto, sans-serif   | Estilo de fuente
+| `--tts-color`         | #fff                 | Color de textos
+| `--tts-padding`       | 0.5em 0.75em         | Espacio de relleno 
+| `--tts-border-radius` | 0.25em               | Bordes redondeados
 
-```html
-<div class="tts tts-block" aria-label="Adiós inline-block">Tooltip</div>
-```
-
-## Customizing
-
-Puede modificar facilmente los estilos del tooltip mediante variables css:
-
-
-| Variable                | Default   | Description                   |
-| ----------------------- | ----------| ----------------------------- |
-| `--tts-size`            | `14px`    | Tamaño de texto y relleno |
-| `--tts-arrow`           | `6px`     | Tamaño del indiador |
-| `--tts-bg`              | `rgb(0 0 0 / 90%)`     | Color de fondo |
-| `--tts-color`           | `#fff`     | Color del texto |
-| `--tts-duration`        | `.3s`     | Duracion de la animación |
-| `--tts-shadow`          | `0 2px 3px rgb(0 0 0 / 40%)`     | Sombra |
-| `--tts-radius`          | `.25em`     | Bordes redondeados |
-
-Con las variables puede crear sus propios temas:
+Las variables permiten crear nuevos temas que puedes aplicar con tus propias clases:
 
 ```css
 .tts-custom {
-  --tts-bg: #607D8B;
+  --tts-background: #607D8B;
+  --tts-border-radius: 1em;
   --tts-duration: .5s;
-  --tts-shadow: 0 2px 10px rgb(0 0 0 / 20%);
-  --tts-radius: 1em;
 }
 ```
 
-O puede establecer estilos globales:
+También puedes establecer **estilos globales** para todos los tooltips:
 
 ```css
-:root {
-  --tts-bg: #607D8B;
-  --tts-duration: .5s;
+[data-tts] {
+  --tts-background: #607D8B;
+  --tts-border-radius: 0px;
 }
+```
+
+## Observaciones
+
+Los tooltips **no funcionan con etiquetas de auto cierre**, por ejemplo `<img/>` o `<input/>`. Para solucionarlo, crea un contenedor e inicia el globo en él:
+
+```html
+<figure data-tts aria-label="Soy una imagen">
+  <img src="example.jpg"/>
+</figure>
 ```
 
 ## License
 
 **tooltips.css** is licensed under the MIT License
-
