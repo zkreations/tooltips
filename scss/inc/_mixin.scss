@@ -1,0 +1,40 @@
+
+
+@mixin tts-core {
+  position: absolute;
+  top: var(--t-top);
+  left: var(--t-left);
+  right: var(--t-right);
+  bottom: var(--t-bottom);
+  opacity: var(--t-op);
+  z-index: 10;
+  // Evita problemas con el estado hover
+  pointer-events: none;
+
+  // Prepara propiedades para animaciones
+  transform: translate(var(--t-tx,0), var(--t-ty,0)) scale(var(--t-ts, 1));
+  transform-origin: var(--t-to, bottom);
+  transition-property: opacity, transform;
+
+  // Velocidad de animacion modificable
+  transition-duration: var(--tts-duration, $tts-duration);
+
+  // Soluciona algunos problemas visuales en Chrome
+  will-change: transform;
+}
+
+@mixin tts-text {
+  @each $key, $value in $tts-text {
+    #{$key}: var(--tts-#{$key}, #{$value});
+  }
+  font-weight: normal;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+
+@mixin tts-arrow {
+  content: "";
+  border-style: solid;
+  border-color: transparent;
+}
