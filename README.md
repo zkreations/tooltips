@@ -13,12 +13,22 @@
   </a>
 </div>
 
+## Demo
+
+🚀 **[Versión más reciente](https://zkreations.github.io/tooltips/)**
+
 ## Instalar
 
-### CDN
+### npm
+
+```
+npm i @zkreations/tooltips
+```
+
+### cdn
 
 ```html
-<link href="https://cdn.jsdelivr.net/gh/zkreations/tooltips@4/tooltips.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@zkreations/tooltips@4" rel="stylesheet"/>
 ```
 
 ## Modo de uso
