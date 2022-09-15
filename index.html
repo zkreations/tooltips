@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tooltips</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@zkreations/tooltips@4">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <style>
+    *,
+    ::after,
+    ::before {
+      box-sizing: border-box;
+    }
+
+    body {
+      color: #fff;
+      background-color: #0f0f13;
+      line-height: 1.75;
+    }
+
+    .demo {
+      padding: 4rem 2rem;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 900px;
+    }
+    .demo-title {
+      font-size: 2rem;
+      margin: 0;
+    }
+    .demo-text {
+      font-size: 1.125rem;
+      color: #c6c6d2;
+    }
+    .demo-button {
+      text-align: center;
+      padding: 1.125rem;
+      cursor: default;
+      color: #fff;
+      background: #2d2d39;
+      padding: 0.75rem 1rem;
+      border-radius: 0.25rem;
+      box-shadow: 0 2px 1px -1px rgba(255, 255, 255, 0.1) inset, 0 1px 3px -1px black;
+    }
+    .demo-columns {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
+      gap: 1rem;
+      padding: 1rem;
+      background-color: rgba(0, 0, 0, 0.75);
+      border-radius: 0.5rem;
+    }
+
+    .tts-slideIn {
+      --tts-start-translate: -1rem;
+    }
+    .tts-slideOut {
+      --tts-start-translate: 1rem;
+    }
+    .tts-zoomIn {
+      --tts-start-scale: 0.8;
+    }
+    .tts-zoomOut {
+      --tts-start-scale: 1.2;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo">
+    <h1 class="demo-title">Tooltips</h1>
+    <p class="demo-text">El globo puede mostrarse en diferentes orientaciones, y dos de ellas pueden combinarse para alinear el globo a los bordes.</p>
+    <div class="demo-columns">
+      <span class="demo-button" data-tts="" aria-label="Arriba">up</span>
+      <span class="demo-button" data-tts="left" aria-label="Izquierda">left</span>
+      <span class="demo-button" data-tts="right" aria-label="Derecha">right</span>
+      <span class="demo-button" data-tts="down" aria-label="Abajo">down</span>
+      <span class="demo-button" data-tts="up-left" aria-label="Inicio">up-left</span>
+      <span class="demo-button" data-tts="up-right" aria-label="Esquina">up-right</span>
+      <span class="demo-button" data-tts="down-left" aria-label="Inferior">down-left</span>
+      <span class="demo-button" data-tts="down-right" aria-label="Final">down-right</span>
+    </div>
+    <p class="demo-text">En pro de conservar el código lo más pequeño posible, no encontrarás animaciones, sin embargo, puedes crearlas fácilmente con variables CSS.</p>
+    <div class="demo-columns">
+      <span class="demo-button tts-slideIn" data-tts="up" aria-label="Hola mundo">Slide In</span>
+      <span class="demo-button tts-slideOut" data-tts="up" aria-label="Hola mundo">Slide Out</span>
+      <span class="demo-button tts-zoomIn" data-tts="up" aria-label="Hola mundo">Zoom In</span>
+      <span class="demo-button tts-zoomOut" data-tts="up" aria-label="Hola mundo">Zoom Out</span></div>
+  </div>
+</body>
+</html>
