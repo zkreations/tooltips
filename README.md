@@ -2,8 +2,8 @@
   <img src=".github/tooltips.svg?sanitize=true" width="120" alt="tts-tooltips">
   <h1>Tooltips.css</h1>
   <p>Ligero y poderoso tooltips sin javascript ~ 0.9kb gzipped</p>
-  <a href="https://www.jsdelivr.com/package/gh/zkreations/tooltips">
-    <img src="https://img.shields.io/jsdelivr/gh/hm/zkreations/tooltips?color=D69E2E&style=for-the-badge"/>
+  <a href="https://www.jsdelivr.com/package/npm/@zkreations/tooltips">
+    <img src="https://img.shields.io/jsdelivr/npm/hm/@zkreations/tooltips?color=D69E2E&style=for-the-badge"/>
   </a>
   <a href="https://github.com/zkreations/tooltips/releases/">
     <img src="https://img.shields.io/github/v/release/zkreations/tooltips?color=68D391&style=for-the-badge"/>
@@ -28,7 +28,7 @@ npm i @zkreations/tooltips
 ### cdn
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/@zkreations/tooltips@4" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@zkreations/tooltips@4/tooltips.min.css" rel="stylesheet"/>
 ```
 
 ## Modo de uso
