@@ -2,17 +2,17 @@
 $tts-duration: .3s;
 $tts-arrow-size: 6px;
 $tts-arrow-offset: 6px;
-$tts-background: rgb(0 0 0 / 90%); // Solo color (background-color)
+$tts-background: rgb(0 0 0 / 90%); // Background color only
 
-// Estado inicial
+// Initial state
 $tts-start-translate: 0px;
 $tts-start-scale: 1;
 
-// Estado final
+// Final state
 $tts-end-translate: 0px;
 $tts-end-scale: 1;
 
-// Estilos (Se convierten en variables CSS)
+// Styles (Converted to CSS variables)
 $tts-text: (
   "font-size": 14px,
   "font-family": "Roboto, sans-serif",

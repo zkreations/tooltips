@@ -1,24 +1,25 @@
 // Tooltips v4.0.0
-// Copyright 2022 zkreations (https://zkreations.com/)
+// Copyright 2023 zkreations (https://zkreations.com/)
 
 @import "inc/mixin";
 @import "inc/variables";
 
 
-// Especifidad a 0 para evitar conflicto
+// Specificity to 0 to avoid conflict
 :where([data-tts]) {
   position: relative;
   display: inline-block;
+
   &::before {
     content: attr(aria-label);
   }
 }
 
 // Tooltips
-// Variables con el prefijo "--tts" son estilos seguros de modificar
-// Variables con el prefijo "--t" no deben modificarse
+// Variables with the prefix "--tts" are safe to modify
+// Variables with the prefix "--t" should not be modified
 
-// Significado de variables
+// Meaning of variables
 // op: opacity
 // tt: transform (translate)
 // tx: transform (translate X)
@@ -28,65 +29,69 @@
 // po: position
 
 [data-tts] {
-  &::before, &::after {
+
+  &::before,
+  &::after {
     @include tts-core;
   }
 
-  // Estado incial
+  // Initial state
   &:not(:hover):not([data-tts-visible]) {
     --t-op: 0;
     --t-tt: var(--tts-start-translate, #{$tts-start-translate});
     --t-ts: var(--tts-start-scale, #{$tts-start-scale});
   }
 
-  // Estado Final
-  &:hover, &[data-tts-visible] {
+  // Final state
+  &:hover,
+  &[data-tts-visible] {
     --t-tt: var(--tts-end-translate, #{$tts-end-translate});
     --t-ts: var(--tts-end-scale, #{$tts-end-scale});
   }
 
-  // Restamos la posicion definida por el usuario
-  // Esto asegura que el globo empezará y terminará donde debería
+  // We subtract the position defined by the user
+  // This ensures that the balloon will start and end where it should
   --t-po: calc(100% - var(--t-tt));
 
-  // Fondo tanto para el indicador como el globo
+  // Background for both the indicator and the balloon
   --t-bg: var(--tts-background, rgba(0, 0, 0, 0.9));
 
-  // Tamaño del indicador
+  // Size of the indicator
   --t-arrow: var(--tts-arrow, #{$tts-arrow-size});
 
-  // Compensacion del indicador 
+  // Offset of the indicator
   --t-offset: var(--tts-arrow-offset, #{$tts-arrow-offset});
 
-  // Texto
+  // Text styles
   &::before {
     @include tts-text;
     background-color: var(--t-bg);
   }
 
-  // Indicador
+  // Indicator styles
   &::after {
     @include tts-arrow;
     border-width: var(--t-arrow);
   }
 }
 
-// Hacia arriba (Por defecto)
-[data-tts*=up], [data-tts=""] {
-  // Define la orientación (importante)
+// Up (Default)
+[data-tts*=up],
+[data-tts=""] {
+  // Define the orientation (important)
   --t-top: 0;
 
-  // Posicion horizontal
+  // Horizontal position
   --t-left: 50%;
   --t-tx: -50%;
 
-  // Globo
+  // Balloon
   &::before {
-    // Restamos el tamaño de la flecha y multiplicamos para obtener un valor negativo
+    // We subtract the size of the arrow and multiply to get a negative value
     --t-ty: calc((var(--t-po) + var(--t-arrow)) * -1);
   }
 
-  // Indicador
+  // Indicator
   &::after {
     --t-to: top;
     --t-ty: calc(var(--t-po) * -1);
@@ -95,24 +100,23 @@
   }
 }
 
-
-// Hacia abajo
+// Down
 [data-tts*=down] {
-  // Define la orientación (importante)
+  // Define the orientation (important)
   --t-bottom: 0;
 
-  // Posicion horizontal
+  // Horizontal position
   --t-left: 50%;
   --t-tx: -50%;
 
-  // Globo
+  // Balloon
   &::before {
     --t-to: top;
-    // Restamos el tamaño de la flecha y multiplicamos para obtener un valor negativo
+    // We subtract the size of the arrow and multiply to get a negative value
     --t-ty: calc(var(--t-po) + var(--t-arrow));
   }
 
-  // Indicador
+  // Indicator
   &::after {
     --t-to: bottom;
     --t-ty: var(--t-po);
@@ -121,23 +125,23 @@
   }
 }
 
-// Hacia la izquierda
+// Left
 [data-tts=left] {
-  // Define la orientación (importante)
+  // Define the orientation (important)
   --t-left: 0;
 
-  // Posicion vertical
+  // Vertical position
   --t-top: 50%;
   --t-ty: -50%;
 
-  // Globo
+  // Balloon
   &::before {
     --t-to: right;
-    // Restamos el tamaño de la flecha y multiplicamos para obtener un valor negativo
+    // We subtract the size of the arrow and multiply to get a negative value
     --t-tx: calc((var(--t-po) + var(--t-arrow)) * -1);
   }
 
-  // Indicador
+  // Indicator
   &::after {
     --t-to: left;
     --t-tx: calc(var(--t-po) * -1);
@@ -146,24 +150,23 @@
   }
 }
 
-
-// Hacia la derecha
+// Right
 [data-tts=right] {
-  // Define la orientación (importante)
+  // Define the orientation (important)
   --t-right: 0;
 
-  // Posicion vertical
+  // Vertical position
   --t-top: 50%;
   --t-ty: -50%;
 
-  // Globo
+  // Balloon
   &::before {
     --t-to: left;
-    // Restamos el tamaño de la flecha y multiplicamos para obtener un valor negativo
+    // We subtract the size of the arrow and multiply to get a negative value
     --t-tx: calc(var(--t-po) + var(--t-arrow));
   }
 
-  // Indicador
+  // Indicator
   &::after {
     --t-to: right;
     --t-tx: var(--t-po);
@@ -174,71 +177,79 @@
 
 
 // Up-Left
-[data-tts=up-left], [data-tts=down-left] {
+[data-tts=up-left],
+[data-tts=down-left] {
   --t-left: 0;
   --t-tx: 0;
 
-  // Indicador
+  // Indicator
   &::after {
     --t-left: var(--t-offset);
   }
 }
 
 [data-tts=up-left] {
-  // Globo
+
+  // Balloon
   &::before {
     --t-to: bottom left;
   }
 
-  // Indicador
+  // Indicator
   &::after {
     --t-to: top left;
   }
 }
 
+// Down-left
 [data-tts=down-left] {
-  // Globo
+
+  // Balloon
   &::before {
     --t-to: top left;
   }
 
-  // Indicador
+  // Indicator
   &::after {
     --t-to: bottom left;
   }
 }
 
 // Up-right
-[data-tts=up-right], [data-tts=down-right] {
+[data-tts=up-right],
+[data-tts=down-right] {
   --t-left: auto;
   --t-right: 0;
   --t-tx: 0;
 
-  // Indicador
+  // Indicator
   &::after {
     --t-right: var(--t-offset);
   }
 }
 
 [data-tts=up-right] {
-  // Globo
+
+  // Balloon
   &::before {
     --t-to: bottom right;
   }
 
-  // Indicador
+  // Indicator
   &::after {
     --t-to: top right;
   }
 }
 
+// Down-right
 [data-tts=down-right] {
-  // Globo
+
+  // Balloon
   &::before {
     --t-to: top right;
   }
 
-  // Indicador
+  // Indicator
   &::after {
     --t-to: bottom right;
   }
