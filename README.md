@@ -159,6 +159,10 @@ Tooltips **do not work with self-closing tags**, for example, `<img/>` or `<inpu
 </figure>
 ```
 
+## Supporting
+
+If you want to help me keep this and more related projects always up to date, you can [buy me a coffee](https://ko-fi.com/zkreations) ☕. I will be very grateful 👏.
+
 ## License
 
 **tooltips.css** is licensed under the MIT License
