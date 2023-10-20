@@ -6,13 +6,10 @@
   <p>A lightweight and powerful solution that doesn't rely on JavaScript and compresses to just 0.7kb (<a href="https://www.multiutil.com/text-to-brotli-compress/">Brotli</a>). Easy to customize and implement, with no impact on performance.</p>
 
   <a href="https://www.jsdelivr.com/package/npm/@zkreations/tooltips">
-    <img src="https://img.shields.io/jsdelivr/npm/hm/@zkreations/tooltips?color=D69E2E&style=for-the-badge"/>
+    <img src="https://img.shields.io/jsdelivr/npm/hm/@zkreations/tooltips?color=68D391&style=for-the-badge"/>
   </a>
-  <a href="https://github.com/zkreations/tooltips/releases/">
-    <img src="https://img.shields.io/github/v/release/zkreations/tooltips?color=68D391&style=for-the-badge"/>
-  </a>
-  <a href="./LICENSE">
-    <img src="https://img.shields.io/github/license/zkreations/tooltips?color=4FD1C5&style=for-the-badge"/>
+  <a href="https://www.npmjs.com/package/@zkreations/tooltips">
+    <img src="https://img.shields.io/npm/v/@zkreations/tooltips?color=4FD1C5&style=for-the-badge"/>
   </a>
 
   <p><a href="https://zkreations.github.io/tooltips/"><strong> Live Demo &rarr;</strong></a></p>
