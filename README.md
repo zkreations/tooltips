@@ -3,7 +3,7 @@
 
   # Tooltips.css
 
-  <p>A lightweight and powerful solution that doesn't rely on JavaScript and compresses to just 0.9kb (gzip). Easy to customize and implement, with no impact on performance.</p>
+  <p>A lightweight and powerful solution that doesn't rely on JavaScript and compresses to just 0.7kb (<a href="https://www.multiutil.com/text-to-brotli-compress/">Brotli</a>). Easy to customize and implement, with no impact on performance.</p>
 
   <a href="https://www.jsdelivr.com/package/npm/@zkreations/tooltips">
     <img src="https://img.shields.io/jsdelivr/npm/hm/@zkreations/tooltips?color=D69E2E&style=for-the-badge"/>
