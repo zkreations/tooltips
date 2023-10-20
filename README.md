@@ -1,3 +1,3 @@
-## Pagina de ejemplo
+# Example Page
 
-Esta es una página de demostración
+This is a demonstration page. (*´ー`)旦 旦(￣ω￣*)
