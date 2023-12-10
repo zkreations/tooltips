@@ -29,22 +29,20 @@
 // po: position
 
 [data-tts] {
-
   &::before,
   &::after {
     @include tts-core;
   }
 
   // Initial state
-  &:not(:hover):not([data-tts-visible]) {
+  &:not(:hover, [data-tts-visible]) {
     --t-op: 0;
     --t-tt: var(--tts-start-translate, #{$tts-start-translate});
     --t-ts: var(--tts-start-scale, #{$tts-start-scale});
   }
 
   // Final state
-  &:hover,
-  &[data-tts-visible] {
+  &:hover, &[data-tts-visible] {
     --t-tt: var(--tts-end-translate, #{$tts-end-translate});
     --t-ts: var(--tts-end-scale, #{$tts-end-scale});
   }
@@ -54,7 +52,7 @@
   --t-po: calc(100% - var(--t-tt));
 
   // Background for both the indicator and the balloon
-  --t-bg: var(--tts-background, rgba(0, 0, 0, 0.9));
+  --t-bg: var(--tts-background, rgb(0 0 0 / 90%));
 
   // Size of the indicator
   --t-arrow: var(--tts-arrow, #{$tts-arrow-size});
@@ -65,18 +63,20 @@
   // Text styles
   &::before {
     @include tts-text;
+
     background-color: var(--t-bg);
   }
 
   // Indicator styles
   &::after {
     @include tts-arrow;
+
     border-width: var(--t-arrow);
   }
 }
 
 // Up (Default)
-[data-tts*=up],
+[data-tts*="up"],
 [data-tts=""] {
   // Define the orientation (important)
   --t-top: 0;
@@ -95,13 +95,14 @@
   &::after {
     --t-to: top;
     --t-ty: calc(var(--t-po) * -1);
+
     border-top-color: var(--t-bg);
     border-bottom-width: 0;
   }
 }
 
 // Down
-[data-tts*=down] {
+[data-tts*="down"] {
   // Define the orientation (important)
   --t-bottom: 0;
 
@@ -112,6 +113,7 @@
   // Balloon
   &::before {
     --t-to: top;
+
     // We subtract the size of the arrow and multiply to get a negative value
     --t-ty: calc(var(--t-po) + var(--t-arrow));
   }
@@ -120,13 +122,14 @@
   &::after {
     --t-to: bottom;
     --t-ty: var(--t-po);
+
     border-bottom-color: var(--t-bg);
     border-top-width: 0;
   }
 }
 
 // Left
-[data-tts=left] {
+[data-tts="left"] {
   // Define the orientation (important)
   --t-left: 0;
 
@@ -137,6 +140,7 @@
   // Balloon
   &::before {
     --t-to: right;
+
     // We subtract the size of the arrow and multiply to get a negative value
     --t-tx: calc((var(--t-po) + var(--t-arrow)) * -1);
   }
@@ -145,13 +149,14 @@
   &::after {
     --t-to: left;
     --t-tx: calc(var(--t-po) * -1);
+
     border-left-color: var(--t-bg);
     border-right-width: 0;
   }
 }
 
 // Right
-[data-tts=right] {
+[data-tts="right"] {
   // Define the orientation (important)
   --t-right: 0;
 
@@ -162,6 +167,7 @@
   // Balloon
   &::before {
     --t-to: left;
+
     // We subtract the size of the arrow and multiply to get a negative value
     --t-tx: calc(var(--t-po) + var(--t-arrow));
   }
@@ -170,6 +176,7 @@
   &::after {
     --t-to: right;
     --t-tx: var(--t-po);
+
     border-right-color: var(--t-bg);
     border-left-width: 0;
   }
@@ -177,8 +184,8 @@
 
 
 // Up-Left
-[data-tts=up-left],
-[data-tts=down-left] {
+[data-tts="up-left"],
+[data-tts="down-left"] {
   --t-left: 0;
   --t-tx: 0;
 
@@ -188,8 +195,7 @@
   }
 }
 
-[data-tts=up-left] {
-
+[data-tts="up-left"] {
   // Balloon
   &::before {
     --t-to: bottom left;
@@ -202,8 +208,7 @@
 }
 
 // Down-left
-[data-tts=down-left] {
-
+[data-tts="down-left"] {
   // Balloon
   &::before {
     --t-to: top left;
@@ -216,8 +221,8 @@
 }
 
 // Up-right
-[data-tts=up-right],
-[data-tts=down-right] {
+[data-tts="up-right"],
+[data-tts="down-right"] {
   --t-left: auto;
   --t-right: 0;
   --t-tx: 0;
@@ -228,8 +233,7 @@
   }
 }
 
-[data-tts=up-right] {
-
+[data-tts="up-right"] {
   // Balloon
   &::before {
     --t-to: bottom right;
@@ -242,8 +246,7 @@
 }
 
 // Down-right
-[data-tts=down-right] {
-
+[data-tts="down-right"] {
   // Balloon
   &::before {
     --t-to: top right;

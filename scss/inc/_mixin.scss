@@ -1,12 +1,10 @@
 // Mixin for the core styling of an element
 @mixin tts-core {
   position: absolute;
-  top: var(--t-top);
-  left: var(--t-left);
-  right: var(--t-right);
-  bottom: var(--t-bottom);
+  inset: var(--t-top) var(--t-right) var(--t-bottom) var(--t-left);
   opacity: var(--t-op);
   z-index: 10;
+
   // Prevent issues with hover state
   pointer-events: none;
 
@@ -27,6 +25,7 @@
   @each $key, $value in $tts-text {
     #{$key}: var(--tts-#{$key}, #{$value});
   }
+
   font-weight: normal;
   line-height: 1.5;
   white-space: nowrap;
