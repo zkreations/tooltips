@@ -20,13 +20,13 @@
 // Variables with the prefix "--t" should not be modified
 
 // Meaning of variables
-// op: opacity
 // tt: transform (translate)
 // tx: transform (translate X)
 // ty: transform (translate Y)
 // ts: transform (scale)
 // to: transform origin
-// po: position
+// p: position
+// o: opacity
 
 [data-tts] {
   &::before,
@@ -36,7 +36,7 @@
 
   // Initial state
   &:not(:hover, [data-tts-visible]) {
-    --t-op: 0;
+    --t-o: 0;
     --t-tt: var(--tts-start-translate, #{$tts-start-translate});
     --t-ts: var(--tts-start-scale, #{$tts-start-scale});
   }
@@ -49,7 +49,7 @@
 
   // We subtract the position defined by the user
   // This ensures that the balloon will start and end where it should
-  --t-po: calc(100% - var(--t-tt));
+  --t-p: calc(100% - var(--t-tt));
 
   // Background for both the indicator and the balloon
   --t-bg: var(--tts-background, rgb(0 0 0 / 90%));
@@ -79,22 +79,22 @@
 [data-tts*="up"],
 [data-tts=""] {
   // Define the orientation (important)
-  --t-top: 0;
+  --t-it: 0;
 
   // Horizontal position
-  --t-left: 50%;
+  --t-il: 50%;
   --t-tx: -50%;
 
   // Balloon
   &::before {
     // We subtract the size of the arrow and multiply to get a negative value
-    --t-ty: calc((var(--t-po) + var(--t-arrow)) * -1);
+    --t-ty: calc((var(--t-p) + var(--t-arrow)) * -1);
   }
 
   // Indicator
   &::after {
     --t-to: top;
-    --t-ty: calc(var(--t-po) * -1);
+    --t-ty: calc(var(--t-p) * -1);
 
     border-top-color: var(--t-bg);
     border-bottom-width: 0;
@@ -104,10 +104,10 @@
 // Down
 [data-tts*="down"] {
   // Define the orientation (important)
-  --t-bottom: 0;
+  --t-ib: 0;
 
   // Horizontal position
-  --t-left: 50%;
+  --t-il: 50%;
   --t-tx: -50%;
 
   // Balloon
@@ -115,13 +115,13 @@
     --t-to: top;
 
     // We subtract the size of the arrow and multiply to get a negative value
-    --t-ty: calc(var(--t-po) + var(--t-arrow));
+    --t-ty: calc(var(--t-p) + var(--t-arrow));
   }
 
   // Indicator
   &::after {
     --t-to: bottom;
-    --t-ty: var(--t-po);
+    --t-ty: var(--t-p);
 
     border-bottom-color: var(--t-bg);
     border-top-width: 0;
@@ -131,10 +131,10 @@
 // Left
 [data-tts="left"] {
   // Define the orientation (important)
-  --t-left: 0;
+  --t-il: 0;
 
   // Vertical position
-  --t-top: 50%;
+  --t-it: 50%;
   --t-ty: -50%;
 
   // Balloon
@@ -142,13 +142,13 @@
     --t-to: right;
 
     // We subtract the size of the arrow and multiply to get a negative value
-    --t-tx: calc((var(--t-po) + var(--t-arrow)) * -1);
+    --t-tx: calc((var(--t-p) + var(--t-arrow)) * -1);
   }
 
   // Indicator
   &::after {
     --t-to: left;
-    --t-tx: calc(var(--t-po) * -1);
+    --t-tx: calc(var(--t-p) * -1);
 
     border-left-color: var(--t-bg);
     border-right-width: 0;
@@ -158,10 +158,10 @@
 // Right
 [data-tts="right"] {
   // Define the orientation (important)
-  --t-right: 0;
+  --t-ir: 0;
 
   // Vertical position
-  --t-top: 50%;
+  --t-it: 50%;
   --t-ty: -50%;
 
   // Balloon
@@ -169,13 +169,13 @@
     --t-to: left;
 
     // We subtract the size of the arrow and multiply to get a negative value
-    --t-tx: calc(var(--t-po) + var(--t-arrow));
+    --t-tx: calc(var(--t-p) + var(--t-arrow));
   }
 
   // Indicator
   &::after {
     --t-to: right;
-    --t-tx: var(--t-po);
+    --t-tx: var(--t-p);
 
     border-right-color: var(--t-bg);
     border-left-width: 0;
@@ -186,12 +186,12 @@
 // Up-Left
 [data-tts="up-left"],
 [data-tts="down-left"] {
-  --t-left: 0;
+  --t-il: 0;
   --t-tx: 0;
 
   // Indicator
   &::after {
-    --t-left: var(--t-offset);
+    --t-il: var(--t-offset);
   }
 }
 
@@ -223,13 +223,13 @@
 // Up-right
 [data-tts="up-right"],
 [data-tts="down-right"] {
-  --t-left: auto;
-  --t-right: 0;
+  --t-il: auto;
+  --t-ir: 0;
   --t-tx: 0;
 
   // Indicator
   &::after {
-    --t-right: var(--t-offset);
+    --t-ir: var(--t-offset);
   }
 }
 

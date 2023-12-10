@@ -1,8 +1,8 @@
 // Mixin for the core styling of an element
 @mixin tts-core {
   position: absolute;
-  inset: var(--t-top) var(--t-right) var(--t-bottom) var(--t-left);
-  opacity: var(--t-op);
+  inset: var(--t-it, auto) var(--t-ir, auto) var(--t-ib, auto) var(--t-il, auto);
+  opacity: var(--t-o);
   z-index: 10;
 
   // Prevent issues with hover state

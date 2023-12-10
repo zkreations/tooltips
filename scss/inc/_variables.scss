@@ -4,13 +4,15 @@ $tts-arrow-size: 6px;
 $tts-arrow-offset: 6px;
 $tts-background: rgb(0 0 0 / 90%); // Background color only
 
+/* stylelint-disable */
 // Initial state
-$tts-start-translate: 0;
+$tts-start-translate: 0px;
 $tts-start-scale: 1;
 
 // Final state
-$tts-end-translate: 0;
+$tts-end-translate: 0px;
 $tts-end-scale: 1;
+/* stylelint-enable */
 
 // Styles (Converted to CSS variables)
 $tts-text: (
