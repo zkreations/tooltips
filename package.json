@@ -1,6 +1,6 @@
 {
   "name": "@zkreations/tooltips",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "description": "Tiny and powerful tooltips with pure css",
   "files": [
     "scss/**/*.scss",
