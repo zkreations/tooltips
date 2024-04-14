@@ -1,19 +1,12 @@
-<div align="center">
-  <img width='100' src="https://raw.githubusercontent.com/zkreations/tooltips/master/.github/tooltips.svg?sanitize=true" align="center" />
 
-  # Tooltips.css
+# Tooltips.css
 
-  <p>A lightweight and powerful solution that doesn't rely on JavaScript and compresses to just 0.7kb (<a href="https://www.multiutil.com/text-to-brotli-compress/">Brotli</a>). Easy to customize and implement, with no impact on performance.</p>
+<img width='100' src="https://raw.githubusercontent.com/zkreations/tooltips/master/.github/tooltips.svg?sanitize=true" align="left" />
 
-  <a href="https://www.jsdelivr.com/package/npm/@zkreations/tooltips">
-    <img src="https://img.shields.io/jsdelivr/npm/hm/@zkreations/tooltips?color=68D391&style=for-the-badge"/>
-  </a>
-  <a href="https://www.npmjs.com/package/@zkreations/tooltips">
-    <img src="https://img.shields.io/npm/v/@zkreations/tooltips?color=4FD1C5&style=for-the-badge"/>
-  </a>
+![J](https://img.shields.io/jsdelivr/npm/hm/@zkreations/tooltips?color=68D391) ![V](https://img.shields.io/npm/v/@zkreations/tooltips) ![L](https://img.shields.io/npm/l/@zkreations/tooltips) 
 
-  <p><a href="https://zkreations.github.io/tooltips/"><strong> Live Demo &rarr;</strong></a></p>
-</div>
+
+A lightweight and powerful solution that doesn't rely on JavaScript and compresses to just 0.7kb [Brotli](https://www.multiutil.com/text-to-brotli-compress/). Easy to customize and implement, with no impact on performance.
 
 ## Installation
 
