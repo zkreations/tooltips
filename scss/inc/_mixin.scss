@@ -1,3 +1,5 @@
+@use "variables";
+
 // Mixin for the core styling of an element
 @mixin tts-core {
   position: absolute;
@@ -14,7 +16,7 @@
   transition-property: opacity, transform;
 
   // Adjustable animation speed
-  transition-duration: var(--tts-duration, $tts-duration);
+  transition-duration: var(--tts-duration, variables.$tts-duration);
 
   // Resolve some visual issues in Chrome
   will-change: transform;
@@ -22,7 +24,7 @@
 
 // Mixin for text styling
 @mixin tts-text {
-  @each $key, $value in $tts-text {
+  @each $key, $value in variables.$tts-text {
     #{$key}: var(--tts-#{$key}, #{$value});
   }
 

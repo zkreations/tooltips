@@ -1,8 +1,8 @@
 // Tooltips v4.0.0
 // Copyright 2023 zkreations (https://zkreations.com/)
 
-@import "inc/mixin";
-@import "inc/variables";
+@use "inc/mixin";
+@use "inc/variables";
 
 
 // Specificity to 0 to avoid conflict
@@ -31,20 +31,20 @@
 [data-tts] {
   &::before,
   &::after {
-    @include tts-core;
+    @include mixin.tts-core;
   }
 
   // Initial state
   &:not(:hover, [data-tts-visible]) {
     --t-o: 0;
-    --t-tt: var(--tts-start-translate, #{$tts-start-translate});
-    --t-ts: var(--tts-start-scale, #{$tts-start-scale});
+    --t-tt: var(--tts-start-translate, #{variables.$tts-start-translate});
+    --t-ts: var(--tts-start-scale, #{variables.$tts-start-scale});
   }
 
   // Final state
   &:hover, &[data-tts-visible] {
-    --t-tt: var(--tts-end-translate, #{$tts-end-translate});
-    --t-ts: var(--tts-end-scale, #{$tts-end-scale});
+    --t-tt: var(--tts-end-translate, #{variables.$tts-end-translate});
+    --t-ts: var(--tts-end-scale, #{variables.$tts-end-scale});
   }
 
   // We subtract the position defined by the user
@@ -55,21 +55,21 @@
   --t-bg: var(--tts-background, rgb(0 0 0 / 90%));
 
   // Size of the indicator
-  --t-arrow: var(--tts-arrow, #{$tts-arrow-size});
+  --t-arrow: var(--tts-arrow, #{variables.$tts-arrow-size});
 
   // Offset of the indicator
-  --t-offset: var(--tts-arrow-offset, #{$tts-arrow-offset});
+  --t-offset: var(--tts-arrow-offset, #{variables.$tts-arrow-offset});
 
   // Text styles
   &::before {
-    @include tts-text;
+    @include mixin.tts-text;
 
     background-color: var(--t-bg);
   }
 
   // Indicator styles
   &::after {
-    @include tts-arrow;
+    @include mixin.tts-arrow;
 
     border-width: var(--t-arrow);
   }
