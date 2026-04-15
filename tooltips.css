@@ -8,12 +8,6 @@
   content: attr(aria-label);
 }
 
-[data-tts] {
-  --t-p: calc(100% - var(--t-tt));
-  --t-bg: var(--tts-background, rgb(0 0 0 / 90%));
-  --t-arrow: var(--tts-arrow, 6px);
-  --t-offset: var(--tts-arrow-offset, 6px);
-}
 [data-tts]::before, [data-tts]::after {
   position: absolute;
   inset: var(--t-it, auto) var(--t-ir, auto) var(--t-ib, auto) var(--t-il, auto);
@@ -34,6 +28,12 @@
 [data-tts]:hover, [data-tts][data-tts-visible] {
   --t-tt: var(--tts-end-translate, 0px);
   --t-ts: var(--tts-end-scale, 1);
+}
+[data-tts] {
+  --t-p: calc(100% - var(--t-tt));
+  --t-bg: var(--tts-background, rgb(0 0 0 / 90%));
+  --t-arrow: var(--tts-arrow, 6px);
+  --t-offset: var(--tts-arrow-offset, 6px);
 }
 [data-tts]::before {
   font-size: var(--tts-font-size, 14px);
