@@ -1,13 +1,24 @@
 {
   "name": "@zkreations/tooltips",
   "version": "4.2.1",
-  "description": "Tiny and powerful tooltips with pure css",
+  "description": "Tiny and powerful tooltips with pure CSS",
   "files": [
-    "scss/**/*.scss",
     "tooltips.css",
-    "tooltips.min.css"
+    "tooltips.min.css",
+    "scss/**/*.scss"
   ],
-  "main": "tooltips.min.css",
+  "style": "tooltips.min.css",
+  "sass": "scss/tooltips.scss",
+  "exports": {
+    ".": {
+      "style": "./tooltips.min.css",
+      "default": "./tooltips.min.css",
+      "sass": "./scss/tooltips.scss"
+    },
+    "./tooltips.css": "./tooltips.css",
+    "./tooltips.min.css": "./tooltips.min.css",
+    "./scss/*": "./scss/*"
+  },
   "scripts": {
     "start": "npm-run-all --parallel watch:css serve",
     "compile": "npm-run-all compile:css minify:css",
@@ -25,7 +36,10 @@
   "keywords": [
     "css",
     "tooltips",
-    "nojs"
+    "nojs",
+    "pure-css",
+    "ui",
+    "frontend"
   ],
   "author": "Abel Moreira Moreno",
   "license": "MIT",
@@ -34,11 +48,11 @@
   },
   "homepage": "https://github.com/zkreations/tooltips#readme",
   "devDependencies": {
-    "lightningcss-cli": "^1.29.2",
+    "lightningcss-cli": "^1.32.0",
     "npm-run-all": "^4.1.5",
-    "sass": "^1.85.1",
+    "sass": "^1.99.0",
     "servor": "^4.0.2",
-    "stylelint": "^16.15.0",
-    "stylelint-config-standard-scss": "^14.0.0"
+    "stylelint": "^17.7.0",
+    "stylelint-config-standard-scss": "^17.0.0"
   }
 }
