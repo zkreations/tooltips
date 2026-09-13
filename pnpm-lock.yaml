@@ -14,9 +14,6 @@ importers:
       sass:
         specifier: ^1.104.0
         version: 1.104.0
-      servor:
-        specifier: ^4.0.2
-        version: 4.0.2
       stylelint:
         specifier: ^17.15.0
         version: 17.15.0(supports-color@10.2.2)
@@ -617,10 +614,6 @@ packages:
     engines: {node: '>=20.19.0'}
     hasBin: true
 
-  servor@4.0.2:
-    resolution: {integrity: sha512-MlmQ5Ntv4jDYUN060x/KEmN7emvIqKMZ9OkM+nY8Bf2+KkyLmGsTqWLyAN2cZr5oESAcH00UanUyyrlS1LRjFw==}
-    hasBin: true
-
   signal-exit@4.1.0:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
@@ -1202,8 +1195,6 @@ snapshots:
       source-map-js: 1.2.1
     optionalDependencies:
       '@parcel/watcher': 2.6.0
-
-  servor@4.0.2: {}
 
   signal-exit@4.1.0: {}
 

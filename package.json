@@ -20,14 +20,13 @@
     "./scss/*": "./scss/*"
   },
   "scripts": {
-    "start": "pnpm --parallel watch:css serve",
+    "start": "pnpm watch:css",
     "compile": "pnpm run compile:css && pnpm run minify:css",
     "compile:css": "sass --style expanded --no-source-map scss/tooltip.scss:index.css",
     "minify:css": "lightningcss --minify --bundle --targets \">= 0.25%\" index.css -o index.min.css",
     "watch:css": "sass --watch scss/tooltip.scss:index.css --style expanded --no-source-map",
     "lint:css": "stylelint scss/**/*.scss --config .stylelintrc.json",
-    "lint:css:fix": "stylelint scss/**/*.scss --config .stylelintrc.json --fix",
-    "serve": "servor ./ --reload --browse"
+    "lint:css:fix": "stylelint scss/**/*.scss --config .stylelintrc.json --fix"
   },
   "repository": {
     "type": "git",
@@ -50,7 +49,6 @@
   "devDependencies": {
     "lightningcss-cli": "^1.33.0",
     "sass": "^1.104.0",
-    "servor": "^4.0.2",
     "stylelint": "^17.15.0",
     "stylelint-config-standard-scss": "^17.0.0"
   }
