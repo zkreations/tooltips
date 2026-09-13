@@ -20,8 +20,8 @@
     "./scss/*": "./scss/*"
   },
   "scripts": {
-    "start": "npm-run-all --parallel watch:css serve",
-    "compile": "npm-run-all compile:css minify:css",
+    "start": "pnpm --parallel watch:css serve",
+    "compile": "pnpm run compile:css && pnpm run minify:css",
     "compile:css": "sass --style expanded --no-source-map scss/:./",
     "minify:css": "lightningcss --minify --bundle --targets \">= 0.25%\" tooltips.css -o tooltips.min.css",
     "watch:css": "sass --watch ./scss:./ --style expanded --no-source-map",
@@ -48,11 +48,10 @@
   },
   "homepage": "https://github.com/zkreations/tooltips#readme",
   "devDependencies": {
-    "lightningcss-cli": "^1.32.0",
-    "npm-run-all": "^4.1.5",
-    "sass": "^1.99.0",
+    "lightningcss-cli": "^1.33.0",
+    "sass": "^1.104.0",
     "servor": "^4.0.2",
-    "stylelint": "^17.7.0",
+    "stylelint": "^17.15.0",
     "stylelint-config-standard-scss": "^17.0.0"
   }
 }
