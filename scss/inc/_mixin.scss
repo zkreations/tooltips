@@ -19,5 +19,4 @@
   transition-property: opacity, transform;
   transition-duration: var(--tooltip-duration, #{variables.$duration});
   transition-timing-function: var(--tooltip-easing, ease);
-  will-change: transform, opacity;
 }
