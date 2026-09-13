@@ -2,6 +2,7 @@
   "name": "@zkreations/tooltips",
   "version": "5.0.0",
   "description": "Tiny and powerful tooltips with pure CSS",
+  "packageManager": "pnpm@11.24.0",
   "files": [
     "index.css",
     "index.min.css",
