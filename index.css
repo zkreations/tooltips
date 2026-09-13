@@ -36,13 +36,11 @@
   transition-property: opacity, transform;
   transition-duration: var(--tooltip-duration, 0.2s);
   transition-timing-function: var(--tooltip-easing, ease);
-  will-change: transform, opacity;
 }
 
 @supports (position-area: block-start) {
   .tooltip::before {
     position: fixed;
-    position-anchor: auto;
     position-area: var(--tooltip-area, block-start);
     position-try-fallbacks: var(--tooltip-fallbacks, flip-block);
     inset: auto;
