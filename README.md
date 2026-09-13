@@ -1,6 +1,16 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/zkreations/tooltips/master/.github/tooltips.svg?sanitize=true" width="128" alt="Blogger Syntax" />
   <h1 align="center">Tooltips</h1>
+  <p align="center">
+    <strong>English</strong> ·
+    <a href="README.es.md">Español</a> ·
+    <a href="README.fr.md">Français</a> ·
+    <a href="README.pt.md">Português</a> ·
+    <a href="README.zh.md">中文</a> ·
+    <a href="README.ja.md">日本語</a>
+    —
+    <a href="https://zkreations.github.io/tooltips/">Demo</a>
+  </p>
 </p>
 
 <p align="center">CSS-only tooltip library. No JavaScript, no dependencies, no configuration, modern with fallback for unsupported browsers, ~0.5 KB minified (Brotli)</p>
@@ -9,19 +19,6 @@
   <a href="https://www.jsdelivr.com/package/npm/@zkreations/tooltips"><img src="https://img.shields.io/jsdelivr/npm/hm/@zkreations/tooltips?style=for-the-badge&labelColor=030712&color=f97316" alt="jsdelivr"></a>
   <a href="https://www.npmjs.com/package/@zkreations/tooltips"><img src="https://img.shields.io/npm/v/@zkreations/tooltips?style=for-the-badge&labelColor=030712&color=a855f7" alt="npmjs"></a>
   <a href="https://www.npmjs.com/package/@zkreations/tooltips"><img src="https://img.shields.io/npm/l/@zkreations/tooltips?style=for-the-badge&labelColor=030712&color=6366f1" alt="license"></a>
-</p>
-
----
-
-<p align="center">
-  <strong>English</strong> ·
-  <a href="README.es.md">Español</a> ·
-  <a href="README.fr.md">Français</a> ·
-  <a href="README.pt.md">Português</a> ·
-  <a href="README.zh.md">中文</a> ·
-  <a href="README.ja.md">日本語</a>
-  —
-  <a href="https://zkreations.github.io/tooltips/">Demo</a>
 </p>
 
 ## Why this instead of a JS-based tooltip library
