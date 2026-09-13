@@ -1,3 +1,10 @@
 {
-  "extends": "stylelint-config-standard-scss"
+  "extends": "stylelint-config-standard-scss",
+  "ignoreFiles": [
+    "*.css",
+    "**/*.css"
+  ],
+  "rules": {
+    "custom-property-pattern": "^([a-z_][a-z0-9_]*)(-[a-z0-9_]+)*$"
+  }
 }
