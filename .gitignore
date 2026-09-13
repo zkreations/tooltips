@@ -2,6 +2,7 @@
 /test
 /node_modules
 package-lock.json
+.codegraph
 
 # Files
 *.html
