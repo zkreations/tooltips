@@ -1,41 +1,23 @@
 @use "variables";
 
-// Mixin for the core styling of an element
-@mixin tts-core {
-  position: absolute;
-  inset: var(--t-it, auto) var(--t-ir, auto) var(--t-ib, auto) var(--t-il, auto);
-  opacity: var(--t-o);
-  z-index: 10;
-
-  // Prevent issues with hover state
-  pointer-events: none;
-
-  // Prepare properties for animations
-  transform: translate(var(--t-tx, 0), var(--t-ty, 0)) scale(var(--t-ts, 1));
-  transform-origin: var(--t-to, bottom);
-  transition-property: opacity, transform;
-
-  // Adjustable animation speed
-  transition-duration: var(--tts-duration, variables.$tts-duration);
-
-  // Resolve some visual issues in Chrome
-  will-change: transform;
-}
-
-// Mixin for text styling
-@mixin tts-text {
-  @each $key, $value in variables.$tts-text {
-    #{$key}: var(--tts-#{$key}, #{$value});
-  }
-
+@mixin bubble {
+  box-sizing: border-box;
+  width: max-content;
+  max-width: var(--tooltip-max-width, #{variables.$max-width});
+  padding: var(--tooltip-padding, #{variables.$padding});
+  border-radius: var(--tooltip-border-radius, #{variables.$border-radius});
+  background-color: var(--tooltip-bg, #{variables.$background});
+  color: var(--tooltip-color, #{variables.$color});
+  font-family: var(--tooltip-font-family, #{variables.$font-family});
+  font-size: var(--tooltip-font-size, #{variables.$font-size});
   font-weight: normal;
-  line-height: 1.5;
-  white-space: nowrap;
-}
-
-// Mixin for creating an arrow element
-@mixin tts-arrow {
-  content: "";
-  border-style: solid;
-  border-color: transparent;
+  line-height: var(--tooltip-line-height, #{variables.$line-height});
+  opacity: var(--_o, 0);
+  pointer-events: none;
+  user-select: none;
+  z-index: var(--tooltip-z-index, 10);
+  transition-property: opacity, transform;
+  transition-duration: var(--tooltip-duration, #{variables.$duration});
+  transition-timing-function: var(--tooltip-easing, ease);
+  will-change: transform, opacity;
 }

@@ -1,0 +1,42 @@
+@use "inc/mixin";
+@use "inc/variables";
+
+.tooltip {
+  position: relative;
+
+  --_o: 0;
+  --_x: var(--tooltip-start-x, var(--tooltip-x, 0));
+  --_y: var(--tooltip-start-y, var(--tooltip-y, 0));
+  --_s: var(--tooltip-start-scale, var(--tooltip-scale, 1));
+
+  &:is(:hover, :focus-visible, [data-tooltip-visible]) {
+    --_o: 1;
+    --_x: var(--tooltip-end-x, var(--tooltip-x, 0));
+    --_y: var(--tooltip-end-y, var(--tooltip-y, 0));
+    --_s: var(--tooltip-end-scale, var(--tooltip-scale, 1));
+  }
+
+  &::before {
+    content: attr(aria-label);
+    position: absolute;
+    bottom: calc(100% + var(--tooltip-gap, #{variables.$gap}));
+    left: 50%;
+    transform: translate(calc(-50% + var(--_x)), var(--_y)) scale(var(--_s));
+    transform-origin: center bottom;
+
+    @include mixin.bubble;
+  }
+}
+
+@supports (position-area: block-start) {
+  .tooltip::before {
+    position: fixed;
+    position-anchor: auto;
+    position-area: var(--tooltip-area, block-start);
+    position-try-fallbacks: var(--tooltip-fallbacks, flip-block);
+    inset: auto;
+    margin: var(--tooltip-gap, #{variables.$gap});
+    transform: translate(var(--_x), var(--_y)) scale(var(--_s));
+    transform-origin: center;
+  }
+}

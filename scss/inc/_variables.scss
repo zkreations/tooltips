@@ -1,24 +1,10 @@
-// Variables
-$tts-duration: .3s;
-$tts-arrow-size: 6px;
-$tts-arrow-offset: 6px;
-$tts-background: rgb(0 0 0 / 90%); // Background color only
-
-/* stylelint-disable */
-// Initial state
-$tts-start-translate: 0px;
-$tts-start-scale: 1;
-
-// Final state
-$tts-end-translate: 0px;
-$tts-end-scale: 1;
-/* stylelint-enable */
-
-// Styles (Converted to CSS variables)
-$tts-text: (
-  "font-size": 14px,
-  "font-family": "Roboto, sans-serif",
-  "color": #fff,
-  "padding": 0.5em .75em,
-  "border-radius": .25em,
-) !default;
+$duration: 0.2s !default;
+$gap: 0.25rem !default;
+$background: rgb(0 0 0 / 90%) !default;
+$color: #fff !default;
+$font-size: 0.875rem !default;
+$font-family: inherit !default;
+$line-height: 1.5 !default;
+$padding: 0.5em 0.75em !default;
+$border-radius: 0.25em !default;
+$max-width: 20rem !default;
