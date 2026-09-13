@@ -1,30 +1,30 @@
 {
   "name": "@zkreations/tooltips",
-  "version": "4.2.2",
+  "version": "5.0.0",
   "description": "Tiny and powerful tooltips with pure CSS",
   "files": [
-    "tooltips.css",
-    "tooltips.min.css",
+    "index.css",
+    "index.min.css",
     "scss/**/*.scss"
   ],
-  "style": "tooltips.min.css",
-  "sass": "scss/tooltips.scss",
+  "style": "index.min.css",
+  "sass": "scss/tooltip.scss",
   "exports": {
     ".": {
-      "style": "./tooltips.min.css",
-      "default": "./tooltips.min.css",
-      "sass": "./scss/tooltips.scss"
+      "style": "./index.min.css",
+      "default": "./index.min.css",
+      "sass": "./scss/tooltip.scss"
     },
-    "./tooltips.css": "./tooltips.css",
-    "./tooltips.min.css": "./tooltips.min.css",
+    "./index.css": "./index.css",
+    "./index.min.css": "./index.min.css",
     "./scss/*": "./scss/*"
   },
   "scripts": {
     "start": "pnpm --parallel watch:css serve",
     "compile": "pnpm run compile:css && pnpm run minify:css",
-    "compile:css": "sass --style expanded --no-source-map scss/:./",
-    "minify:css": "lightningcss --minify --bundle --targets \">= 0.25%\" tooltips.css -o tooltips.min.css",
-    "watch:css": "sass --watch ./scss:./ --style expanded --no-source-map",
+    "compile:css": "sass --style expanded --no-source-map scss/tooltip.scss:index.css",
+    "minify:css": "lightningcss --minify --bundle --targets \">= 0.25%\" index.css -o index.min.css",
+    "watch:css": "sass --watch scss/tooltip.scss:index.css --style expanded --no-source-map",
     "lint:css": "stylelint scss/**/*.scss --config .stylelintrc.json",
     "lint:css:fix": "stylelint scss/**/*.scss --config .stylelintrc.json --fix",
     "serve": "servor ./ --reload --browse"
