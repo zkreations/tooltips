@@ -3,6 +3,12 @@
   "version": "5.0.0",
   "description": "Tiny and powerful tooltips with pure CSS",
   "packageManager": "pnpm@11.24.0",
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead"
+  ],
   "files": [
     "index.css",
     "index.min.css",
@@ -24,7 +30,7 @@
     "start": "pnpm watch:css",
     "compile": "pnpm run compile:css && pnpm run minify:css",
     "compile:css": "sass --style expanded --no-source-map scss/tooltip.scss:index.css",
-    "minify:css": "lightningcss --minify --bundle --targets \">= 0.25%\" index.css -o index.min.css",
+    "minify:css": "lightningcss --minify --bundle --browserslist index.css -o index.min.css",
     "watch:css": "sass --watch scss/tooltip.scss:index.css --style expanded --no-source-map",
     "lint:css": "stylelint scss/**/*.scss --config .stylelintrc.json",
     "lint:css:fix": "stylelint scss/**/*.scss --config .stylelintrc.json --fix"
