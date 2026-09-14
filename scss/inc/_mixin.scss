@@ -2,7 +2,6 @@
 
 @mixin bubble {
   box-sizing: border-box;
-  width: max-content;
   max-width: var(--tooltip-max-width, #{variables.$max-width});
   padding: var(--tooltip-padding, #{variables.$padding});
   border-radius: var(--tooltip-border-radius, #{variables.$border-radius});

@@ -19,7 +19,6 @@
   transform: translate(calc(-50% + var(--_x)), var(--_y)) scale(var(--_s));
   transform-origin: center bottom;
   box-sizing: border-box;
-  width: max-content;
   max-width: var(--tooltip-max-width, 20rem);
   padding: var(--tooltip-padding, 0.5em 0.75em);
   border-radius: var(--tooltip-border-radius, 0.25em);
