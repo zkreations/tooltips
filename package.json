@@ -1,0 +1,28 @@
+{
+  "name": "tooltips",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tooltip demo",
+  "type": "module",
+  "packageManager": "pnpm@11.24.0",
+  "scripts": {
+    "build": "pnpm run build:css",
+    "build:css": "sass --style=expanded --no-source-map scss/main.scss style.css && lightningcss --minify --bundle --browserslist style.css -o style.min.css",
+    "watch": "sass --watch scss/main.scss:style.css --style=expanded --no-source-map",
+    "lint": "stylelint \"scss/**/*.scss\"",
+    "lint:fix": "stylelint \"scss/**/*.scss\" --fix"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.24.0",
+      "onFail": "download"
+    }
+  },
+  "devDependencies": {
+    "lightningcss-cli": "^1.33.0",
+    "sass": "^1.104.0",
+    "stylelint": "^17.15.0",
+    "stylelint-config-standard-scss": "^17.0.0"
+  }
+}
