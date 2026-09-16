@@ -110,7 +110,7 @@ import '@zkreations/tooltips/index.min.css';
 ```css
 .tooltip::before {
   position-area: var(--tooltip-area, block-start);
-  position-try-fallbacks: flip-block, flip-inline;
+  position-try-fallbacks: var(--tooltip-fallbacks, flip-block, flip-inline);
 }
 ```
 
@@ -127,7 +127,7 @@ import '@zkreations/tooltips/index.min.css';
 ```css
 .tooltip--fixed-right {
   --tooltip-area: inline-end;
-  position-try-fallbacks: none;
+  --tooltip-fallbacks: none;
 }
 ```
 
@@ -148,6 +148,7 @@ import '@zkreations/tooltips/index.min.css';
 | 变量 | 默认值 | 描述 |
 | --- | --- | --- |
 | `--tooltip-area` | `block-start` | 相对于锚点的位置区域 |
+| `--tooltip-fallbacks` | `flip-block, flip-inline` | 被裁剪时的回退位置 |
 | `--tooltip-gap` | `0.5rem` | 锚点与工具提示之间的间距 |
 | `--tooltip-bg` | `rgb(0 0 0 / 90%)` | 背景颜色 |
 | `--tooltip-color` | `#fff` | 文字颜色 |

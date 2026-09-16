@@ -110,7 +110,7 @@ Los tooltips aparecen arriba (`block-start`) por defecto y se desplazan automát
 ```css
 .tooltip::before {
   position-area: var(--tooltip-area, block-start);
-  position-try-fallbacks: flip-block, flip-inline;
+  position-try-fallbacks: var(--tooltip-fallbacks, flip-block, flip-inline);
 }
 ```
 
@@ -127,7 +127,7 @@ Para forzar una posición sin desplazamiento automático:
 ```css
 .tooltip--fixed-right {
   --tooltip-area: inline-end;
-  position-try-fallbacks: none;
+  --tooltip-fallbacks: none;
 }
 ```
 
@@ -148,6 +148,7 @@ Sobreescribir las propiedades CSS para ajustar la apariencia:
 | Variable | Valor por defecto | Descripción |
 | --- | --- | --- |
 | `--tooltip-area` | `block-start` | Área de posición relativa al ancla |
+| `--tooltip-fallbacks` | `flip-block, flip-inline` | Posiciones de fallback si se recorta |
 | `--tooltip-gap` | `0.5rem` | Separación entre el ancla y el tooltip |
 | `--tooltip-bg` | `rgb(0 0 0 / 90%)` | Color de fondo |
 | `--tooltip-color` | `#fff` | Color del texto |

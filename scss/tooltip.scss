@@ -33,7 +33,7 @@
     position: fixed;
     position-anchor: auto;
     position-area: var(--tooltip-area, block-start);
-    position-try-fallbacks: flip-block, flip-inline;
+    position-try-fallbacks: var(--tooltip-fallbacks, flip-block, flip-inline);
     inset: auto;
     margin: var(--tooltip-gap, #{variables.$gap});
     transform: translate(var(--_x), var(--_y)) scale(var(--_s));

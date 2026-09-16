@@ -110,7 +110,7 @@ Tooltips appear at the top (`block-start`) by default and flip automatically (`f
 ```css
 .tooltip::before {
   position-area: var(--tooltip-area, block-start);
-  position-try-fallbacks: flip-block, flip-inline;
+  position-try-fallbacks: var(--tooltip-fallbacks, flip-block, flip-inline);
 }
 ```
 
@@ -127,7 +127,7 @@ To force a position without automatic flipping:
 ```css
 .tooltip--fixed-right {
   --tooltip-area: inline-end;
-  position-try-fallbacks: none;
+  --tooltip-fallbacks: none;
 }
 ```
 
@@ -148,6 +148,7 @@ Override CSS variables to adjust the appearance:
 | Variable | Default | Description |
 | --- | --- | --- |
 | `--tooltip-area` | `block-start` | Position area relative to anchor |
+| `--tooltip-fallbacks` | `flip-block, flip-inline` | Fallback positions if clipped |
 | `--tooltip-gap` | `0.5rem` | Spacing between anchor and tooltip |
 | `--tooltip-bg` | `rgb(0 0 0 / 90%)` | Background color |
 | `--tooltip-color` | `#fff` | Text color |

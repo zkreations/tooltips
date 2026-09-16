@@ -110,7 +110,7 @@ import '@zkreations/tooltips/index.min.css';
 ```css
 .tooltip::before {
   position-area: var(--tooltip-area, block-start);
-  position-try-fallbacks: flip-block, flip-inline;
+  position-try-fallbacks: var(--tooltip-fallbacks, flip-block, flip-inline);
 }
 ```
 
@@ -127,7 +127,7 @@ import '@zkreations/tooltips/index.min.css';
 ```css
 .tooltip--fixed-right {
   --tooltip-area: inline-end;
-  position-try-fallbacks: none;
+  --tooltip-fallbacks: none;
 }
 ```
 
@@ -148,6 +148,7 @@ CSS 変数を上書きして外観を調整します：
 | 変数 | デフォルト値 | 説明 |
 | --- | --- | --- |
 | `--tooltip-area` | `block-start` | アンカーを基準とした位置エリア |
+| `--tooltip-fallbacks` | `flip-block, flip-inline` | クリップされた場合のフォールバック位置 |
 | `--tooltip-gap` | `0.5rem` | アンカーとツールチップの間隔 |
 | `--tooltip-bg` | `rgb(0 0 0 / 90%)` | 背景色 |
 | `--tooltip-color` | `#fff` | テキスト色 |
