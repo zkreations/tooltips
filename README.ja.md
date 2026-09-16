@@ -160,16 +160,8 @@ CSS 変数を上書きして外観を調整します：
 | `--tt-z-index` | `10` | 重なり順 (z-index) |
 | `--tt-duration` | `0.2s` | トランジションの時間 |
 | `--tt-ease` | `ease` | トランジションのタイミング関数 |
-| `--tt-scale` | `1` | バブルのスケール |
-| `--tt-origin` | `center` | 変形の基点 |
-| `--tt-x` | `0` | 水平オフセット |
-| `--tt-y` | `0` | 垂直オフセット |
-| `--tt-start-scale` | `--tt-scale` | 初期スケール |
-| `--tt-end-scale` | `--tt-scale` | 表示時のスケール |
-| `--tt-start-x` | `--tt-x` | 初期水平オフセット |
-| `--tt-end-x` | `--tt-x` | 表示時の水平オフセット |
-| `--tt-start-y` | `--tt-y` | 初期垂直オフセット |
-| `--tt-end-y` | `--tt-y` | 表示時の垂直オフセット |
+| `--tt-start` | `none` | 非表示状態の変形（例: `scale(0.85)`, `translateY(6px)`） |
+| `--tt-end` | `none` | 表示状態の変形 |
 
 例：
 

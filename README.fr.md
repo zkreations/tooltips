@@ -160,16 +160,8 @@ Surcharger les propriétés CSS pour ajuster l'apparence :
 | `--tt-z-index` | `10` | Ordre d'empilement (z-index) |
 | `--tt-duration` | `0.2s` | Durée de la transition |
 | `--tt-ease` | `ease` | Fonction de temporisation |
-| `--tt-scale` | `1` | Échelle de la bulle |
-| `--tt-origin` | `center` | Origine de transformation |
-| `--tt-x` | `0` | Décalage horizontal |
-| `--tt-y` | `0` | Décalage vertical |
-| `--tt-start-scale` | `--tt-scale` | Échelle initiale |
-| `--tt-end-scale` | `--tt-scale` | Échelle visible |
-| `--tt-start-x` | `--tt-x` | Décalage horizontal initial |
-| `--tt-end-x` | `--tt-x` | Décalage horizontal visible |
-| `--tt-start-y` | `--tt-y` | Décalage vertical initial |
-| `--tt-end-y` | `--tt-y` | Décalage vertical visible |
+| `--tt-start` | `none` | Transformation au repos (ex. `scale(0.85)`, `translateY(6px)`) |
+| `--tt-end` | `none` | Transformation à l'état visible |
 
 Exemple :
 

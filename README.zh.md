@@ -160,16 +160,8 @@ import '@zkreations/tooltips/index.min.css';
 | `--tt-z-index` | `10` | 层叠顺序 (z-index) |
 | `--tt-duration` | `0.2s` | 过渡持续时间 |
 | `--tt-ease` | `ease` | 过渡时间函数 |
-| `--tt-scale` | `1` | 气泡缩放比例 |
-| `--tt-origin` | `center` | 变换原点 |
-| `--tt-x` | `0` | 水平偏移 |
-| `--tt-y` | `0` | 垂直偏移 |
-| `--tt-start-scale` | `--tt-scale` | 初始缩放比例 |
-| `--tt-end-scale` | `--tt-scale` | 可见时缩放比例 |
-| `--tt-start-x` | `--tt-x` | 初始水平偏移 |
-| `--tt-end-x` | `--tt-x` | 可见时水平偏移 |
-| `--tt-start-y` | `--tt-y` | 初始垂直偏移 |
-| `--tt-end-y` | `--tt-y` | 可见时垂直偏移 |
+| `--tt-start` | `none` | 隐藏状态下的变换（例如 `scale(0.85)`、`translateY(6px)`） |
+| `--tt-end` | `none` | 显示状态下的变换 |
 
 示例：
 

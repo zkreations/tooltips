@@ -160,16 +160,8 @@ Override CSS variables to adjust the appearance:
 | `--tt-z-index` | `10` | Stacking order |
 | `--tt-duration` | `0.2s` | Transition duration |
 | `--tt-ease` | `ease` | Transition timing function |
-| `--tt-scale` | `1` | Bubble scale |
-| `--tt-origin` | `center` | Transform origin |
-| `--tt-x` | `0` | Horizontal offset |
-| `--tt-y` | `0` | Vertical offset |
-| `--tt-start-scale` | `--tt-scale` | Initial scale |
-| `--tt-end-scale` | `--tt-scale` | Visible scale |
-| `--tt-start-x` | `--tt-x` | Initial horizontal offset |
-| `--tt-end-x` | `--tt-x` | Visible horizontal offset |
-| `--tt-start-y` | `--tt-y` | Initial vertical offset |
-| `--tt-end-y` | `--tt-y` | Visible vertical offset |
+| `--tt-start` | `none` | Transform on hidden state (e.g. `scale(0.85)`, `translateY(6px)`) |
+| `--tt-end` | `none` | Transform on visible state |
 
 Example:
 

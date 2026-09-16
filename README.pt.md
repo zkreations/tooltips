@@ -160,16 +160,8 @@ Sobrescrever as propriedades CSS para ajustar a aparência:
 | `--tt-z-index` | `10` | Ordem de empilhamento (z-index) |
 | `--tt-duration` | `0.2s` | Duração da transição |
 | `--tt-ease` | `ease` | Função de temporização da transição |
-| `--tt-scale` | `1` | Escala da bolha |
-| `--tt-origin` | `center` | Origem da transformação |
-| `--tt-x` | `0` | Deslocamento horizontal |
-| `--tt-y` | `0` | Deslocamento vertical |
-| `--tt-start-scale` | `--tt-scale` | Escala inicial |
-| `--tt-end-scale` | `--tt-scale` | Escala visível |
-| `--tt-start-x` | `--tt-x` | Deslocamento horizontal inicial |
-| `--tt-end-x` | `--tt-x` | Deslocamento horizontal visível |
-| `--tt-start-y` | `--tt-y` | Deslocamento vertical inicial |
-| `--tt-end-y` | `--tt-y` | Deslocamento vertical visível |
+| `--tt-start` | `none` | Transformação em repouso (ex. `scale(0.85)`, `translateY(6px)`) |
+| `--tt-end` | `none` | Transformação no estado visível |
 
 Exemplo:
 

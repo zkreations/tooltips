@@ -160,16 +160,8 @@ Sobreescribir las propiedades CSS para ajustar la apariencia:
 | `--tt-z-index` | `10` | Orden de apilamiento (z-index) |
 | `--tt-duration` | `0.2s` | Duración de la transición |
 | `--tt-ease` | `ease` | Función de temporización de la transición |
-| `--tt-scale` | `1` | Escala de la burbuja |
-| `--tt-origin` | `center` | Origen de transformación |
-| `--tt-x` | `0` | Desplazamiento horizontal |
-| `--tt-y` | `0` | Desplazamiento vertical |
-| `--tt-start-scale` | `--tt-scale` | Escala inicial |
-| `--tt-end-scale` | `--tt-scale` | Escala visible |
-| `--tt-start-x` | `--tt-x` | Desplazamiento horizontal inicial |
-| `--tt-end-x` | `--tt-x` | Desplazamiento horizontal visible |
-| `--tt-start-y` | `--tt-y` | Desplazamiento vertical inicial |
-| `--tt-end-y` | `--tt-y` | Desplazamiento vertical visible |
+| `--tt-start` | `none` | Transformación en reposo (ej. `scale(0.85)`, `translateY(6px)`) |
+| `--tt-end` | `none` | Transformación en estado visible |
 
 Ejemplo:
 
