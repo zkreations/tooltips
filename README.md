@@ -157,6 +157,7 @@ Override CSS variables to adjust the appearance:
 | `--tooltip-line-height` | `1.5` | Line height |
 | `--tooltip-padding` | `0.5em 0.75em` | Bubble padding |
 | `--tooltip-border-radius` | `0.25em` | Border radius |
+| `--tooltip-box-shadow` | `none` | Box shadow |
 | `--tooltip-max-width` | `20rem` | Maximum bubble width |
 | `--tooltip-duration` | `0.2s` | Transition duration |
 | `--tooltip-easing` | `ease` | Transition timing function |
@@ -179,6 +180,7 @@ Example:
   --tooltip-color: #ffffff;
   --tooltip-border-radius: 8px;
   --tooltip-padding: 8px 12px;
+  --tooltip-box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
   --tooltip-gap: 0.5rem;
 }
 ```

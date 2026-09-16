@@ -157,6 +157,7 @@ Sobreescribir las propiedades CSS para ajustar la apariencia:
 | `--tooltip-line-height` | `1.5` | Altura de línea |
 | `--tooltip-padding` | `0.5em 0.75em` | Padding de la burbuja |
 | `--tooltip-border-radius` | `0.25em` | Radio de borde |
+| `--tooltip-box-shadow` | `none` | Sombra de la burbuja |
 | `--tooltip-max-width` | `20rem` | Ancho máximo de la burbuja |
 | `--tooltip-duration` | `0.2s` | Duración de la transición |
 | `--tooltip-easing` | `ease` | Función de temporización de la transición |
@@ -179,6 +180,7 @@ Ejemplo:
   --tooltip-color: #ffffff;
   --tooltip-border-radius: 8px;
   --tooltip-padding: 8px 12px;
+  --tooltip-box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
   --tooltip-gap: 0.5rem;
 }
 ```

@@ -157,6 +157,7 @@ CSS 変数を上書きして外観を調整します：
 | `--tooltip-line-height` | `1.5` | 行の高さ |
 | `--tooltip-padding` | `0.5em 0.75em` | バブルのパディング |
 | `--tooltip-border-radius` | `0.25em` | 境界線の丸み |
+| `--tooltip-box-shadow` | `none` | バブルの影（ボックスシャドウ） |
 | `--tooltip-max-width` | `20rem` | バブルの最大幅 |
 | `--tooltip-duration` | `0.2s` | トランジションの時間 |
 | `--tooltip-easing` | `ease` | トランジションのタイミング関数 |
@@ -179,6 +180,7 @@ CSS 変数を上書きして外観を調整します：
   --tooltip-color: #ffffff;
   --tooltip-border-radius: 8px;
   --tooltip-padding: 8px 12px;
+  --tooltip-box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
   --tooltip-gap: 0.5rem;
 }
 ```

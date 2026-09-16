@@ -157,6 +157,7 @@ import '@zkreations/tooltips/index.min.css';
 | `--tooltip-line-height` | `1.5` | 行高 |
 | `--tooltip-padding` | `0.5em 0.75em` | 气泡内边距 |
 | `--tooltip-border-radius` | `0.25em` | 边框圆角 |
+| `--tooltip-box-shadow` | `none` | 气泡阴影 |
 | `--tooltip-max-width` | `20rem` | 气泡最大宽度 |
 | `--tooltip-duration` | `0.2s` | 过渡持续时间 |
 | `--tooltip-easing` | `ease` | 过渡时间函数 |
@@ -179,6 +180,7 @@ import '@zkreations/tooltips/index.min.css';
   --tooltip-color: #ffffff;
   --tooltip-border-radius: 8px;
   --tooltip-padding: 8px 12px;
+  --tooltip-box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
   --tooltip-gap: 0.5rem;
 }
 ```

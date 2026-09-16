@@ -157,6 +157,7 @@ Sobrescrever as propriedades CSS para ajustar a aparência:
 | `--tooltip-line-height` | `1.5` | Altura da linha |
 | `--tooltip-padding` | `0.5em 0.75em` | Padding da bolha |
 | `--tooltip-border-radius` | `0.25em` | Raio da borda |
+| `--tooltip-box-shadow` | `none` | Sombra da bolha |
 | `--tooltip-max-width` | `20rem` | Largura máxima da bolha |
 | `--tooltip-duration` | `0.2s` | Duração da transição |
 | `--tooltip-easing` | `ease` | Função de temporização da transição |
@@ -179,6 +180,7 @@ Exemplo:
   --tooltip-color: #ffffff;
   --tooltip-border-radius: 8px;
   --tooltip-padding: 8px 12px;
+  --tooltip-box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
   --tooltip-gap: 0.5rem;
 }
 ```
