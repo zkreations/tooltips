@@ -33,10 +33,10 @@
   .tooltip::before {
     position: fixed;
     position-anchor: auto;
-    position-area: block-start;
     position-try-fallbacks: flip-block, flip-inline;
+    position-area: block-start;
+    margin-block: 0.5rem;
     inset: auto;
-    margin: 0.5rem;
     justify-self: anchor-center;
     translate: none;
     transform-origin: center;

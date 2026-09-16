@@ -1,4 +1,5 @@
 @use "variables";
+@use "sass:string";
 
 @function prop($name, $fallback, $customizable: true) {
   @if $customizable {
@@ -52,10 +53,20 @@
 @mixin anchor($customizable: true) {
   position: fixed;
   position-anchor: auto;
-  position-area: prop('--tt-area', block-start, $customizable);
   position-try-fallbacks: prop('--tt-fallbacks', (flip-block, flip-inline), $customizable);
+
+  @if $customizable {
+    --_a: #{prop('--tt-area', block-start, $customizable)};
+    position-area: var(--_a);
+    margin: prop('--tt-gap', variables.$gap, $customizable);
+    margin-block: string.unquote("if(style(--_a: inline-start): 0; style(--_a: inline-end): 0; else: #{prop('--tt-gap', variables.$gap, $customizable)})");
+    margin-inline: string.unquote("if(style(--_a: block-start): 0; style(--_a: block-end): 0; else: #{prop('--tt-gap', variables.$gap, $customizable)})");
+  } @else {
+    position-area: block-start;
+    margin-block: variables.$gap;
+  }
+
   inset: auto;
-  margin: prop('--tt-gap', variables.$gap, $customizable);
   justify-self: anchor-center;
   translate: none;
   transform-origin: center;

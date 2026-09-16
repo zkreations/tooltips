@@ -38,10 +38,13 @@
   .tooltip::before {
     position: fixed;
     position-anchor: auto;
-    position-area: var(--tt-area, block-start);
     position-try-fallbacks: var(--tt-fallbacks, flip-block, flip-inline);
-    inset: auto;
+    --_a: var(--tt-area, block-start);
+    position-area: var(--_a);
     margin: var(--tt-gap, 0.5rem);
+    margin-block: if(style(--_a: inline-start): 0; style(--_a: inline-end): 0; else: var(--tt-gap, 0.5rem));
+    margin-inline: if(style(--_a: block-start): 0; style(--_a: block-end): 0; else: var(--tt-gap, 0.5rem));
+    inset: auto;
     justify-self: anchor-center;
     translate: none;
     transform-origin: center;
