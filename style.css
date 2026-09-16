@@ -381,6 +381,30 @@ body {
   --tt-start: scale(0.75);
 }
 
+.anim-slide {
+  --tt-duration: 0.3s;
+  --tt-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --tt-start: translateX(1.25rem);
+}
+
+.anim-rotate {
+  --tt-duration: 0.35s;
+  --tt-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --tt-start: rotate(-8deg) scale(0.9);
+}
+
+.anim-bounce {
+  --tt-duration: 0.5s;
+  --tt-ease: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --tt-start: translateY(0.75rem) scale(0.92);
+}
+
+.anim-flip {
+  --tt-duration: 0.4s;
+  --tt-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --tt-start: rotateX(-80deg) translateY(0.5rem);
+}
+
 .theme-contrast {
   --tt-bg: #000;
   --tt-color: #fff;
@@ -410,6 +434,39 @@ body {
   --tt-padding: 8px 12px;
   --tt-shadow: 0 4px 12px rgb(0 0 0 / 15%);
   --tt-gap: 0.5rem;
+}
+
+.theme-sunset {
+  --tt-bg: #9a3412;
+  --tt-color: #fff7ed;
+  --tt-radius: 1rem;
+  --tt-padding: 0.65em 1em;
+  --tt-shadow: 0 6px 16px rgb(154 52 18 / 30%);
+}
+
+.theme-mint {
+  --tt-bg: #d1fae5;
+  --tt-color: #064e3b;
+  --tt-radius: 6px;
+  --tt-padding: 0.6em 0.9em;
+  --tt-shadow: 0 0 0 1px rgb(6 78 59 / 20%);
+}
+
+.theme-outline {
+  --tt-bg: transparent;
+  --tt-color: #172033;
+  --tt-radius: 6px;
+  --tt-padding: 0.5em 0.8em;
+  --tt-shadow: 0 0 0 1px currentcolor;
+}
+
+.theme-glass {
+  --tt-bg: rgb(15 23 42 / 88%);
+  --tt-color: #e0f2fe;
+  --tt-radius: 12px;
+  --tt-padding: 0.7em 1em;
+  --tt-shadow: 0 8px 24px rgb(15 23 42 / 30%);
+  --tt-gap: 0.75rem;
 }
 
 .auto-fill {
