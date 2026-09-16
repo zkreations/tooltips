@@ -12,7 +12,8 @@
   }
 }
 
-@supports (position-area: block-start) {
+@supports (position-area: block-start) and
+          (position-try-fallbacks: flip-block) {
   .tooltip::before {
     @include mixin.anchor(false);
   }

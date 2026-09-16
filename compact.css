@@ -29,7 +29,7 @@
   opacity: 0;
 }
 
-@supports (position-area: block-start) {
+@supports (position-area: block-start) and (position-try-fallbacks: flip-block) {
   .tooltip::before {
     position: fixed;
     position-anchor: auto;
