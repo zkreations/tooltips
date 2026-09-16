@@ -6,6 +6,7 @@
   <title>Tooltips</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@zkreations/tooltips@latest/index.min.css">
   <link rel="stylesheet" href="style.min.css">
+  <link href="favicon.svg" rel="icon" type="image/svg+xml">
 </head>
 
 <body>
@@ -64,10 +65,13 @@
             <span class="card-tag">block-start</span>
           </div>
           <div class="card-stage">
-            <button type="button" class="tooltip btn pos-top" aria-label="Tooltip on top">
-              Trigger Top
+            <button type="button" class="tooltip btn pos-top" data-copy-target="#css-pos-top" aria-label="Tooltip on top">
+              Copy CSS
             </button>
           </div>
+          <template id="css-pos-top">.pos-top {
+  --tt-area: block-start;
+}</template>
         </div>
 
         <div class="card">
@@ -76,10 +80,13 @@
             <span class="card-tag">inline-end</span>
           </div>
           <div class="card-stage">
-            <button type="button" class="tooltip btn pos-right" aria-label="Tooltip on right">
-              Trigger Right
+            <button type="button" class="tooltip btn pos-right" data-copy-target="#css-pos-right" aria-label="Tooltip on right">
+              Copy CSS
             </button>
           </div>
+          <template id="css-pos-right">.pos-right {
+  --tt-area: inline-end;
+}</template>
         </div>
 
         <div class="card">
@@ -88,10 +95,13 @@
             <span class="card-tag">block-end</span>
           </div>
           <div class="card-stage">
-            <button type="button" class="tooltip btn pos-bottom" aria-label="Tooltip on bottom">
-              Trigger Bottom
+            <button type="button" class="tooltip btn pos-bottom" data-copy-target="#css-pos-bottom" aria-label="Tooltip on bottom">
+              Copy CSS
             </button>
           </div>
+          <template id="css-pos-bottom">.pos-bottom {
+  --tt-area: block-end;
+}</template>
         </div>
 
         <div class="card">
@@ -100,10 +110,13 @@
             <span class="card-tag">inline-start</span>
           </div>
           <div class="card-stage">
-            <button type="button" class="tooltip btn pos-left" aria-label="Tooltip on left">
-              Trigger Left
+            <button type="button" class="tooltip btn pos-left" data-copy-target="#css-pos-left" aria-label="Tooltip on left">
+              Copy CSS
             </button>
           </div>
+          <template id="css-pos-left">.pos-left {
+  --tt-area: inline-start;
+}</template>
         </div>
       </div>
     </section>
@@ -126,10 +139,14 @@
             <span class="card-tag">translateY</span>
           </div>
           <div class="card-stage">
-            <button type="button" class="tooltip btn anim-lift" aria-label="Smooth vertical lift">
-              Hover me
+            <button type="button" class="tooltip btn anim-lift" data-copy-target="#css-anim-lift" aria-label="Smooth vertical lift">
+              Copy CSS
             </button>
           </div>
+          <template id="css-anim-lift">.anim-lift {
+  --tt-duration: 0.25s;
+  --tt-start: translateY(1rem);
+}</template>
         </div>
 
         <div class="card">
@@ -138,12 +155,15 @@
             <span class="card-tag">scale(0.8)</span>
           </div>
           <div class="card-stage">
-            <button type="button" class="tooltip btn anim-pop" aria-label="Smooth scale effect">
-              Hover me
+            <button type="button" class="tooltip btn anim-pop" data-copy-target="#css-anim-pop" aria-label="Smooth scale effect">
+              Copy CSS
             </button>
           </div>
+          <template id="css-anim-pop">.anim-pop {
+  --tt-duration: 0.2s;
+  --tt-start: scale(0.75);
+}</template>
         </div>
-
 
         <div class="card">
           <div class="card-header">
@@ -151,10 +171,15 @@
             <span class="card-tag">translateX</span>
           </div>
           <div class="card-stage">
-            <button type="button" class="tooltip btn anim-slide" aria-label="Smooth horizontal slide">
-              Hover me
+            <button type="button" class="tooltip btn anim-slide" data-copy-target="#css-anim-slide" aria-label="Smooth horizontal slide">
+              Copy CSS
             </button>
           </div>
+          <template id="css-anim-slide">.anim-slide {
+  --tt-duration: 0.3s;
+  --tt-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --tt-start: translateX(1.25rem);
+}</template>
         </div>
 
         <div class="card">
@@ -163,10 +188,15 @@
             <span class="card-tag">rotate</span>
           </div>
           <div class="card-stage">
-            <button type="button" class="tooltip btn anim-rotate" aria-label="Smooth rotation effect">
-              Hover me
+            <button type="button" class="tooltip btn anim-rotate" data-copy-target="#css-anim-rotate" aria-label="Smooth rotation effect">
+              Copy CSS
             </button>
           </div>
+          <template id="css-anim-rotate">.anim-rotate {
+  --tt-duration: 0.35s;
+  --tt-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --tt-start: rotate(-8deg) scale(0.9);
+}</template>
         </div>
 
         <div class="card">
@@ -175,10 +205,15 @@
             <span class="card-tag">custom easing</span>
           </div>
           <div class="card-stage">
-            <button type="button" class="tooltip btn anim-bounce" aria-label="Elastic bounce effect">
-              Hover me
+            <button type="button" class="tooltip btn anim-bounce" data-copy-target="#css-anim-bounce" aria-label="Elastic bounce effect">
+              Copy CSS
             </button>
           </div>
+          <template id="css-anim-bounce">.anim-bounce {
+  --tt-duration: 0.5s;
+  --tt-ease: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --tt-start: translateY(0.75rem) scale(0.92);
+}</template>
         </div>
 
         <div class="card">
@@ -187,10 +222,15 @@
             <span class="card-tag">rotateX</span>
           </div>
           <div class="card-stage">
-            <button type="button" class="tooltip btn anim-flip" aria-label="Three dimensional flip effect">
-              Hover me
+            <button type="button" class="tooltip btn anim-flip" data-copy-target="#css-anim-flip" aria-label="Three dimensional flip effect">
+              Copy CSS
             </button>
           </div>
+          <template id="css-anim-flip">.anim-flip {
+  --tt-duration: 0.4s;
+  --tt-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --tt-start: rotateX(-80deg) translateY(0.5rem);
+}</template>
         </div>
       </div>
     </section>
@@ -213,10 +253,16 @@
             <span class="card-tag">WCAG AAA</span>
           </div>
           <div class="card-stage">
-            <button type="button" class="tooltip btn theme-contrast" aria-label="Maximum readability" data-tooltip-visible>
-              Contrast Theme
+            <button type="button" class="tooltip btn theme-contrast" data-copy-target="#css-theme-contrast" aria-label="Maximum readability" data-tooltip-visible>
+              Copy CSS
             </button>
           </div>
+          <template id="css-theme-contrast">.theme-contrast {
+  --tt-bg: #000;
+  --tt-color: #fff;
+  --tt-radius: 0;
+  --tt-padding: 0.5em 0.8em;
+}</template>
         </div>
 
         <div class="card">
@@ -225,10 +271,18 @@
             <span class="card-tag">Minimalist</span>
           </div>
           <div class="card-stage">
-            <button type="button" class="tooltip btn theme-light" aria-label="Bright and clean" data-tooltip-visible>
-              Light Theme
+            <button type="button" class="tooltip btn theme-light" data-copy-target="#css-theme-light" aria-label="Bright and clean" data-tooltip-visible>
+              Copy CSS
             </button>
           </div>
+          <template id="css-theme-light">.theme-light {
+  --tt-bg: #fff;
+  --tt-color: #000;
+  --tt-radius: 0;
+  --tt-shadow:
+    0 4px 8px rgb(0 0 0 / 15%),
+    0 0 0 1px rgb(0 0 0 / 50%);
+}</template>
         </div>
 
         <div class="card">
@@ -237,10 +291,15 @@
             <span class="card-tag">Rounded</span>
           </div>
           <div class="card-stage">
-            <button type="button" class="tooltip btn theme-balloon" aria-label="I'm round!" data-tooltip-visible>
-              Balloon Theme
+            <button type="button" class="tooltip btn theme-balloon" data-copy-target="#css-theme-balloon" aria-label="I'm round!" data-tooltip-visible>
+              Copy CSS
             </button>
           </div>
+          <template id="css-theme-balloon">.theme-balloon {
+  --tt-radius: 9999px;
+  --tt-padding: 0.5em 1em;
+  --tt-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+}</template>
         </div>
 
         <div class="card">
@@ -249,10 +308,18 @@
             <span class="card-tag">Vibrant Blue</span>
           </div>
           <div class="card-stage">
-            <button type="button" class="tooltip btn theme-brand" aria-label="Accented brand color" data-tooltip-visible>
-              Brand Theme
+            <button type="button" class="tooltip btn theme-brand" data-copy-target="#css-theme-brand" aria-label="Accented brand color" data-tooltip-visible>
+              Copy CSS
             </button>
           </div>
+          <template id="css-theme-brand">.theme-brand {
+  --tt-bg: #2563eb;
+  --tt-color: #fff;
+  --tt-radius: 8px;
+  --tt-padding: 8px 12px;
+  --tt-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+  --tt-gap: 0.5rem;
+}</template>
         </div>
       </div>
     </section>
@@ -272,5 +339,49 @@
       </div>
     </div>
   </footer>
+  <script>
+    const copyButtons = document.querySelectorAll("[data-copy-npm], [data-copy-target]");
+    const feedbackDuration = 2500;
+    const timers = new WeakMap();
+
+    function showCopyFeedback(button, message, originalLabel) {
+      button.setAttribute("aria-label", message);
+
+      clearTimeout(timers.get(button));
+      timers.set(button, setTimeout(() => {
+        button.setAttribute("aria-label", originalLabel);
+      }, feedbackDuration));
+    }
+
+    copyButtons.forEach((button) => {
+      let copying = false;
+      const originalLabel = button.getAttribute("aria-label");
+
+      button.addEventListener("click", async () => {
+        if (copying) return;
+        copying = true;
+
+        const { copyNpm, copyTarget } = button.dataset;
+        const text = copyNpm ?? document.querySelector(copyTarget)?.content.textContent.trim();
+
+        if (!text || !navigator.clipboard) {
+          showCopyFeedback(button, "Unable to copy", originalLabel);
+          copying = false;
+          return;
+        }
+
+        try {
+          await navigator.clipboard.writeText(text);
+          const cardTitle = button.closest(".card")?.querySelector(".card-title")?.textContent.trim();
+          const message = copyNpm ? "NPM route copied" : (cardTitle ? `CSS copied: ${cardTitle}` : "CSS copied");
+          showCopyFeedback(button, message, originalLabel);
+        } catch {
+          showCopyFeedback(button, "Unable to copy", originalLabel);
+        } finally {
+          copying = false;
+        }
+      });
+    });
+  </script>
 </body>
 </html>
