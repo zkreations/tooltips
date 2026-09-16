@@ -109,25 +109,25 @@ Los tooltips aparecen arriba (`block-start`) por defecto y se desplazan automát
 
 ```css
 .tooltip::before {
-  position-area: var(--tooltip-area, block-start);
-  position-try-fallbacks: var(--tooltip-fallbacks, flip-block, flip-inline);
+  position-area: var(--tt-area, block-start);
+  position-try-fallbacks: var(--tt-fallbacks, flip-block, flip-inline);
 }
 ```
 
-Para definir una posición personalizada, sobreescribir `--tooltip-area`:
+Para definir una posición personalizada, sobreescribir `--tt-area`:
 
 ```css
-.tooltip--right  { --tooltip-area: inline-end; }
-.tooltip--left   { --tooltip-area: inline-start; }
-.tooltip--bottom { --tooltip-area: block-end; }
+.tooltip--right  { --tt-area: inline-end; }
+.tooltip--left   { --tt-area: inline-start; }
+.tooltip--bottom { --tt-area: block-end; }
 ```
 
 Para forzar una posición sin desplazamiento automático:
 
 ```css
 .tooltip--fixed-right {
-  --tooltip-area: inline-end;
-  --tooltip-fallbacks: none;
+  --tt-area: inline-end;
+  --tt-fallbacks: none;
 }
 ```
 
@@ -147,42 +147,40 @@ Sobreescribir las propiedades CSS para ajustar la apariencia:
 
 | Variable | Valor por defecto | Descripción |
 | --- | --- | --- |
-| `--tooltip-area` | `block-start` | Área de posición relativa al ancla |
-| `--tooltip-fallbacks` | `flip-block, flip-inline` | Posiciones de fallback si se recorta |
-| `--tooltip-gap` | `0.5rem` | Separación entre el ancla y el tooltip |
-| `--tooltip-bg` | `rgb(0 0 0 / 90%)` | Color de fondo |
-| `--tooltip-color` | `#fff` | Color del texto |
-| `--tooltip-font-size` | `0.875rem` | Tamaño de fuente |
-| `--tooltip-font-family` | `inherit` | Familia tipográfica |
-| `--tooltip-line-height` | `1.5` | Altura de línea |
-| `--tooltip-padding` | `0.5em 0.75em` | Padding de la burbuja |
-| `--tooltip-border` | `none` | Borde de la burbuja |
-| `--tooltip-border-radius` | `0.25em` | Radio de borde |
-| `--tooltip-box-shadow` | `none` | Sombra de la burbuja |
-| `--tooltip-max-width` | `20rem` | Ancho máximo de la burbuja |
-| `--tooltip-duration` | `0.2s` | Duración de la transición |
-| `--tooltip-easing` | `ease` | Función de temporización de la transición |
-| `--tooltip-scale` | `1` | Escala de la burbuja |
-| `--tooltip-origin` | `center` | Origen de transformación |
-| `--tooltip-x` | `0` | Desplazamiento horizontal |
-| `--tooltip-y` | `0` | Desplazamiento vertical |
-| `--tooltip-start-scale` | `--tooltip-scale` | Escala inicial |
-| `--tooltip-end-scale` | `--tooltip-scale` | Escala visible |
-| `--tooltip-start-x` | `--tooltip-x` | Desplazamiento horizontal inicial |
-| `--tooltip-end-x` | `--tooltip-x` | Desplazamiento horizontal visible |
-| `--tooltip-start-y` | `--tooltip-y` | Desplazamiento vertical inicial |
-| `--tooltip-end-y` | `--tooltip-y` | Desplazamiento vertical visible |
+| `--tt-area` | `block-start` | Área de posición relativa al ancla |
+| `--tt-fallbacks` | `flip-block, flip-inline` | Posiciones de fallback si se recorta |
+| `--tt-gap` | `0.5rem` | Separación entre el ancla y el tooltip |
+| `--tt-bg` | `rgb(0 0 0 / 90%)` | Color de fondo |
+| `--tt-color` | `#fff` | Color del texto |
+| `--tt-size` | `0.875rem` | Tamaño de fuente |
+| `--tt-padding` | `0.5em 0.75em` | Padding de la burbuja |
+| `--tt-radius` | `0.25em` | Radio de borde |
+| `--tt-shadow` | `none` | Sombra de la burbuja |
+| `--tt-max-width` | `20rem` | Ancho máximo de la burbuja |
+| `--tt-z-index` | `10` | Orden de apilamiento (z-index) |
+| `--tt-duration` | `0.2s` | Duración de la transición |
+| `--tt-ease` | `ease` | Función de temporización de la transición |
+| `--tt-scale` | `1` | Escala de la burbuja |
+| `--tt-origin` | `center` | Origen de transformación |
+| `--tt-x` | `0` | Desplazamiento horizontal |
+| `--tt-y` | `0` | Desplazamiento vertical |
+| `--tt-start-scale` | `--tt-scale` | Escala inicial |
+| `--tt-end-scale` | `--tt-scale` | Escala visible |
+| `--tt-start-x` | `--tt-x` | Desplazamiento horizontal inicial |
+| `--tt-end-x` | `--tt-x` | Desplazamiento horizontal visible |
+| `--tt-start-y` | `--tt-y` | Desplazamiento vertical inicial |
+| `--tt-end-y` | `--tt-y` | Desplazamiento vertical visible |
 
 Ejemplo:
 
 ```css
 .tooltip--custom {
-  --tooltip-bg: #2563eb;
-  --tooltip-color: #ffffff;
-  --tooltip-border-radius: 8px;
-  --tooltip-padding: 8px 12px;
-  --tooltip-box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
-  --tooltip-gap: 0.5rem;
+  --tt-bg: #2563eb;
+  --tt-color: #ffffff;
+  --tt-radius: 8px;
+  --tt-padding: 8px 12px;
+  --tt-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+  --tt-gap: 0.5rem;
 }
 ```
 
@@ -214,10 +212,10 @@ La v5 no incluye una flecha como pseudo-elemento (`::after`). `flip-block` y `fl
 | --- | --- |
 | `[data-tts]` | `.tooltip` |
 | `data-tts-visible` | `data-tooltip-visible` |
-| `[data-tts="down"]` | `--tooltip-area: block-end;` |
-| `[data-tts="left"]` | `--tooltip-area: inline-start;` |
-| `[data-tts="right"]` | `--tooltip-area: inline-end;` |
-| `--tts-*` | `--tooltip-*` |
+| `[data-tts="down"]` | `--tt-area: block-end;` |
+| `[data-tts="left"]` | `--tt-area: inline-start;` |
+| `[data-tts="right"]` | `--tt-area: inline-end;` |
+| `--tts-*` | `--tt-*` |
 | `tooltips.min.css` | `index.min.css` |
 
 

@@ -109,25 +109,25 @@ Tooltips appear at the top (`block-start`) by default and flip automatically (`f
 
 ```css
 .tooltip::before {
-  position-area: var(--tooltip-area, block-start);
-  position-try-fallbacks: var(--tooltip-fallbacks, flip-block, flip-inline);
+  position-area: var(--tt-area, block-start);
+  position-try-fallbacks: var(--tt-fallbacks, flip-block, flip-inline);
 }
 ```
 
-To set a custom position, override `--tooltip-area`:
+To set a custom position, override `--tt-area`:
 
 ```css
-.tooltip--right  { --tooltip-area: inline-end; }
-.tooltip--left   { --tooltip-area: inline-start; }
-.tooltip--bottom { --tooltip-area: block-end; }
+.tooltip--right  { --tt-area: inline-end; }
+.tooltip--left   { --tt-area: inline-start; }
+.tooltip--bottom { --tt-area: block-end; }
 ```
 
 To force a position without automatic flipping:
 
 ```css
 .tooltip--fixed-right {
-  --tooltip-area: inline-end;
-  --tooltip-fallbacks: none;
+  --tt-area: inline-end;
+  --tt-fallbacks: none;
 }
 ```
 
@@ -147,42 +147,40 @@ Override CSS variables to adjust the appearance:
 
 | Variable | Default | Description |
 | --- | --- | --- |
-| `--tooltip-area` | `block-start` | Position area relative to anchor |
-| `--tooltip-fallbacks` | `flip-block, flip-inline` | Fallback positions if clipped |
-| `--tooltip-gap` | `0.5rem` | Spacing between anchor and tooltip |
-| `--tooltip-bg` | `rgb(0 0 0 / 90%)` | Background color |
-| `--tooltip-color` | `#fff` | Text color |
-| `--tooltip-font-size` | `0.875rem` | Font size |
-| `--tooltip-font-family` | `inherit` | Font family |
-| `--tooltip-line-height` | `1.5` | Line height |
-| `--tooltip-padding` | `0.5em 0.75em` | Bubble padding |
-| `--tooltip-border` | `none` | Border |
-| `--tooltip-border-radius` | `0.25em` | Border radius |
-| `--tooltip-box-shadow` | `none` | Box shadow |
-| `--tooltip-max-width` | `20rem` | Maximum bubble width |
-| `--tooltip-duration` | `0.2s` | Transition duration |
-| `--tooltip-easing` | `ease` | Transition timing function |
-| `--tooltip-scale` | `1` | Bubble scale |
-| `--tooltip-origin` | `center` | Transform origin |
-| `--tooltip-x` | `0` | Horizontal offset |
-| `--tooltip-y` | `0` | Vertical offset |
-| `--tooltip-start-scale` | `--tooltip-scale` | Initial scale |
-| `--tooltip-end-scale` | `--tooltip-scale` | Visible scale |
-| `--tooltip-start-x` | `--tooltip-x` | Initial horizontal offset |
-| `--tooltip-end-x` | `--tooltip-x` | Visible horizontal offset |
-| `--tooltip-start-y` | `--tooltip-y` | Initial vertical offset |
-| `--tooltip-end-y` | `--tooltip-y` | Visible vertical offset |
+| `--tt-area` | `block-start` | Position area relative to anchor |
+| `--tt-fallbacks` | `flip-block, flip-inline` | Fallback positions if clipped |
+| `--tt-gap` | `0.5rem` | Spacing between anchor and tooltip |
+| `--tt-bg` | `rgb(0 0 0 / 90%)` | Background color |
+| `--tt-color` | `#fff` | Text color |
+| `--tt-size` | `0.875rem` | Font size |
+| `--tt-padding` | `0.5em 0.75em` | Bubble padding |
+| `--tt-radius` | `0.25em` | Border radius |
+| `--tt-shadow` | `none` | Box shadow |
+| `--tt-max-width` | `20rem` | Maximum bubble width |
+| `--tt-z-index` | `10` | Stacking order |
+| `--tt-duration` | `0.2s` | Transition duration |
+| `--tt-ease` | `ease` | Transition timing function |
+| `--tt-scale` | `1` | Bubble scale |
+| `--tt-origin` | `center` | Transform origin |
+| `--tt-x` | `0` | Horizontal offset |
+| `--tt-y` | `0` | Vertical offset |
+| `--tt-start-scale` | `--tt-scale` | Initial scale |
+| `--tt-end-scale` | `--tt-scale` | Visible scale |
+| `--tt-start-x` | `--tt-x` | Initial horizontal offset |
+| `--tt-end-x` | `--tt-x` | Visible horizontal offset |
+| `--tt-start-y` | `--tt-y` | Initial vertical offset |
+| `--tt-end-y` | `--tt-y` | Visible vertical offset |
 
 Example:
 
 ```css
 .tooltip--custom {
-  --tooltip-bg: #2563eb;
-  --tooltip-color: #ffffff;
-  --tooltip-border-radius: 8px;
-  --tooltip-padding: 8px 12px;
-  --tooltip-box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
-  --tooltip-gap: 0.5rem;
+  --tt-bg: #2563eb;
+  --tt-color: #ffffff;
+  --tt-radius: 8px;
+  --tt-padding: 8px 12px;
+  --tt-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+  --tt-gap: 0.5rem;
 }
 ```
 
@@ -214,10 +212,10 @@ v5 does not include a pseudo-element arrow (`::after`). `flip-block` and `flip-i
 | --- | --- |
 | `[data-tts]` | `.tooltip` |
 | `data-tts-visible` | `data-tooltip-visible` |
-| `[data-tts="down"]` | `--tooltip-area: block-end;` |
-| `[data-tts="left"]` | `--tooltip-area: inline-start;` |
-| `[data-tts="right"]` | `--tooltip-area: inline-end;` |
-| `--tts-*` | `--tooltip-*` |
+| `[data-tts="down"]` | `--tt-area: block-end;` |
+| `[data-tts="left"]` | `--tt-area: inline-start;` |
+| `[data-tts="right"]` | `--tt-area: inline-end;` |
+| `--tts-*` | `--tt-*` |
 | `tooltips.min.css` | `index.min.css` |
 
 ## Support

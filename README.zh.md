@@ -109,25 +109,25 @@ import '@zkreations/tooltips/index.min.css';
 
 ```css
 .tooltip::before {
-  position-area: var(--tooltip-area, block-start);
-  position-try-fallbacks: var(--tooltip-fallbacks, flip-block, flip-inline);
+  position-area: var(--tt-area, block-start);
+  position-try-fallbacks: var(--tt-fallbacks, flip-block, flip-inline);
 }
 ```
 
-要设置自定义位置，覆盖 `--tooltip-area`：
+要设置自定义位置，覆盖 `--tt-area`：
 
 ```css
-.tooltip--right  { --tooltip-area: inline-end; }
-.tooltip--left   { --tooltip-area: inline-start; }
-.tooltip--bottom { --tooltip-area: block-end; }
+.tooltip--right  { --tt-area: inline-end; }
+.tooltip--left   { --tt-area: inline-start; }
+.tooltip--bottom { --tt-area: block-end; }
 ```
 
 要固定位置且不自动切换：
 
 ```css
 .tooltip--fixed-right {
-  --tooltip-area: inline-end;
-  --tooltip-fallbacks: none;
+  --tt-area: inline-end;
+  --tt-fallbacks: none;
 }
 ```
 
@@ -147,42 +147,40 @@ import '@zkreations/tooltips/index.min.css';
 
 | 变量 | 默认值 | 描述 |
 | --- | --- | --- |
-| `--tooltip-area` | `block-start` | 相对于锚点的位置区域 |
-| `--tooltip-fallbacks` | `flip-block, flip-inline` | 被裁剪时的回退位置 |
-| `--tooltip-gap` | `0.5rem` | 锚点与工具提示之间的间距 |
-| `--tooltip-bg` | `rgb(0 0 0 / 90%)` | 背景颜色 |
-| `--tooltip-color` | `#fff` | 文字颜色 |
-| `--tooltip-font-size` | `0.875rem` | 字体大小 |
-| `--tooltip-font-family` | `inherit` | 字体系列 |
-| `--tooltip-line-height` | `1.5` | 行高 |
-| `--tooltip-padding` | `0.5em 0.75em` | 气泡内边距 |
-| `--tooltip-border` | `none` | 气泡边框 |
-| `--tooltip-border-radius` | `0.25em` | 边框圆角 |
-| `--tooltip-box-shadow` | `none` | 气泡阴影 |
-| `--tooltip-max-width` | `20rem` | 气泡最大宽度 |
-| `--tooltip-duration` | `0.2s` | 过渡持续时间 |
-| `--tooltip-easing` | `ease` | 过渡时间函数 |
-| `--tooltip-scale` | `1` | 气泡缩放比例 |
-| `--tooltip-origin` | `center` | 变换原点 |
-| `--tooltip-x` | `0` | 水平偏移 |
-| `--tooltip-y` | `0` | 垂直偏移 |
-| `--tooltip-start-scale` | `--tooltip-scale` | 初始缩放比例 |
-| `--tooltip-end-scale` | `--tooltip-scale` | 可见时缩放比例 |
-| `--tooltip-start-x` | `--tooltip-x` | 初始水平偏移 |
-| `--tooltip-end-x` | `--tooltip-x` | 可见时水平偏移 |
-| `--tooltip-start-y` | `--tooltip-y` | 初始垂直偏移 |
-| `--tooltip-end-y` | `--tooltip-y` | 可见时垂直偏移 |
+| `--tt-area` | `block-start` | 相对于锚点的位置区域 |
+| `--tt-fallbacks` | `flip-block, flip-inline` | 被裁剪时的回退位置 |
+| `--tt-gap` | `0.5rem` | 锚点与工具提示之间的间距 |
+| `--tt-bg` | `rgb(0 0 0 / 90%)` | 背景颜色 |
+| `--tt-color` | `#fff` | 文字颜色 |
+| `--tt-size` | `0.875rem` | 字体大小 |
+| `--tt-padding` | `0.5em 0.75em` | 气泡内边距 |
+| `--tt-radius` | `0.25em` | 边框圆角 |
+| `--tt-shadow` | `none` | 气泡阴影 |
+| `--tt-max-width` | `20rem` | 气泡最大宽度 |
+| `--tt-z-index` | `10` | 层叠顺序 (z-index) |
+| `--tt-duration` | `0.2s` | 过渡持续时间 |
+| `--tt-ease` | `ease` | 过渡时间函数 |
+| `--tt-scale` | `1` | 气泡缩放比例 |
+| `--tt-origin` | `center` | 变换原点 |
+| `--tt-x` | `0` | 水平偏移 |
+| `--tt-y` | `0` | 垂直偏移 |
+| `--tt-start-scale` | `--tt-scale` | 初始缩放比例 |
+| `--tt-end-scale` | `--tt-scale` | 可见时缩放比例 |
+| `--tt-start-x` | `--tt-x` | 初始水平偏移 |
+| `--tt-end-x` | `--tt-x` | 可见时水平偏移 |
+| `--tt-start-y` | `--tt-y` | 初始垂直偏移 |
+| `--tt-end-y` | `--tt-y` | 可见时垂直偏移 |
 
 示例：
 
 ```css
 .tooltip--custom {
-  --tooltip-bg: #2563eb;
-  --tooltip-color: #ffffff;
-  --tooltip-border-radius: 8px;
-  --tooltip-padding: 8px 12px;
-  --tooltip-box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
-  --tooltip-gap: 0.5rem;
+  --tt-bg: #2563eb;
+  --tt-color: #ffffff;
+  --tt-radius: 8px;
+  --tt-padding: 8px 12px;
+  --tt-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+  --tt-gap: 0.5rem;
 }
 ```
 
@@ -214,10 +212,10 @@ v5 不包含伪元素箭头（`::after`）。`flip-block` 与 `flip-inline` 改�
 | --- | --- |
 | `[data-tts]` | `.tooltip` |
 | `data-tts-visible` | `data-tooltip-visible` |
-| `[data-tts="down"]` | `--tooltip-area: block-end;` |
-| `[data-tts="left"]` | `--tooltip-area: inline-start;` |
-| `[data-tts="right"]` | `--tooltip-area: inline-end;` |
-| `--tts-*` | `--tooltip-*` |
+| `[data-tts="down"]` | `--tt-area: block-end;` |
+| `[data-tts="left"]` | `--tt-area: inline-start;` |
+| `[data-tts="right"]` | `--tt-area: inline-end;` |
+| `--tts-*` | `--tt-*` |
 | `tooltips.min.css` | `index.min.css` |
 
 ## 支持

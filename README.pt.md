@@ -109,25 +109,25 @@ Os tooltips aparecem acima (`block-start`) por padrão e alternam automaticament
 
 ```css
 .tooltip::before {
-  position-area: var(--tooltip-area, block-start);
-  position-try-fallbacks: var(--tooltip-fallbacks, flip-block, flip-inline);
+  position-area: var(--tt-area, block-start);
+  position-try-fallbacks: var(--tt-fallbacks, flip-block, flip-inline);
 }
 ```
 
-Para definir uma posição personalizada, sobrescrever `--tooltip-area`:
+Para definir uma posição personalizada, sobrescrever `--tt-area`:
 
 ```css
-.tooltip--right  { --tooltip-area: inline-end; }
-.tooltip--left   { --tooltip-area: inline-start; }
-.tooltip--bottom { --tooltip-area: block-end; }
+.tooltip--right  { --tt-area: inline-end; }
+.tooltip--left   { --tt-area: inline-start; }
+.tooltip--bottom { --tt-area: block-end; }
 ```
 
 Para forçar uma posição sem alternância automática:
 
 ```css
 .tooltip--fixed-right {
-  --tooltip-area: inline-end;
-  --tooltip-fallbacks: none;
+  --tt-area: inline-end;
+  --tt-fallbacks: none;
 }
 ```
 
@@ -147,42 +147,40 @@ Sobrescrever as propriedades CSS para ajustar a aparência:
 
 | Variável | Valor padrão | Descrição |
 | --- | --- | --- |
-| `--tooltip-area` | `block-start` | Área de posição relativa à âncora |
-| `--tooltip-fallbacks` | `flip-block, flip-inline` | Posições de fallback se recortado |
-| `--tooltip-gap` | `0.5rem` | Espaçamento entre âncora e tooltip |
-| `--tooltip-bg` | `rgb(0 0 0 / 90%)` | Cor de fundo |
-| `--tooltip-color` | `#fff` | Cor do texto |
-| `--tooltip-font-size` | `0.875rem` | Tamanho da fonte |
-| `--tooltip-font-family` | `inherit` | Família tipográfica |
-| `--tooltip-line-height` | `1.5` | Altura da linha |
-| `--tooltip-padding` | `0.5em 0.75em` | Padding da bolha |
-| `--tooltip-border` | `none` | Borda da bolha |
-| `--tooltip-border-radius` | `0.25em` | Raio da borda |
-| `--tooltip-box-shadow` | `none` | Sombra da bolha |
-| `--tooltip-max-width` | `20rem` | Largura máxima da bolha |
-| `--tooltip-duration` | `0.2s` | Duração da transição |
-| `--tooltip-easing` | `ease` | Função de temporização da transição |
-| `--tooltip-scale` | `1` | Escala da bolha |
-| `--tooltip-origin` | `center` | Origem da transformação |
-| `--tooltip-x` | `0` | Deslocamento horizontal |
-| `--tooltip-y` | `0` | Deslocamento vertical |
-| `--tooltip-start-scale` | `--tooltip-scale` | Escala inicial |
-| `--tooltip-end-scale` | `--tooltip-scale` | Escala visível |
-| `--tooltip-start-x` | `--tooltip-x` | Deslocamento horizontal inicial |
-| `--tooltip-end-x` | `--tooltip-x` | Deslocamento horizontal visível |
-| `--tooltip-start-y` | `--tooltip-y` | Deslocamento vertical inicial |
-| `--tooltip-end-y` | `--tooltip-y` | Deslocamento vertical visível |
+| `--tt-area` | `block-start` | Área de posição relativa à âncora |
+| `--tt-fallbacks` | `flip-block, flip-inline` | Posições de fallback se recortado |
+| `--tt-gap` | `0.5rem` | Espaçamento entre âncora e tooltip |
+| `--tt-bg` | `rgb(0 0 0 / 90%)` | Cor de fundo |
+| `--tt-color` | `#fff` | Cor do texto |
+| `--tt-size` | `0.875rem` | Tamanho da fonte |
+| `--tt-padding` | `0.5em 0.75em` | Padding da bolha |
+| `--tt-radius` | `0.25em` | Raio da borda |
+| `--tt-shadow` | `none` | Sombra da bolha |
+| `--tt-max-width` | `20rem` | Largura máxima da bolha |
+| `--tt-z-index` | `10` | Ordem de empilhamento (z-index) |
+| `--tt-duration` | `0.2s` | Duração da transição |
+| `--tt-ease` | `ease` | Função de temporização da transição |
+| `--tt-scale` | `1` | Escala da bolha |
+| `--tt-origin` | `center` | Origem da transformação |
+| `--tt-x` | `0` | Deslocamento horizontal |
+| `--tt-y` | `0` | Deslocamento vertical |
+| `--tt-start-scale` | `--tt-scale` | Escala inicial |
+| `--tt-end-scale` | `--tt-scale` | Escala visível |
+| `--tt-start-x` | `--tt-x` | Deslocamento horizontal inicial |
+| `--tt-end-x` | `--tt-x` | Deslocamento horizontal visível |
+| `--tt-start-y` | `--tt-y` | Deslocamento vertical inicial |
+| `--tt-end-y` | `--tt-y` | Deslocamento vertical visível |
 
 Exemplo:
 
 ```css
 .tooltip--custom {
-  --tooltip-bg: #2563eb;
-  --tooltip-color: #ffffff;
-  --tooltip-border-radius: 8px;
-  --tooltip-padding: 8px 12px;
-  --tooltip-box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
-  --tooltip-gap: 0.5rem;
+  --tt-bg: #2563eb;
+  --tt-color: #ffffff;
+  --tt-radius: 8px;
+  --tt-padding: 8px 12px;
+  --tt-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+  --tt-gap: 0.5rem;
 }
 ```
 
@@ -214,10 +212,10 @@ A v5 não inclui uma seta como pseudo-elemento (`::after`). `flip-block` e `flip
 | --- | --- |
 | `[data-tts]` | `.tooltip` |
 | `data-tts-visible` | `data-tooltip-visible` |
-| `[data-tts="down"]` | `--tooltip-area: block-end;` |
-| `[data-tts="left"]` | `--tooltip-area: inline-start;` |
-| `[data-tts="right"]` | `--tooltip-area: inline-end;` |
-| `--tts-*` | `--tooltip-*` |
+| `[data-tts="down"]` | `--tt-area: block-end;` |
+| `[data-tts="left"]` | `--tt-area: inline-start;` |
+| `[data-tts="right"]` | `--tt-area: inline-end;` |
+| `--tts-*` | `--tt-*` |
 | `tooltips.min.css` | `index.min.css` |
 
 ## Suporte

@@ -109,25 +109,25 @@ import '@zkreations/tooltips/index.min.css';
 
 ```css
 .tooltip::before {
-  position-area: var(--tooltip-area, block-start);
-  position-try-fallbacks: var(--tooltip-fallbacks, flip-block, flip-inline);
+  position-area: var(--tt-area, block-start);
+  position-try-fallbacks: var(--tt-fallbacks, flip-block, flip-inline);
 }
 ```
 
-カスタム位置を設定するには、`--tooltip-area` を上書きします：
+カスタム位置を設定するには、`--tt-area` を上書きします：
 
 ```css
-.tooltip--right  { --tooltip-area: inline-end; }
-.tooltip--left   { --tooltip-area: inline-start; }
-.tooltip--bottom { --tooltip-area: block-end; }
+.tooltip--right  { --tt-area: inline-end; }
+.tooltip--left   { --tt-area: inline-start; }
+.tooltip--bottom { --tt-area: block-end; }
 ```
 
 自動切り替えなしで位置を固定するには：
 
 ```css
 .tooltip--fixed-right {
-  --tooltip-area: inline-end;
-  --tooltip-fallbacks: none;
+  --tt-area: inline-end;
+  --tt-fallbacks: none;
 }
 ```
 
@@ -147,42 +147,40 @@ CSS 変数を上書きして外観を調整します：
 
 | 変数 | デフォルト値 | 説明 |
 | --- | --- | --- |
-| `--tooltip-area` | `block-start` | アンカーを基準とした位置エリア |
-| `--tooltip-fallbacks` | `flip-block, flip-inline` | クリップされた場合のフォールバック位置 |
-| `--tooltip-gap` | `0.5rem` | アンカーとツールチップの間隔 |
-| `--tooltip-bg` | `rgb(0 0 0 / 90%)` | 背景色 |
-| `--tooltip-color` | `#fff` | テキスト色 |
-| `--tooltip-font-size` | `0.875rem` | フォントサイズ |
-| `--tooltip-font-family` | `inherit` | フォントファミリー |
-| `--tooltip-line-height` | `1.5` | 行の高さ |
-| `--tooltip-padding` | `0.5em 0.75em` | バブルのパディング |
-| `--tooltip-border` | `none` | バブルの境界線（ボーダー） |
-| `--tooltip-border-radius` | `0.25em` | 境界線の丸み |
-| `--tooltip-box-shadow` | `none` | バブルの影（ボックスシャドウ） |
-| `--tooltip-max-width` | `20rem` | バブルの最大幅 |
-| `--tooltip-duration` | `0.2s` | トランジションの時間 |
-| `--tooltip-easing` | `ease` | トランジションのタイミング関数 |
-| `--tooltip-scale` | `1` | バブルのスケール |
-| `--tooltip-origin` | `center` | 変形の基点 |
-| `--tooltip-x` | `0` | 水平オフセット |
-| `--tooltip-y` | `0` | 垂直オフセット |
-| `--tooltip-start-scale` | `--tooltip-scale` | 初期スケール |
-| `--tooltip-end-scale` | `--tooltip-scale` | 表示時のスケール |
-| `--tooltip-start-x` | `--tooltip-x` | 初期水平オフセット |
-| `--tooltip-end-x` | `--tooltip-x` | 表示時の水平オフセット |
-| `--tooltip-start-y` | `--tooltip-y` | 初期垂直オフセット |
-| `--tooltip-end-y` | `--tooltip-y` | 表示時の垂直オフセット |
+| `--tt-area` | `block-start` | アンカーを基準とした位置エリア |
+| `--tt-fallbacks` | `flip-block, flip-inline` | クリップされた場合のフォールバック位置 |
+| `--tt-gap` | `0.5rem` | アンカーとツールチップの間隔 |
+| `--tt-bg` | `rgb(0 0 0 / 90%)` | 背景色 |
+| `--tt-color` | `#fff` | テキスト色 |
+| `--tt-size` | `0.875rem` | フォントサイズ |
+| `--tt-padding` | `0.5em 0.75em` | バブルのパディング |
+| `--tt-radius` | `0.25em` | 境界線の丸み |
+| `--tt-shadow` | `none` | バブルの影（ボックスシャドウ） |
+| `--tt-max-width` | `20rem` | バブルの最大幅 |
+| `--tt-z-index` | `10` | 重なり順 (z-index) |
+| `--tt-duration` | `0.2s` | トランジションの時間 |
+| `--tt-ease` | `ease` | トランジションのタイミング関数 |
+| `--tt-scale` | `1` | バブルのスケール |
+| `--tt-origin` | `center` | 変形の基点 |
+| `--tt-x` | `0` | 水平オフセット |
+| `--tt-y` | `0` | 垂直オフセット |
+| `--tt-start-scale` | `--tt-scale` | 初期スケール |
+| `--tt-end-scale` | `--tt-scale` | 表示時のスケール |
+| `--tt-start-x` | `--tt-x` | 初期水平オフセット |
+| `--tt-end-x` | `--tt-x` | 表示時の水平オフセット |
+| `--tt-start-y` | `--tt-y` | 初期垂直オフセット |
+| `--tt-end-y` | `--tt-y` | 表示時の垂直オフセット |
 
 例：
 
 ```css
 .tooltip--custom {
-  --tooltip-bg: #2563eb;
-  --tooltip-color: #ffffff;
-  --tooltip-border-radius: 8px;
-  --tooltip-padding: 8px 12px;
-  --tooltip-box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
-  --tooltip-gap: 0.5rem;
+  --tt-bg: #2563eb;
+  --tt-color: #ffffff;
+  --tt-radius: 8px;
+  --tt-padding: 8px 12px;
+  --tt-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+  --tt-gap: 0.5rem;
 }
 ```
 
@@ -214,10 +212,10 @@ v5 は擬似要素の矢印（`::after`）を含んでいません。`flip-block
 | --- | --- |
 | `[data-tts]` | `.tooltip` |
 | `data-tts-visible` | `data-tooltip-visible` |
-| `[data-tts="down"]` | `--tooltip-area: block-end;` |
-| `[data-tts="left"]` | `--tooltip-area: inline-start;` |
-| `[data-tts="right"]` | `--tooltip-area: inline-end;` |
-| `--tts-*` | `--tooltip-*` |
+| `[data-tts="down"]` | `--tt-area: block-end;` |
+| `[data-tts="left"]` | `--tt-area: inline-start;` |
+| `[data-tts="right"]` | `--tt-area: inline-end;` |
+| `--tts-*` | `--tt-*` |
 | `tooltips.min.css` | `index.min.css` |
 
 ## サポート

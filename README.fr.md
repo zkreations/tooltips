@@ -109,25 +109,25 @@ Les tooltips apparaissent en haut (`block-start`) par défaut et basculent autom
 
 ```css
 .tooltip::before {
-  position-area: var(--tooltip-area, block-start);
-  position-try-fallbacks: var(--tooltip-fallbacks, flip-block, flip-inline);
+  position-area: var(--tt-area, block-start);
+  position-try-fallbacks: var(--tt-fallbacks, flip-block, flip-inline);
 }
 ```
 
-Pour définir une position personnalisée, surcharger `--tooltip-area` :
+Pour définir une position personnalisée, surcharger `--tt-area` :
 
 ```css
-.tooltip--right  { --tooltip-area: inline-end; }
-.tooltip--left   { --tooltip-area: inline-start; }
-.tooltip--bottom { --tooltip-area: block-end; }
+.tooltip--right  { --tt-area: inline-end; }
+.tooltip--left   { --tt-area: inline-start; }
+.tooltip--bottom { --tt-area: block-end; }
 ```
 
 Pour forcer une position sans basculement automatique :
 
 ```css
 .tooltip--fixed-right {
-  --tooltip-area: inline-end;
-  --tooltip-fallbacks: none;
+  --tt-area: inline-end;
+  --tt-fallbacks: none;
 }
 ```
 
@@ -147,42 +147,40 @@ Surcharger les propriétés CSS pour ajuster l'apparence :
 
 | Variable | Valeur par défaut | Description |
 | --- | --- | --- |
-| `--tooltip-area` | `block-start` | Zone de position relative à l'ancre |
-| `--tooltip-fallbacks` | `flip-block, flip-inline` | Positions de fallback si rognée |
-| `--tooltip-gap` | `0.5rem` | Espacement entre l'ancre et le tooltip |
-| `--tooltip-bg` | `rgb(0 0 0 / 90%)` | Couleur de fond |
-| `--tooltip-color` | `#fff` | Couleur du texte |
-| `--tooltip-font-size` | `0.875rem` | Taille de police |
-| `--tooltip-font-family` | `inherit` | Famille typographique |
-| `--tooltip-line-height` | `1.5` | Hauteur de ligne |
-| `--tooltip-padding` | `0.5em 0.75em` | Padding de la bulle |
-| `--tooltip-border` | `none` | Bordure de la bulle |
-| `--tooltip-border-radius` | `0.25em` | Rayon de bordure |
-| `--tooltip-box-shadow` | `none` | Ombre de la bulle |
-| `--tooltip-max-width` | `20rem` | Largeur maximale de la bulle |
-| `--tooltip-duration` | `0.2s` | Durée de la transition |
-| `--tooltip-easing` | `ease` | Fonction de temporisation |
-| `--tooltip-scale` | `1` | Échelle de la bulle |
-| `--tooltip-origin` | `center` | Origine de transformation |
-| `--tooltip-x` | `0` | Décalage horizontal |
-| `--tooltip-y` | `0` | Décalage vertical |
-| `--tooltip-start-scale` | `--tooltip-scale` | Échelle initiale |
-| `--tooltip-end-scale` | `--tooltip-scale` | Échelle visible |
-| `--tooltip-start-x` | `--tooltip-x` | Décalage horizontal initial |
-| `--tooltip-end-x` | `--tooltip-x` | Décalage horizontal visible |
-| `--tooltip-start-y` | `--tooltip-y` | Décalage vertical initial |
-| `--tooltip-end-y` | `--tooltip-y` | Décalage vertical visible |
+| `--tt-area` | `block-start` | Zone de position relative à l'ancre |
+| `--tt-fallbacks` | `flip-block, flip-inline` | Positions de fallback si rognée |
+| `--tt-gap` | `0.5rem` | Espacement entre l'ancre et le tooltip |
+| `--tt-bg` | `rgb(0 0 0 / 90%)` | Couleur de fond |
+| `--tt-color` | `#fff` | Couleur du texte |
+| `--tt-size` | `0.875rem` | Taille de police |
+| `--tt-padding` | `0.5em 0.75em` | Padding de la bulle |
+| `--tt-radius` | `0.25em` | Rayon de bordure |
+| `--tt-shadow` | `none` | Ombre de la bulle |
+| `--tt-max-width` | `20rem` | Largeur maximale de la bulle |
+| `--tt-z-index` | `10` | Ordre d'empilement (z-index) |
+| `--tt-duration` | `0.2s` | Durée de la transition |
+| `--tt-ease` | `ease` | Fonction de temporisation |
+| `--tt-scale` | `1` | Échelle de la bulle |
+| `--tt-origin` | `center` | Origine de transformation |
+| `--tt-x` | `0` | Décalage horizontal |
+| `--tt-y` | `0` | Décalage vertical |
+| `--tt-start-scale` | `--tt-scale` | Échelle initiale |
+| `--tt-end-scale` | `--tt-scale` | Échelle visible |
+| `--tt-start-x` | `--tt-x` | Décalage horizontal initial |
+| `--tt-end-x` | `--tt-x` | Décalage horizontal visible |
+| `--tt-start-y` | `--tt-y` | Décalage vertical initial |
+| `--tt-end-y` | `--tt-y` | Décalage vertical visible |
 
 Exemple :
 
 ```css
 .tooltip--custom {
-  --tooltip-bg: #2563eb;
-  --tooltip-color: #ffffff;
-  --tooltip-border-radius: 8px;
-  --tooltip-padding: 8px 12px;
-  --tooltip-box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
-  --tooltip-gap: 0.5rem;
+  --tt-bg: #2563eb;
+  --tt-color: #ffffff;
+  --tt-radius: 8px;
+  --tt-padding: 8px 12px;
+  --tt-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+  --tt-gap: 0.5rem;
 }
 ```
 
@@ -214,10 +212,10 @@ La v5 n'inclut pas de flèche en pseudo-élément (`::after`). `flip-block` et `
 | --- | --- |
 | `[data-tts]` | `.tooltip` |
 | `data-tts-visible` | `data-tooltip-visible` |
-| `[data-tts="down"]` | `--tooltip-area: block-end;` |
-| `[data-tts="left"]` | `--tooltip-area: inline-start;` |
-| `[data-tts="right"]` | `--tooltip-area: inline-end;` |
-| `--tts-*` | `--tooltip-*` |
+| `[data-tts="down"]` | `--tt-area: block-end;` |
+| `[data-tts="left"]` | `--tt-area: inline-start;` |
+| `[data-tts="right"]` | `--tt-area: inline-end;` |
+| `--tts-*` | `--tt-*` |
 | `tooltips.min.css` | `index.min.css` |
 
 ## Support
