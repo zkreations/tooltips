@@ -156,6 +156,7 @@ Sobreescribir las propiedades CSS para ajustar la apariencia:
 | `--tooltip-font-family` | `inherit` | Familia tipográfica |
 | `--tooltip-line-height` | `1.5` | Altura de línea |
 | `--tooltip-padding` | `0.5em 0.75em` | Padding de la burbuja |
+| `--tooltip-border` | `none` | Borde de la burbuja |
 | `--tooltip-border-radius` | `0.25em` | Radio de borde |
 | `--tooltip-box-shadow` | `none` | Sombra de la burbuja |
 | `--tooltip-max-width` | `20rem` | Ancho máximo de la burbuja |

@@ -156,6 +156,7 @@ CSS 変数を上書きして外観を調整します：
 | `--tooltip-font-family` | `inherit` | フォントファミリー |
 | `--tooltip-line-height` | `1.5` | 行の高さ |
 | `--tooltip-padding` | `0.5em 0.75em` | バブルのパディング |
+| `--tooltip-border` | `none` | バブルの境界線（ボーダー） |
 | `--tooltip-border-radius` | `0.25em` | 境界線の丸み |
 | `--tooltip-box-shadow` | `none` | バブルの影（ボックスシャドウ） |
 | `--tooltip-max-width` | `20rem` | バブルの最大幅 |

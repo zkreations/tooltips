@@ -156,6 +156,7 @@ Override CSS variables to adjust the appearance:
 | `--tooltip-font-family` | `inherit` | Font family |
 | `--tooltip-line-height` | `1.5` | Line height |
 | `--tooltip-padding` | `0.5em 0.75em` | Bubble padding |
+| `--tooltip-border` | `none` | Border |
 | `--tooltip-border-radius` | `0.25em` | Border radius |
 | `--tooltip-box-shadow` | `none` | Box shadow |
 | `--tooltip-max-width` | `20rem` | Maximum bubble width |

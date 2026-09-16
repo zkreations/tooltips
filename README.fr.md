@@ -156,6 +156,7 @@ Surcharger les propriétés CSS pour ajuster l'apparence :
 | `--tooltip-font-family` | `inherit` | Famille typographique |
 | `--tooltip-line-height` | `1.5` | Hauteur de ligne |
 | `--tooltip-padding` | `0.5em 0.75em` | Padding de la bulle |
+| `--tooltip-border` | `none` | Bordure de la bulle |
 | `--tooltip-border-radius` | `0.25em` | Rayon de bordure |
 | `--tooltip-box-shadow` | `none` | Ombre de la bulle |
 | `--tooltip-max-width` | `20rem` | Largeur maximale de la bulle |

@@ -156,6 +156,7 @@ import '@zkreations/tooltips/index.min.css';
 | `--tooltip-font-family` | `inherit` | 字体系列 |
 | `--tooltip-line-height` | `1.5` | 行高 |
 | `--tooltip-padding` | `0.5em 0.75em` | 气泡内边距 |
+| `--tooltip-border` | `none` | 气泡边框 |
 | `--tooltip-border-radius` | `0.25em` | 边框圆角 |
 | `--tooltip-box-shadow` | `none` | 气泡阴影 |
 | `--tooltip-max-width` | `20rem` | 气泡最大宽度 |

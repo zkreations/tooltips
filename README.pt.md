@@ -156,6 +156,7 @@ Sobrescrever as propriedades CSS para ajustar a aparência:
 | `--tooltip-font-family` | `inherit` | Família tipográfica |
 | `--tooltip-line-height` | `1.5` | Altura da linha |
 | `--tooltip-padding` | `0.5em 0.75em` | Padding da bolha |
+| `--tooltip-border` | `none` | Borda da bolha |
 | `--tooltip-border-radius` | `0.25em` | Raio da borda |
 | `--tooltip-box-shadow` | `none` | Sombra da bolha |
 | `--tooltip-max-width` | `20rem` | Largura máxima da bolha |
