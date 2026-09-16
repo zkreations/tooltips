@@ -183,6 +183,18 @@ Exemplo:
 }
 ```
 
+## Versão compacta
+
+Se você prefere não utilizar variáveis CSS e busca o menor tamanho possível, o proyecto inclui uma variante compacta (`compact.css` / `compact.min.css`) que mantém o posicionamento automático via CSS Anchor Positioning e o fallback para navegadores sem suporte.
+
+Devido ao seu tamanho reduzido (~1 KB sem minificar / ~800 B minificado), é recomendável copiar diretamente o conteúdo de `compact.css` para a folha de estilos do seu projeto em vez de carregá-lo como dependência externa. Dessa forma, você pode editar e personalizar qualquer aspecto visual do tooltip diretamente no CSS, sem recorrer a variáveis.
+
+Se ainda assim preferir importá-lo pelo pacote:
+
+```js
+import '@zkreations/tooltips/compact.min.css';
+```
+
 ## Sem seta, por design
 
 A v5 não inclui uma seta como pseudo-elemento (`::after`). `flip-block` e `flip-inline` alteram o posicionamento da bolha sem comunicar as mudanças de orientação às bordas dos pseudo-elementos de forma consistente entre os navegadores, o que produz bugs visuais. Omitir a seta evita esses bugs e mantém a folha de estilos menor.

@@ -183,6 +183,18 @@ Ejemplo:
 }
 ```
 
+## Versión compacta
+
+Si prefieres no utilizar variables CSS y buscas el menor tamaño posible, el proyecto incluye una variante compacta (`compact.css` / `compact.min.css`) que conserva el posicionamiento automático mediante CSS Anchor Positioning y el fallback para navegadores no compatibles.
+
+Debido a su reducido tamaño (~1 KB sin minificar / ~800 B minificado), se recomienda copiar directamente el contenido de `compact.css` en la hoja de estilos de tu proyecto en lugar de cargarlo como dependencia externa. De este modo, puedes editar y personalizar cualquier aspecto visual del tooltip de forma directa en el código CSS, sin necesidad de recurrir a variables.
+
+Si prefieres importarlo como paquete:
+
+```js
+import '@zkreations/tooltips/compact.min.css';
+```
+
 ## Sin flecha, por diseño
 
 La v5 no incluye una flecha como pseudo-elemento (`::after`). `flip-block` y `flip-inline` cambian la posición de la burbuja sin comunicar el cambio de orientación a los bordes de pseudo-elementos de forma consistente en todos los navegadores, lo que produce errores visuales. Omitir la flecha evita esos errores y mantiene la hoja de estilos más pequeña.
