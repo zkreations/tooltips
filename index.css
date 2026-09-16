@@ -1,22 +1,18 @@
 .tooltip {
   position: relative;
   --_o: 0;
-  --_x: var(--tt-start-x, var(--tt-x, 0));
-  --_y: var(--tt-start-y, var(--tt-y, 0));
-  --_s: var(--tt-start-scale, var(--tt-scale, 1));
+  --_t: var(--tt-start, none);
 }
 .tooltip:is(:hover, :focus-visible, [data-tooltip-visible]) {
   --_o: 1;
-  --_x: var(--tt-end-x, var(--tt-x, 0));
-  --_y: var(--tt-end-y, var(--tt-y, 0));
-  --_s: var(--tt-end-scale, var(--tt-scale, 1));
+  --_t: var(--tt-end, none);
 }
 .tooltip::before {
   content: attr(aria-label);
   position: absolute;
   bottom: calc(100% + var(--tt-gap, 0.5rem));
   left: 50%;
-  transform: translate(calc(-50% + var(--_x)), var(--_y)) scale(var(--_s));
+  translate: -50%;
   transform-origin: center bottom;
   box-sizing: border-box;
   max-width: var(--tt-max-width, 20rem);
@@ -35,6 +31,7 @@
   box-shadow: var(--tt-shadow, none);
   transition-property: opacity, transform;
   opacity: var(--_o, 0);
+  transform: var(--_t, none);
 }
 
 @supports (position-area: block-start) {
@@ -45,7 +42,7 @@
     position-try-fallbacks: var(--tt-fallbacks, flip-block, flip-inline);
     inset: auto;
     margin: var(--tt-gap, 0.5rem);
-    transform: translate(var(--_x), var(--_y)) scale(var(--_s));
-    transform-origin: var(--tt-origin, center);
+    translate: none;
+    transform-origin: center;
   }
 }

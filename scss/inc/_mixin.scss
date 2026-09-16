@@ -31,6 +31,7 @@
   @if $customizable {
     transition-property: opacity, transform;
     opacity: var(--_o, 0);
+    transform: var(--_t, none);
   } @else {
     transition-property: opacity;
     opacity: 0;
@@ -42,14 +43,8 @@
   position: absolute;
   bottom: calc(100% + #{prop('--tt-gap', variables.$gap, $customizable)});
   left: 50%;
-
-  @if $customizable {
-    transform: translate(calc(-50% + var(--_x)), var(--_y)) scale(var(--_s));
-    transform-origin: center bottom;
-  } @else {
-    transform: translateX(-50%);
-    transform-origin: center bottom;
-  }
+  translate: -50%;
+  transform-origin: center bottom;
 
   @include bubble($customizable);
 }
@@ -61,12 +56,6 @@
   position-try-fallbacks: prop('--tt-fallbacks', (flip-block, flip-inline), $customizable);
   inset: auto;
   margin: prop('--tt-gap', variables.$gap, $customizable);
-
-  @if $customizable {
-    transform: translate(var(--_x), var(--_y)) scale(var(--_s));
-    transform-origin: var(--tt-origin, center);
-  } @else {
-    transform: none;
-    transform-origin: center;
-  }
+  translate: none;
+  transform-origin: center;
 }

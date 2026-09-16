@@ -9,7 +9,7 @@
   position: absolute;
   bottom: calc(100% + 0.5rem);
   left: 50%;
-  transform: translateX(-50%);
+  translate: -50%;
   transform-origin: center bottom;
   box-sizing: border-box;
   max-width: 20rem;
@@ -37,7 +37,7 @@
     position-try-fallbacks: flip-block, flip-inline;
     inset: auto;
     margin: 0.5rem;
-    transform: none;
+    translate: none;
     transform-origin: center;
   }
 }
