@@ -14,7 +14,7 @@
 .tooltip::before {
   content: attr(aria-label);
   position: absolute;
-  bottom: calc(100% + var(--tooltip-gap, 0.25rem));
+  bottom: calc(100% + var(--tooltip-gap, 0.5rem));
   left: 50%;
   transform: translate(calc(-50% + var(--_x)), var(--_y)) scale(var(--_s));
   transform-origin: center bottom;
@@ -44,7 +44,7 @@
     position-area: var(--tooltip-area, block-start);
     position-try-fallbacks: flip-block, flip-inline;
     inset: auto;
-    margin: var(--tooltip-gap, 0.25rem);
+    margin: var(--tooltip-gap, 0.5rem);
     transform: translate(var(--_x), var(--_y)) scale(var(--_s));
     transform-origin: center;
   }
