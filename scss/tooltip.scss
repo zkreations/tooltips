@@ -37,6 +37,6 @@
     inset: auto;
     margin: var(--tooltip-gap, #{variables.$gap});
     transform: translate(var(--_x), var(--_y)) scale(var(--_s));
-    transform-origin: center;
+    transform-origin: var(--tooltip-origin, center);
   }
 }
