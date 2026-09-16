@@ -21,6 +21,7 @@
   box-sizing: border-box;
   max-width: var(--tooltip-max-width, 20rem);
   padding: var(--tooltip-padding, 0.5em 0.75em);
+  border: var(--tooltip-border, none);
   border-radius: var(--tooltip-border-radius, 0.25em);
   background-color: var(--tooltip-bg, rgba(0, 0, 0, 0.9));
   color: var(--tooltip-color, #fff);

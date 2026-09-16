@@ -12,6 +12,7 @@
   box-sizing: border-box;
   max-width: prop('--tooltip-max-width', variables.$max-width, $customizable);
   padding: prop('--tooltip-padding', variables.$padding, $customizable);
+  border: prop('--tooltip-border', variables.$border, $customizable);
   border-radius: prop('--tooltip-border-radius', variables.$border-radius, $customizable);
   background-color: prop('--tooltip-bg', variables.$background, $customizable);
   color: prop('--tooltip-color', variables.$color, $customizable);
