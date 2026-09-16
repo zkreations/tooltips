@@ -85,8 +85,6 @@ svg {
   --outline: #cbd5e1;
   --outline-variant: #e2e8f0;
   --outline-subtle: rgb(226 232 240 / 60%);
-  --inverse-on-surface: #fff;
-  --inverse-surface-contrast: #000;
   --shadow-color: rgb(0 0 0 / 4%);
   --font-primary: 'Inter', sans-serif;
   --font-monospace: "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
@@ -375,26 +373,34 @@ body {
 
 .anim-lift {
   --tt-duration: 0.25s;
-  --tt-start: translateY(0.5rem);
+  --tt-start: translateY(1rem);
 }
 
 .anim-pop {
   --tt-duration: 0.2s;
-  --tt-start: scale(0.8);
-}
-
-.anim-bounce {
-  --tt-duration: 0.4s;
-  --tt-ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --tt-start: translateY(0.5rem) scale(0.85);
+  --tt-start: scale(0.75);
 }
 
 .theme-contrast {
-  --tt-bg: var(--inverse-surface-contrast);
-  --tt-color: var(--inverse-on-surface);
-  --tt-size: 0.875rem;
-  --tt-radius: 2px;
+  --tt-bg: #000;
+  --tt-color: #fff;
+  --tt-radius: 0;
   --tt-padding: 0.5em 0.8em;
+}
+
+.theme-light {
+  --tt-bg: #fff;
+  --tt-color: #000;
+  --tt-radius: 0;
+  --tt-shadow:
+    0 4px 8px rgb(0 0 0 / 15%),
+    0 0 0 1px rgb(0 0 0 / 50%);
+}
+
+.theme-balloon {
+  --tt-radius: 9999px;
+  --tt-padding: 0.5em 1em;
+  --tt-shadow: 0 4px 12px rgb(0 0 0 / 15%);
 }
 
 .theme-brand {
