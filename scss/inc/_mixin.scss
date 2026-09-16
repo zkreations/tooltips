@@ -19,6 +19,7 @@
   font-size: prop('--tooltip-font-size', variables.$font-size, $customizable);
   font-weight: normal;
   line-height: prop('--tooltip-line-height', variables.$line-height, $customizable);
+  box-shadow: prop('--tooltip-box-shadow', variables.$box-shadow, $customizable);
   pointer-events: none;
   user-select: none;
   z-index: prop('--tooltip-z-index', 10, $customizable);

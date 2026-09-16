@@ -28,6 +28,7 @@
   font-size: var(--tooltip-font-size, 0.875rem);
   font-weight: normal;
   line-height: var(--tooltip-line-height, 1.5);
+  box-shadow: var(--tooltip-box-shadow, none);
   pointer-events: none;
   user-select: none;
   z-index: var(--tooltip-z-index, 10);
