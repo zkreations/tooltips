@@ -1,0 +1,44 @@
+.tooltip {
+  position: relative;
+}
+.tooltip:is(:hover, :focus-visible, [data-tooltip-visible])::before {
+  opacity: 1;
+}
+.tooltip::before {
+  content: attr(aria-label);
+  position: absolute;
+  bottom: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: center bottom;
+  box-sizing: border-box;
+  max-width: 20rem;
+  padding: 0.5em 0.75em;
+  border-radius: 0.25em;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: normal;
+  line-height: 1.5;
+  pointer-events: none;
+  user-select: none;
+  z-index: 10;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  transition-property: opacity;
+  opacity: 0;
+}
+
+@supports (position-area: block-start) {
+  .tooltip::before {
+    position: fixed;
+    position-anchor: auto;
+    position-area: block-start;
+    position-try-fallbacks: flip-block, flip-inline;
+    inset: auto;
+    margin: 0.5rem;
+    transform: none;
+    transform-origin: center;
+  }
+}

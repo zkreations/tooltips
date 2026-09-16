@@ -28,13 +28,13 @@
   font-size: var(--tooltip-font-size, 0.875rem);
   font-weight: normal;
   line-height: var(--tooltip-line-height, 1.5);
-  opacity: var(--_o, 0);
   pointer-events: none;
   user-select: none;
   z-index: var(--tooltip-z-index, 10);
-  transition-property: opacity, transform;
   transition-duration: var(--tooltip-duration, 0.2s);
   transition-timing-function: var(--tooltip-easing, ease);
+  transition-property: opacity, transform;
+  opacity: var(--_o, 0);
 }
 
 @supports (position-area: block-start) {

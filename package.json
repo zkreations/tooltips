@@ -12,6 +12,8 @@
   "files": [
     "index.css",
     "index.min.css",
+    "compact.css",
+    "compact.min.css",
     "scss/**/*.scss"
   ],
   "style": "index.min.css",
@@ -22,16 +24,23 @@
       "default": "./index.min.css",
       "sass": "./scss/tooltip.scss"
     },
+    "./compact": {
+      "style": "./compact.min.css",
+      "default": "./compact.min.css",
+      "sass": "./scss/compact.scss"
+    },
     "./index.css": "./index.css",
     "./index.min.css": "./index.min.css",
+    "./compact.css": "./compact.css",
+    "./compact.min.css": "./compact.min.css",
     "./scss/*": "./scss/*"
   },
   "scripts": {
     "start": "pnpm watch:css",
     "compile": "pnpm run compile:css && pnpm run minify:css",
-    "compile:css": "sass --style expanded --no-source-map scss/tooltip.scss:index.css",
-    "minify:css": "lightningcss --minify --bundle --browserslist index.css -o index.min.css",
-    "watch:css": "sass --watch scss/tooltip.scss:index.css --style expanded --no-source-map",
+    "compile:css": "sass --style expanded --no-source-map scss/tooltip.scss:index.css scss/compact.scss:compact.css",
+    "minify:css": "lightningcss --minify --bundle --browserslist index.css -o index.min.css && lightningcss --minify --bundle --browserslist compact.css -o compact.min.css",
+    "watch:css": "sass --watch scss/tooltip.scss:index.css scss/compact.scss:compact.css --style expanded --no-source-map",
     "lint:css": "stylelint scss/**/*.scss --config .stylelintrc.json",
     "lint:css:fix": "stylelint scss/**/*.scss --config .stylelintrc.json --fix"
   },

@@ -1,21 +1,69 @@
 @use "variables";
 
-@mixin bubble {
+@function prop($name, $fallback, $customizable: true) {
+  @if $customizable {
+    @return var(#{$name}, #{$fallback});
+  }
+
+  @return $fallback;
+}
+
+@mixin bubble($customizable: true) {
   box-sizing: border-box;
-  max-width: var(--tooltip-max-width, #{variables.$max-width});
-  padding: var(--tooltip-padding, #{variables.$padding});
-  border-radius: var(--tooltip-border-radius, #{variables.$border-radius});
-  background-color: var(--tooltip-bg, #{variables.$background});
-  color: var(--tooltip-color, #{variables.$color});
-  font-family: var(--tooltip-font-family, #{variables.$font-family});
-  font-size: var(--tooltip-font-size, #{variables.$font-size});
+  max-width: prop('--tooltip-max-width', variables.$max-width, $customizable);
+  padding: prop('--tooltip-padding', variables.$padding, $customizable);
+  border-radius: prop('--tooltip-border-radius', variables.$border-radius, $customizable);
+  background-color: prop('--tooltip-bg', variables.$background, $customizable);
+  color: prop('--tooltip-color', variables.$color, $customizable);
+  font-family: prop('--tooltip-font-family', variables.$font-family, $customizable);
+  font-size: prop('--tooltip-font-size', variables.$font-size, $customizable);
   font-weight: normal;
-  line-height: var(--tooltip-line-height, #{variables.$line-height});
-  opacity: var(--_o, 0);
+  line-height: prop('--tooltip-line-height', variables.$line-height, $customizable);
   pointer-events: none;
   user-select: none;
-  z-index: var(--tooltip-z-index, 10);
-  transition-property: opacity, transform;
-  transition-duration: var(--tooltip-duration, #{variables.$duration});
-  transition-timing-function: var(--tooltip-easing, ease);
+  z-index: prop('--tooltip-z-index', 10, $customizable);
+  transition-duration: prop('--tooltip-duration', variables.$duration, $customizable);
+  transition-timing-function: prop('--tooltip-easing', ease, $customizable);
+
+  @if $customizable {
+    transition-property: opacity, transform;
+    opacity: var(--_o, 0);
+  } @else {
+    transition-property: opacity;
+    opacity: 0;
+  }
+}
+
+@mixin fallback($customizable: true) {
+  content: attr(aria-label);
+  position: absolute;
+  bottom: calc(100% + #{prop('--tooltip-gap', variables.$gap, $customizable)});
+  left: 50%;
+
+  @if $customizable {
+    transform: translate(calc(-50% + var(--_x)), var(--_y)) scale(var(--_s));
+    transform-origin: center bottom;
+  } @else {
+    transform: translateX(-50%);
+    transform-origin: center bottom;
+  }
+
+  @include bubble($customizable);
+}
+
+@mixin anchor($customizable: true) {
+  position: fixed;
+  position-anchor: auto;
+  position-area: prop('--tooltip-area', block-start, $customizable);
+  position-try-fallbacks: prop('--tooltip-fallbacks', (flip-block, flip-inline), $customizable);
+  inset: auto;
+  margin: prop('--tooltip-gap', variables.$gap, $customizable);
+
+  @if $customizable {
+    transform: translate(var(--_x), var(--_y)) scale(var(--_s));
+    transform-origin: var(--tooltip-origin, center);
+  } @else {
+    transform: none;
+    transform-origin: center;
+  }
 }

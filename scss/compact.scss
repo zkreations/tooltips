@@ -1,0 +1,20 @@
+@use "inc/mixin";
+
+.tooltip {
+  position: relative;
+
+  &:is(:hover, :focus-visible, [data-tooltip-visible])::before {
+    opacity: 1;
+  }
+
+  &::before {
+    @include mixin.fallback(false);
+  }
+}
+
+@supports (position-area: block-start) {
+  .tooltip::before {
+    @include mixin.anchor(false);
+  }
+}
+
