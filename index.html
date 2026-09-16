@@ -1,95 +1,215 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tooltips</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@zkreations/tooltips@4/tooltips.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <style>
-    *,
-    ::after,
-    ::before {
-      box-sizing: border-box;
-    }
-
-    body {
-      color: #fff;
-      background-color: #0f0f13;
-      line-height: 1.75;
-    }
-
-    .demo {
-      padding: 4rem 2rem;
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 900px;
-    }
-    .demo-title {
-      font-size: 2rem;
-      margin: 0;
-    }
-    .demo-text {
-      font-size: 1.125rem;
-      color: #c6c6d2;
-    }
-    .demo-button {
-      text-align: center;
-      padding: 1.125rem;
-      cursor: default;
-      color: #fff;
-      background: #2d2d39;
-      padding: 0.75rem 1rem;
-      border-radius: 0.25rem;
-      box-shadow: 0 2px 1px -1px rgba(255, 255, 255, 0.1) inset, 0 1px 3px -1px black;
-    }
-    .demo-columns {
-      margin-top: 2rem;
-      margin-bottom: 2rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
-      gap: 1rem;
-      padding: 1rem;
-      background-color: rgba(0, 0, 0, 0.75);
-      border-radius: 0.5rem;
-    }
-
-    .tts-slideIn {
-      --tts-start-translate: -1rem;
-    }
-    .tts-slideOut {
-      --tts-start-translate: 1rem;
-    }
-    .tts-zoomIn {
-      --tts-start-scale: 0.8;
-    }
-    .tts-zoomOut {
-      --tts-start-scale: 1.2;
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@zkreations/tooltips@5/index.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="demo">
-    <h1 class="demo-title">Tooltips</h1>
-    <p class="demo-text">The tooltip can be displayed in different orientations, and two of them can be combined to align the tooltip with the edges.</p>
-    <div class="demo-columns">
-      <span class="demo-button" data-tts="" aria-label="Up">up</span>
-      <span class="demo-button" data-tts="left" aria-label="Left">left</span>
-      <span class="demo-button" data-tts="right" aria-label="Right">right</span>
-      <span class="demo-button" data-tts="down" aria-label="Down">down</span>
-      <span class="demo-button" data-tts="up-left" aria-label="Top-Left">up-left</span>
-      <span class="demo-button" data-tts="up-right" aria-label="Top-Right">up-right</span>
-      <span class="demo-button" data-tts="down-left" aria-label="Bottom-Left">down-left</span>
-      <span class="demo-button" data-tts="down-right" aria-label="Bottom-Right">down-right</span>
+  <header class="header">
+    <div class="container">
+      <div class="header-wrapper">
+        <div class="brand-group">
+          <button data-copy-npm="npm i -D @zkreations/tooltips" class="brand-logo tooltip" aria-label="Copy npm command">
+            <svg class="i i-npm" viewBox="0 0 24 24">
+              <path d="M3 21h18V3H3Zm11-10v10"/>
+            </svg>
+            @zkreations/tooltips
+          </button>
+        </div>
+        <div class="header-actions i-md">
+          <a href="https://github.com/zkreations/tooltips" class="action-btn tooltip" target="_blank" rel="noopener noreferrer" title="GitHub Repository" aria-label="GitHub repository">
+            <svg viewBox="0 0 24 24" class="i i-github"><path d="M9 22v-3q0-2 1-3A7 6.5 0 015 5Q4 3 5 1q3 0 4 2 3-1 6 0 2-2 4-2 1 2 0 4a7 6.5 0 01-5 11q1 1 1 3v3M2 17c2 0 3 4 7 2"></path></svg>
+          </a>
+          <a href="https://x.com/intent/tweet?text=Check%20out%20the%20new%20Tooltips%20library&url=https%3A%2F%2Fgithub.com%2Fzkreations%2Ftooltips" class="action-btn tooltip" target="_blank" rel="noopener noreferrer" title="Twitter Share" aria-label="Twitter share">
+            <svg viewBox="0 0 24 24" class="i i-x"><path d="m3 21 7.54-7.54m2.92-2.92L21 3M8 3H3l13 18h5Z"></path></svg>
+          </a>
+        </div>
+      </div>
     </div>
-    <p class="demo-text">In order to keep the code as small as possible, you won't find animations here, but you can easily create them with CSS variables.</p>
-    <div class="demo-columns">
-      <span class="demo-button tts-slideIn" data-tts="up" aria-label="Hello world">Slide In</span>
-      <span class="demo-button tts-slideOut" data-tts="up" aria-label="Hello world">Slide Out</span>
-      <span class="demo-button tts-zoomIn" data-tts="up" aria-label="Hello world">Zoom In</span>
-      <span class="demo-button tts-zoomOut" data-tts="up" aria-label="Hello world">Zoom Out</span>
+  </header>
+
+  <main class="main-content container">
+
+    <section class="hero-section" id="playground">
+      <div class="hero-header">
+        <div class="pill-feature">
+          <span>100% Pure CSS · Zero JavaScript · ~0.5 KB Brotli</span>
+        </div>
+        <h1 class="hero-title">Tooltips with Anchor Positioning</h1>
+        <p class="hero-description">
+          Dynamically calculates viewport space leveraging CSS Anchor Positioning. Zero runtime JavaScript libraries, zero dependencies, automatic collision handling, and instant rendering without layout shifts.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-container" id="positions">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2 class="section-title">CSS-Defined Positions</h2>
+          <span class="section-pill">Pure CSS Properties</span>
+        </div>
+        <p class="section-desc">
+          The core does not ship eight rigid orientation classes. The bubble uses the native <code>position-area</code> property exposed via <code>--tooltip-area</code>, letting you place the tooltip wherever your layout demands.
+        </p>
+      </div>
+
+      <div class="cards auto-fill">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Direction: Top</span>
+            <span class="card-tag">block-start</span>
+          </div>
+          <div class="card-stage">
+            <button type="button" class="tooltip btn pos-top" aria-label="Tooltip on top">
+              Trigger Top
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Direction: Right</span>
+            <span class="card-tag">inline-end</span>
+          </div>
+          <div class="card-stage">
+            <button type="button" class="tooltip btn pos-right" aria-label="Tooltip on right">
+              Trigger Right
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Direction: Bottom</span>
+            <span class="card-tag">block-end</span>
+          </div>
+          <div class="card-stage">
+            <button type="button" class="tooltip btn pos-bottom" aria-label="Tooltip on bottom">
+              Trigger Bottom
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Direction: Left</span>
+            <span class="card-tag">inline-start</span>
+          </div>
+          <div class="card-stage">
+            <button type="button" class="tooltip btn pos-left" aria-label="Tooltip on left">
+              Trigger Left
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-container" id="animations">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2 class="section-title">Animations & Transitions</h2>
+          <span class="section-pill">Hardware-Accelerated</span>
+        </div>
+        <p class="section-desc">
+          Customize tooltip entry and exit transitions at 60 FPS using CSS variables. Adjust initial offsets, scale, duration, and easing curves without touching the core bundle.
+        </p>
+      </div>
+
+      <div class="cards auto-fill">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Elevation (Lift)</span>
+            <span class="card-tag">translateY</span>
+          </div>
+          <div class="card-stage">
+            <button type="button" class="tooltip btn anim-lift" aria-label="Smooth vertical lift">
+              Hover me
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Scale (Pop)</span>
+            <span class="card-tag">scale(0.75)</span>
+          </div>
+          <div class="card-stage">
+            <button type="button" class="tooltip btn anim-pop" aria-label="Smooth scale effect">
+              Hover me
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Combined Bounce</span>
+            <span class="card-tag">cubic-bezier</span>
+          </div>
+          <div class="card-stage">
+            <button type="button" class="tooltip btn anim-bounce" aria-label="Elastic bounce and scale">
+              Hover me
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-container" id="themes">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2 class="section-title">Customization & Visual Variants</h2>
+          <span class="section-pill">Customizable</span>
+        </div>
+        <p class="section-desc">
+          Modify backgrounds, text colors, borders, radius, and paddings. Tooltips effortlessly adapt to your design system.
+        </p>
+      </div>
+
+      <div class="cards auto-fill">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">High Contrast</span>
+            <span class="card-tag">WCAG AAA</span>
+          </div>
+          <div class="card-stage">
+            <button type="button" class="tooltip btn theme-contrast" aria-label="Maximum readability and contrast" data-tooltip-visible>
+              Contrast Theme
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Brand Accent</span>
+            <span class="card-tag">Vibrant Blue</span>
+          </div>
+          <div class="card-stage">
+            <button type="button" class="tooltip btn theme-brand" aria-label="Accented brand color" data-tooltip-visible>
+              Brand Theme
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-wrapper">
+        <div class="footer-brand">
+          <span>Created by <a href="https://zkreations.com" target="_blank" rel="noopener noreferrer">zkreations</a></span>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/zkreations/tooltips" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+          <a href="https://github.com/zkreations/tooltips/issues" target="_blank" rel="noopener noreferrer">Issues</a>
+          <a href="https://ko-fi.com/zkreations" target="_blank" rel="noopener noreferrer">Support on Ko-fi</a>
+        </div>
+      </div>
     </div>
-  </div>
+  </footer>
 </body>
 </html>

@@ -1,0 +1,21 @@
+
+.btn {
+  padding: 0.5rem 1rem;
+  background-color: var(--surface-container);
+  border: 1px solid var(--outline-variant);
+  font-size: .875rem;
+  font-weight: 500;
+  color: var(--on-surface);
+  box-shadow: 0 1px 2px var(--shadow-color);
+  transition: all 0.15s ease;
+
+  &:hover {
+    background-color: var(--surface-variant);
+    border-color: var(--outline);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+}

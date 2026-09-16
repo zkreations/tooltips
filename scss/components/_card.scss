@@ -1,0 +1,44 @@
+.cards {
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.card {
+  background-color: var(--surface-container);
+  border: 1px solid var(--outline-variant);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover {
+    border-color: var(--outline);
+    box-shadow: 0 4px 12px var(--shadow-color);
+  }
+
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--outline-variant);
+    padding-bottom: 0.75rem;
+  }
+
+  &-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  &-stage {
+    min-height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: var(--surface-container-low);
+    border: 1px solid var(--outline-subtle);
+    padding: 1rem;
+  }
+}

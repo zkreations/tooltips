@@ -1,0 +1,13 @@
+.i {
+  stroke-width: var(--i-stroke, 2);
+  width: var(--i-size, 24px);
+  height: var(--i-size, 24px);
+  stroke: var(--i-color, currentColor);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+
+  &-md {
+    --i-size: 20px;
+  }
+}

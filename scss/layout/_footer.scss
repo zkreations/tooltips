@@ -1,0 +1,37 @@
+.footer {
+  background-color: var(--surface);
+  border-top: 1px solid var(--outline-variant);
+  padding-top: clamp(1rem, 5vw, 1.5rem);
+  padding-bottom: clamp(1rem, 5vw, 1.5rem);
+}
+
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: var(--on-surface-variant);
+
+  @media (width >= 768px) {
+    flex-direction: row;
+  }
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+
+  a:hover {
+    color: var(--on-surface);
+  }
+}

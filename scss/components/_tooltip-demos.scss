@@ -1,0 +1,51 @@
+.pos-top {
+  --tooltip-area: block-start;
+}
+
+.pos-right {
+  --tooltip-area: inline-end;
+}
+
+.pos-bottom {
+  --tooltip-area: block-end;
+}
+
+.pos-left {
+  --tooltip-area: inline-start;
+}
+
+.anim-lift {
+  --tooltip-duration: 0.25s;
+  --tooltip-start-y: 8px;
+  --tooltip-end-y: 0;
+}
+
+.anim-pop {
+  --tooltip-duration: 0.2s;
+  --tooltip-start-scale: 0.75;
+  --tooltip-end-scale: 1;
+}
+
+.anim-bounce {
+  --tooltip-duration: 0.4s;
+  --tooltip-easing: cubic-bezier(0.16, 1, 0.3, 1);
+  --tooltip-start-scale: 0.85;
+  --tooltip-start-y: 8px;
+  --tooltip-end-y: 0;
+}
+
+.theme-contrast {
+  --tooltip-bg: var(--inverse-surface-contrast);
+  --tooltip-color: var(--inverse-on-surface);
+  --tooltip-font-size: 0.875rem;
+  --tooltip-border-radius: 2px;
+  --tooltip-padding: 0.5em 0.8em;
+}
+
+.theme-brand {
+  --tooltip-bg: var(--primary);
+  --tooltip-color: var(--on-primary);
+  --tooltip-border-radius: 6px;
+  --tooltip-padding: 0.5em 0.85em;
+  --tooltip-gap: 0.4rem;
+}

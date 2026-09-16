@@ -1,0 +1,14 @@
+.brand {
+  &-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  &-logo {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+  }
+}

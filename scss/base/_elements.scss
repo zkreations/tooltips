@@ -1,0 +1,39 @@
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/static/fonts/Inter-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/static/fonts/Inter-Medium.woff2") format("woff2");
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  font-family: var(--font-primary, sans-serif);
+  background-color: var(--surface);
+  color: var(--on-surface);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+}
+
+:not(pre)>code {
+  padding: .2em .4em;
+  white-space: nowrap;
+  background-color: var(--surface-variant);
+  font-weight: 400;
+  font-size: .875rem;
+}
