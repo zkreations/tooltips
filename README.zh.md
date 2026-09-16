@@ -185,9 +185,9 @@ import '@zkreations/tooltips/index.min.css';
 
 ## 精简版本
 
-如果您不想使用 CSS 变量并追求尽可能小的体积，本项目提供了精简版本（`compact.css` / `compact.min.css`），保留了基于 CSS Anchor Positioning 的自动定位以及针对不支持浏览器的回退方案。
+如果您不想使用 CSS 变量并追求尽可能小的体积，本项目提供了精简版本（[compact.css](compact.css) / `compact.min.css`），保留了基于 CSS Anchor Positioning 的自动定位以及针对不支持浏览器的回退方案。
 
-鉴于其体积极小（未压缩约 1 KB，压缩后约 800 B），建议直接将 `compact.css` 的内容复制并粘贴到您的项目样式表中，而不是作为外部依赖引入。这样您无需通过变量即可直接在 CSS 中完全自定义提示框的样式。
+鉴于其体积极小（未压缩约 1 KB，压缩后约 800 B），建议直接将 [compact.css](compact.css) 的内容复制并粘贴到您的项目样式表中，而不是作为外部依赖引入。这样您无需通过变量即可直接在 CSS 中完全自定义提示框的样式。
 
 如果您仍想从包中直接引入：
 
