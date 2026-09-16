@@ -105,12 +105,12 @@ Ajouter la classe `.tooltip` et l'attribut `aria-label` à n'importe quel élém
 
 ### Positionnement
 
-Les tooltips apparaissent en haut (`block-start`) par défaut et basculent automatiquement du côté opposé (`flip-block`) lorsque l'espace est insuffisant :
+Les tooltips apparaissent en haut (`block-start`) par défaut et basculent automatiquement (`flip-block, flip-inline`) lorsque l'espace est insuffisant :
 
 ```css
 .tooltip::before {
   position-area: var(--tooltip-area, block-start);
-  position-try-fallbacks: var(--tooltip-fallbacks, flip-block);
+  position-try-fallbacks: flip-block, flip-inline;
 }
 ```
 
@@ -127,7 +127,7 @@ Pour forcer une position sans basculement automatique :
 ```css
 .tooltip--fixed-right {
   --tooltip-area: inline-end;
-  --tooltip-fallbacks: none;
+  position-try-fallbacks: none;
 }
 ```
 
@@ -148,8 +148,7 @@ Surcharger les propriétés CSS pour ajuster l'apparence :
 | Variable | Valeur par défaut | Description |
 | --- | --- | --- |
 | `--tooltip-area` | `block-start` | Zone de position relative à l'ancre |
-| `--tooltip-fallbacks` | `flip-block` | Positions de fallback si rognée |
-| `--tooltip-gap` | `0.25rem` | Espacement entre l'ancre et le tooltip |
+| `--tooltip-gap` | `0.5rem` | Espacement entre l'ancre et le tooltip |
 | `--tooltip-bg` | `rgb(0 0 0 / 90%)` | Couleur de fond |
 | `--tooltip-color` | `#fff` | Couleur du texte |
 | `--tooltip-font-size` | `0.875rem` | Taille de police |
@@ -161,6 +160,7 @@ Surcharger les propriétés CSS pour ajuster l'apparence :
 | `--tooltip-duration` | `0.2s` | Durée de la transition |
 | `--tooltip-easing` | `ease` | Fonction de temporisation |
 | `--tooltip-scale` | `1` | Échelle de la bulle |
+| `--tooltip-origin` | `center` | Origine de transformation |
 | `--tooltip-x` | `0` | Décalage horizontal |
 | `--tooltip-y` | `0` | Décalage vertical |
 | `--tooltip-start-scale` | `--tooltip-scale` | Échelle initiale |
@@ -184,7 +184,7 @@ Exemple :
 
 ## Sans flèche, par conception
 
-La v5 n'inclut pas de flèche en pseudo-élément (`::after`). `flip-block` modifie le placement de la bulle sans communiquer les changements d'orientation aux bordures des pseudo-éléments de façon cohérente entre les navigateurs, ce qui produit des bugs visuels. Omettre la flèche évite ces bugs et réduit la taille de la feuille de styles.
+La v5 n'inclut pas de flèche en pseudo-élément (`::after`). `flip-block` et `flip-inline` modifient le placement de la bulle sans communiquer les changements d'orientation aux bordures des pseudo-éléments de façon cohérente entre les navigateurs, ce qui produit des bugs visuels. Omettre la flèche évite ces bugs et réduit la taille de la feuille de styles.
 
 ## Compatibilité des navigateurs
 

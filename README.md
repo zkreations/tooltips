@@ -105,12 +105,12 @@ Add the `.tooltip` class and the `aria-label` attribute to any HTML element:
 
 ### Positioning
 
-Tooltips appear at the top (`block-start`) by default and flip automatically to the opposite side (`flip-block`) when space is limited:
+Tooltips appear at the top (`block-start`) by default and flip automatically (`flip-block, flip-inline`) when space is limited:
 
 ```css
 .tooltip::before {
   position-area: var(--tooltip-area, block-start);
-  position-try-fallbacks: var(--tooltip-fallbacks, flip-block);
+  position-try-fallbacks: flip-block, flip-inline;
 }
 ```
 
@@ -127,7 +127,7 @@ To force a position without automatic flipping:
 ```css
 .tooltip--fixed-right {
   --tooltip-area: inline-end;
-  --tooltip-fallbacks: none;
+  position-try-fallbacks: none;
 }
 ```
 
@@ -148,8 +148,7 @@ Override CSS variables to adjust the appearance:
 | Variable | Default | Description |
 | --- | --- | --- |
 | `--tooltip-area` | `block-start` | Position area relative to anchor |
-| `--tooltip-fallbacks` | `flip-block` | Fallback positions if clipped |
-| `--tooltip-gap` | `0.25rem` | Spacing between anchor and tooltip |
+| `--tooltip-gap` | `0.5rem` | Spacing between anchor and tooltip |
 | `--tooltip-bg` | `rgb(0 0 0 / 90%)` | Background color |
 | `--tooltip-color` | `#fff` | Text color |
 | `--tooltip-font-size` | `0.875rem` | Font size |
@@ -161,6 +160,7 @@ Override CSS variables to adjust the appearance:
 | `--tooltip-duration` | `0.2s` | Transition duration |
 | `--tooltip-easing` | `ease` | Transition timing function |
 | `--tooltip-scale` | `1` | Bubble scale |
+| `--tooltip-origin` | `center` | Transform origin |
 | `--tooltip-x` | `0` | Horizontal offset |
 | `--tooltip-y` | `0` | Vertical offset |
 | `--tooltip-start-scale` | `--tooltip-scale` | Initial scale |
@@ -184,7 +184,7 @@ Example:
 
 ## No arrow by design
 
-v5 does not include a pseudo-element arrow (`::after`). `flip-block` changes bubble placement without communicating orientation changes to pseudo-element borders consistently across browsers, which produces visual bugs. Omitting the arrow avoids those bugs and keeps the stylesheet smaller.
+v5 does not include a pseudo-element arrow (`::after`). `flip-block` and `flip-inline` change bubble placement without communicating orientation changes to pseudo-element borders consistently across browsers, which produces visual bugs. Omitting the arrow avoids those bugs and keeps the stylesheet smaller.
 
 ## Browser compatibility
 

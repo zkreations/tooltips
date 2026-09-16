@@ -105,12 +105,12 @@ Añadir la clase `.tooltip` y el atributo `aria-label` a cualquier elemento HTML
 
 ### Posicionamiento
 
-Los tooltips aparecen arriba (`block-start`) por defecto y se desplazan automáticamente al lado opuesto (`flip-block`) cuando el espacio es insuficiente:
+Los tooltips aparecen arriba (`block-start`) por defecto y se desplazan automáticamente (`flip-block, flip-inline`) cuando el espacio es insuficiente:
 
 ```css
 .tooltip::before {
   position-area: var(--tooltip-area, block-start);
-  position-try-fallbacks: var(--tooltip-fallbacks, flip-block);
+  position-try-fallbacks: flip-block, flip-inline;
 }
 ```
 
@@ -127,7 +127,7 @@ Para forzar una posición sin desplazamiento automático:
 ```css
 .tooltip--fixed-right {
   --tooltip-area: inline-end;
-  --tooltip-fallbacks: none;
+  position-try-fallbacks: none;
 }
 ```
 
@@ -148,8 +148,7 @@ Sobreescribir las propiedades CSS para ajustar la apariencia:
 | Variable | Valor por defecto | Descripción |
 | --- | --- | --- |
 | `--tooltip-area` | `block-start` | Área de posición relativa al ancla |
-| `--tooltip-fallbacks` | `flip-block` | Posiciones de fallback si se recorta |
-| `--tooltip-gap` | `0.25rem` | Separación entre el ancla y el tooltip |
+| `--tooltip-gap` | `0.5rem` | Separación entre el ancla y el tooltip |
 | `--tooltip-bg` | `rgb(0 0 0 / 90%)` | Color de fondo |
 | `--tooltip-color` | `#fff` | Color del texto |
 | `--tooltip-font-size` | `0.875rem` | Tamaño de fuente |
@@ -161,6 +160,7 @@ Sobreescribir las propiedades CSS para ajustar la apariencia:
 | `--tooltip-duration` | `0.2s` | Duración de la transición |
 | `--tooltip-easing` | `ease` | Función de temporización de la transición |
 | `--tooltip-scale` | `1` | Escala de la burbuja |
+| `--tooltip-origin` | `center` | Origen de transformación |
 | `--tooltip-x` | `0` | Desplazamiento horizontal |
 | `--tooltip-y` | `0` | Desplazamiento vertical |
 | `--tooltip-start-scale` | `--tooltip-scale` | Escala inicial |
@@ -184,7 +184,7 @@ Ejemplo:
 
 ## Sin flecha, por diseño
 
-La v5 no incluye una flecha como pseudo-elemento (`::after`). `flip-block` cambia la posición de la burbuja sin comunicar el cambio de orientación a los bordes de pseudo-elementos de forma consistente en todos los navegadores, lo que produce errores visuales. Omitir la flecha evita esos errores y mantiene la hoja de estilos más pequeña.
+La v5 no incluye una flecha como pseudo-elemento (`::after`). `flip-block` y `flip-inline` cambian la posición de la burbuja sin comunicar el cambio de orientación a los bordes de pseudo-elementos de forma consistente en todos los navegadores, lo que produce errores visuales. Omitir la flecha evita esos errores y mantiene la hoja de estilos más pequeña.
 
 ## Compatibilidad con navegadores
 

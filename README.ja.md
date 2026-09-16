@@ -105,12 +105,12 @@ import '@zkreations/tooltips/index.min.css';
 
 ### ポジショニング
 
-ツールチップはデフォルトで上部（`block-start`）に表示され、スペースが不足した場合は自動的に反対側（`flip-block`）へ切り替わります：
+ツールチップはデフォルトで上部（`block-start`）に表示され、スペースが不足した場合は自動的に反転（`flip-block, flip-inline`）します：
 
 ```css
 .tooltip::before {
   position-area: var(--tooltip-area, block-start);
-  position-try-fallbacks: var(--tooltip-fallbacks, flip-block);
+  position-try-fallbacks: flip-block, flip-inline;
 }
 ```
 
@@ -127,7 +127,7 @@ import '@zkreations/tooltips/index.min.css';
 ```css
 .tooltip--fixed-right {
   --tooltip-area: inline-end;
-  --tooltip-fallbacks: none;
+  position-try-fallbacks: none;
 }
 ```
 
@@ -148,8 +148,7 @@ CSS 変数を上書きして外観を調整します：
 | 変数 | デフォルト値 | 説明 |
 | --- | --- | --- |
 | `--tooltip-area` | `block-start` | アンカーを基準とした位置エリア |
-| `--tooltip-fallbacks` | `flip-block` | クリップされた場合のフォールバック位置 |
-| `--tooltip-gap` | `0.25rem` | アンカーとツールチップの間隔 |
+| `--tooltip-gap` | `0.5rem` | アンカーとツールチップの間隔 |
 | `--tooltip-bg` | `rgb(0 0 0 / 90%)` | 背景色 |
 | `--tooltip-color` | `#fff` | テキスト色 |
 | `--tooltip-font-size` | `0.875rem` | フォントサイズ |
@@ -161,6 +160,7 @@ CSS 変数を上書きして外観を調整します：
 | `--tooltip-duration` | `0.2s` | トランジションの時間 |
 | `--tooltip-easing` | `ease` | トランジションのタイミング関数 |
 | `--tooltip-scale` | `1` | バブルのスケール |
+| `--tooltip-origin` | `center` | 変形の基点 |
 | `--tooltip-x` | `0` | 水平オフセット |
 | `--tooltip-y` | `0` | 垂直オフセット |
 | `--tooltip-start-scale` | `--tooltip-scale` | 初期スケール |
@@ -184,7 +184,7 @@ CSS 変数を上書きして外観を調整します：
 
 ## 矢印なし、それが設計上の選択
 
-v5 は擬似要素の矢印（`::after`）を含んでいません。`flip-block` はバブルの配置を変えますが、その方向の変化をすべてのブラウザで一貫して擬似要素の境界線に伝えることができず、視覚的なバグを引き起こします。矢印を省略することでそれらのバグを回避し、スタイルシートをより小さく保ちます。
+v5 は擬似要素の矢印（`::after`）を含んでいません。`flip-block` および `flip-inline` はバブルの配置を変えますが、その方向の変化をすべてのブラウザで一貫して擬似要素の境界線に伝えることができず、視覚的なバグを引き起こします。矢印を省略することでそれらのバグを回避し、スタイルシートをより小さく保ちます。
 
 ## ブラウザ互換性
 

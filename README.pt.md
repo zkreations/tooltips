@@ -105,12 +105,12 @@ Adicionar a classe `.tooltip` e o atributo `aria-label` a qualquer elemento HTML
 
 ### Posicionamento
 
-Os tooltips aparecem acima (`block-start`) por padrão e alternam automaticamente para o lado oposto (`flip-block`) quando o espaço é insuficiente:
+Os tooltips aparecem acima (`block-start`) por padrão e alternam automaticamente (`flip-block, flip-inline`) quando o espaço é insuficiente:
 
 ```css
 .tooltip::before {
   position-area: var(--tooltip-area, block-start);
-  position-try-fallbacks: var(--tooltip-fallbacks, flip-block);
+  position-try-fallbacks: flip-block, flip-inline;
 }
 ```
 
@@ -127,7 +127,7 @@ Para forçar uma posição sem alternância automática:
 ```css
 .tooltip--fixed-right {
   --tooltip-area: inline-end;
-  --tooltip-fallbacks: none;
+  position-try-fallbacks: none;
 }
 ```
 
@@ -148,8 +148,7 @@ Sobrescrever as propriedades CSS para ajustar a aparência:
 | Variável | Valor padrão | Descrição |
 | --- | --- | --- |
 | `--tooltip-area` | `block-start` | Área de posição relativa à âncora |
-| `--tooltip-fallbacks` | `flip-block` | Posições de fallback se recortado |
-| `--tooltip-gap` | `0.25rem` | Espaçamento entre âncora e tooltip |
+| `--tooltip-gap` | `0.5rem` | Espaçamento entre âncora e tooltip |
 | `--tooltip-bg` | `rgb(0 0 0 / 90%)` | Cor de fundo |
 | `--tooltip-color` | `#fff` | Cor do texto |
 | `--tooltip-font-size` | `0.875rem` | Tamanho da fonte |
@@ -161,6 +160,7 @@ Sobrescrever as propriedades CSS para ajustar a aparência:
 | `--tooltip-duration` | `0.2s` | Duração da transição |
 | `--tooltip-easing` | `ease` | Função de temporização da transição |
 | `--tooltip-scale` | `1` | Escala da bolha |
+| `--tooltip-origin` | `center` | Origem da transformação |
 | `--tooltip-x` | `0` | Deslocamento horizontal |
 | `--tooltip-y` | `0` | Deslocamento vertical |
 | `--tooltip-start-scale` | `--tooltip-scale` | Escala inicial |
@@ -184,7 +184,7 @@ Exemplo:
 
 ## Sem seta, por design
 
-A v5 não inclui uma seta como pseudo-elemento (`::after`). `flip-block` altera o posicionamento da bolha sem comunicar as mudanças de orientação às bordas dos pseudo-elementos de forma consistente entre os navegadores, o que produz bugs visuais. Omitir a seta evita esses bugs e mantém a folha de estilos menor.
+A v5 não inclui uma seta como pseudo-elemento (`::after`). `flip-block` e `flip-inline` alteram o posicionamento da bolha sem comunicar as mudanças de orientação às bordas dos pseudo-elementos de forma consistente entre os navegadores, o que produz bugs visuais. Omitir a seta evita esses bugs e mantém a folha de estilos menor.
 
 ## Compatibilidade com navegadores
 

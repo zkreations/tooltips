@@ -105,12 +105,12 @@ import '@zkreations/tooltips/index.min.css';
 
 ### 定位
 
-工具提示默认显示在顶部（`block-start`），当空间不足时自动切换到对侧（`flip-block`）：
+工具提示默认显示在顶部（`block-start`），当空间不足时自动切换（`flip-block, flip-inline`）：
 
 ```css
 .tooltip::before {
   position-area: var(--tooltip-area, block-start);
-  position-try-fallbacks: var(--tooltip-fallbacks, flip-block);
+  position-try-fallbacks: flip-block, flip-inline;
 }
 ```
 
@@ -127,7 +127,7 @@ import '@zkreations/tooltips/index.min.css';
 ```css
 .tooltip--fixed-right {
   --tooltip-area: inline-end;
-  --tooltip-fallbacks: none;
+  position-try-fallbacks: none;
 }
 ```
 
@@ -148,8 +148,7 @@ import '@zkreations/tooltips/index.min.css';
 | 变量 | 默认值 | 描述 |
 | --- | --- | --- |
 | `--tooltip-area` | `block-start` | 相对于锚点的位置区域 |
-| `--tooltip-fallbacks` | `flip-block` | 被裁剪时的回退位置 |
-| `--tooltip-gap` | `0.25rem` | 锚点与工具提示之间的间距 |
+| `--tooltip-gap` | `0.5rem` | 锚点与工具提示之间的间距 |
 | `--tooltip-bg` | `rgb(0 0 0 / 90%)` | 背景颜色 |
 | `--tooltip-color` | `#fff` | 文字颜色 |
 | `--tooltip-font-size` | `0.875rem` | 字体大小 |
@@ -161,6 +160,7 @@ import '@zkreations/tooltips/index.min.css';
 | `--tooltip-duration` | `0.2s` | 过渡持续时间 |
 | `--tooltip-easing` | `ease` | 过渡时间函数 |
 | `--tooltip-scale` | `1` | 气泡缩放比例 |
+| `--tooltip-origin` | `center` | 变换原点 |
 | `--tooltip-x` | `0` | 水平偏移 |
 | `--tooltip-y` | `0` | 垂直偏移 |
 | `--tooltip-start-scale` | `--tooltip-scale` | 初始缩放比例 |
@@ -184,7 +184,7 @@ import '@zkreations/tooltips/index.min.css';
 
 ## 设计上不含箭头
 
-v5 不包含伪元素箭头（`::after`）。`flip-block` 改变气泡位置时，无法在所有浏览器中一致地将方向变化传达给伪元素边框，这会产生视觉错误。省略箭头可避免这些错误并保持样式表更小。
+v5 不包含伪元素箭头（`::after`）。`flip-block` 与 `flip-inline` 改变气泡位置时，无法在所有浏览器中一致地将方向变化传达给伪元素边框，这会产生视觉错误。省略箭头可避免这些错误并保持样式表更小。
 
 ## 浏览器兼容性
 
