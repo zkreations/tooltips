@@ -1,51 +1,48 @@
 .pos-top {
-  --tooltip-area: block-start;
+  --tt-area: block-start;
 }
 
 .pos-right {
-  --tooltip-area: inline-end;
+  --tt-area: inline-end;
 }
 
 .pos-bottom {
-  --tooltip-area: block-end;
+  --tt-area: block-end;
 }
 
 .pos-left {
-  --tooltip-area: inline-start;
+  --tt-area: inline-start;
 }
 
 .anim-lift {
-  --tooltip-duration: 0.25s;
-  --tooltip-start-y: 8px;
-  --tooltip-end-y: 0;
+  --tt-duration: 0.25s;
+  --tt-start: translateY(0.5rem);
 }
 
 .anim-pop {
-  --tooltip-duration: 0.2s;
-  --tooltip-start-scale: 0.75;
-  --tooltip-end-scale: 1;
+  --tt-duration: 0.2s;
+  --tt-start: scale(0.8);
 }
 
 .anim-bounce {
-  --tooltip-duration: 0.4s;
-  --tooltip-easing: cubic-bezier(0.16, 1, 0.3, 1);
-  --tooltip-start-scale: 0.85;
-  --tooltip-start-y: 8px;
-  --tooltip-end-y: 0;
+  --tt-duration: 0.4s;
+  --tt-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --tt-start: translateY(0.5rem) scale(0.85);
 }
 
 .theme-contrast {
-  --tooltip-bg: var(--inverse-surface-contrast);
-  --tooltip-color: var(--inverse-on-surface);
-  --tooltip-font-size: 0.875rem;
-  --tooltip-border-radius: 2px;
-  --tooltip-padding: 0.5em 0.8em;
+  --tt-bg: var(--inverse-surface-contrast);
+  --tt-color: var(--inverse-on-surface);
+  --tt-size: 0.875rem;
+  --tt-radius: 2px;
+  --tt-padding: 0.5em 0.8em;
 }
 
 .theme-brand {
-  --tooltip-bg: var(--primary);
-  --tooltip-color: var(--on-primary);
-  --tooltip-border-radius: 6px;
-  --tooltip-padding: 0.5em 0.85em;
-  --tooltip-gap: 0.4rem;
+  --tt-bg: #2563eb;
+  --tt-color: #fff;
+  --tt-radius: 8px;
+  --tt-padding: 8px 12px;
+  --tt-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+  --tt-gap: 0.5rem;
 }
