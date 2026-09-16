@@ -10,22 +10,23 @@
 
 @mixin bubble($customizable: true) {
   box-sizing: border-box;
-  max-width: prop('--tooltip-max-width', variables.$max-width, $customizable);
-  padding: prop('--tooltip-padding', variables.$padding, $customizable);
-  border: prop('--tooltip-border', variables.$border, $customizable);
-  border-radius: prop('--tooltip-border-radius', variables.$border-radius, $customizable);
-  background-color: prop('--tooltip-bg', variables.$background, $customizable);
-  color: prop('--tooltip-color', variables.$color, $customizable);
-  font-family: prop('--tooltip-font-family', variables.$font-family, $customizable);
-  font-size: prop('--tooltip-font-size', variables.$font-size, $customizable);
+  max-width: prop('--tt-max-width', variables.$max-width, $customizable);
+  padding: prop('--tt-padding', variables.$padding, $customizable);
+  border-radius: prop('--tt-radius', variables.$radius, $customizable);
+  background-color: prop('--tt-bg', variables.$background, $customizable);
+  color: prop('--tt-color', variables.$color, $customizable);
+  font-size: prop('--tt-size', variables.$size, $customizable);
   font-weight: normal;
-  line-height: prop('--tooltip-line-height', variables.$line-height, $customizable);
-  box-shadow: prop('--tooltip-box-shadow', variables.$box-shadow, $customizable);
+  line-height: variables.$line-height;
   pointer-events: none;
   user-select: none;
-  z-index: prop('--tooltip-z-index', 10, $customizable);
-  transition-duration: prop('--tooltip-duration', variables.$duration, $customizable);
-  transition-timing-function: prop('--tooltip-easing', ease, $customizable);
+  z-index: prop('--tt-z-index', 10, $customizable);
+  transition-duration: prop('--tt-duration', variables.$duration, $customizable);
+  transition-timing-function: prop('--tt-ease', ease, $customizable);
+
+  @if $customizable or variables.$shadow != none {
+    box-shadow: prop('--tt-shadow', variables.$shadow, $customizable);
+  }
 
   @if $customizable {
     transition-property: opacity, transform;
@@ -39,7 +40,7 @@
 @mixin fallback($customizable: true) {
   content: attr(aria-label);
   position: absolute;
-  bottom: calc(100% + #{prop('--tooltip-gap', variables.$gap, $customizable)});
+  bottom: calc(100% + #{prop('--tt-gap', variables.$gap, $customizable)});
   left: 50%;
 
   @if $customizable {
@@ -56,14 +57,14 @@
 @mixin anchor($customizable: true) {
   position: fixed;
   position-anchor: auto;
-  position-area: prop('--tooltip-area', block-start, $customizable);
-  position-try-fallbacks: prop('--tooltip-fallbacks', (flip-block, flip-inline), $customizable);
+  position-area: prop('--tt-area', block-start, $customizable);
+  position-try-fallbacks: prop('--tt-fallbacks', (flip-block, flip-inline), $customizable);
   inset: auto;
-  margin: prop('--tooltip-gap', variables.$gap, $customizable);
+  margin: prop('--tt-gap', variables.$gap, $customizable);
 
   @if $customizable {
     transform: translate(var(--_x), var(--_y)) scale(var(--_s));
-    transform-origin: var(--tooltip-origin, center);
+    transform-origin: var(--tt-origin, center);
   } @else {
     transform: none;
     transform-origin: center;

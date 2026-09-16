@@ -4,15 +4,15 @@
   position: relative;
 
   --_o: 0;
-  --_x: var(--tooltip-start-x, var(--tooltip-x, 0));
-  --_y: var(--tooltip-start-y, var(--tooltip-y, 0));
-  --_s: var(--tooltip-start-scale, var(--tooltip-scale, 1));
+  --_x: var(--tt-start-x, var(--tt-x, 0));
+  --_y: var(--tt-start-y, var(--tt-y, 0));
+  --_s: var(--tt-start-scale, var(--tt-scale, 1));
 
   &:is(:hover, :focus-visible, [data-tooltip-visible]) {
     --_o: 1;
-    --_x: var(--tooltip-end-x, var(--tooltip-x, 0));
-    --_y: var(--tooltip-end-y, var(--tooltip-y, 0));
-    --_s: var(--tooltip-end-scale, var(--tooltip-scale, 1));
+    --_x: var(--tt-end-x, var(--tt-x, 0));
+    --_y: var(--tt-end-y, var(--tt-y, 0));
+    --_s: var(--tt-end-scale, var(--tt-scale, 1));
   }
 
   &::before {

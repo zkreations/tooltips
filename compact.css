@@ -14,15 +14,12 @@
   box-sizing: border-box;
   max-width: 20rem;
   padding: 0.5em 0.75em;
-  border: none;
   border-radius: 0.25em;
   background-color: rgba(0, 0, 0, 0.9);
   color: #fff;
-  font-family: inherit;
   font-size: 0.875rem;
   font-weight: normal;
   line-height: 1.5;
-  box-shadow: none;
   pointer-events: none;
   user-select: none;
   z-index: 10;

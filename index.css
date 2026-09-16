@@ -1,40 +1,38 @@
 .tooltip {
   position: relative;
   --_o: 0;
-  --_x: var(--tooltip-start-x, var(--tooltip-x, 0));
-  --_y: var(--tooltip-start-y, var(--tooltip-y, 0));
-  --_s: var(--tooltip-start-scale, var(--tooltip-scale, 1));
+  --_x: var(--tt-start-x, var(--tt-x, 0));
+  --_y: var(--tt-start-y, var(--tt-y, 0));
+  --_s: var(--tt-start-scale, var(--tt-scale, 1));
 }
 .tooltip:is(:hover, :focus-visible, [data-tooltip-visible]) {
   --_o: 1;
-  --_x: var(--tooltip-end-x, var(--tooltip-x, 0));
-  --_y: var(--tooltip-end-y, var(--tooltip-y, 0));
-  --_s: var(--tooltip-end-scale, var(--tooltip-scale, 1));
+  --_x: var(--tt-end-x, var(--tt-x, 0));
+  --_y: var(--tt-end-y, var(--tt-y, 0));
+  --_s: var(--tt-end-scale, var(--tt-scale, 1));
 }
 .tooltip::before {
   content: attr(aria-label);
   position: absolute;
-  bottom: calc(100% + var(--tooltip-gap, 0.5rem));
+  bottom: calc(100% + var(--tt-gap, 0.5rem));
   left: 50%;
   transform: translate(calc(-50% + var(--_x)), var(--_y)) scale(var(--_s));
   transform-origin: center bottom;
   box-sizing: border-box;
-  max-width: var(--tooltip-max-width, 20rem);
-  padding: var(--tooltip-padding, 0.5em 0.75em);
-  border: var(--tooltip-border, none);
-  border-radius: var(--tooltip-border-radius, 0.25em);
-  background-color: var(--tooltip-bg, rgba(0, 0, 0, 0.9));
-  color: var(--tooltip-color, #fff);
-  font-family: var(--tooltip-font-family, inherit);
-  font-size: var(--tooltip-font-size, 0.875rem);
+  max-width: var(--tt-max-width, 20rem);
+  padding: var(--tt-padding, 0.5em 0.75em);
+  border-radius: var(--tt-radius, 0.25em);
+  background-color: var(--tt-bg, rgba(0, 0, 0, 0.9));
+  color: var(--tt-color, #fff);
+  font-size: var(--tt-size, 0.875rem);
   font-weight: normal;
-  line-height: var(--tooltip-line-height, 1.5);
-  box-shadow: var(--tooltip-box-shadow, none);
+  line-height: 1.5;
   pointer-events: none;
   user-select: none;
-  z-index: var(--tooltip-z-index, 10);
-  transition-duration: var(--tooltip-duration, 0.2s);
-  transition-timing-function: var(--tooltip-easing, ease);
+  z-index: var(--tt-z-index, 10);
+  transition-duration: var(--tt-duration, 0.2s);
+  transition-timing-function: var(--tt-ease, ease);
+  box-shadow: var(--tt-shadow, none);
   transition-property: opacity, transform;
   opacity: var(--_o, 0);
 }
@@ -43,11 +41,11 @@
   .tooltip::before {
     position: fixed;
     position-anchor: auto;
-    position-area: var(--tooltip-area, block-start);
-    position-try-fallbacks: var(--tooltip-fallbacks, flip-block, flip-inline);
+    position-area: var(--tt-area, block-start);
+    position-try-fallbacks: var(--tt-fallbacks, flip-block, flip-inline);
     inset: auto;
-    margin: var(--tooltip-gap, 0.5rem);
+    margin: var(--tt-gap, 0.5rem);
     transform: translate(var(--_x), var(--_y)) scale(var(--_s));
-    transform-origin: var(--tooltip-origin, center);
+    transform-origin: var(--tt-origin, center);
   }
 }
