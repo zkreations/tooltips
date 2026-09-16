@@ -42,6 +42,7 @@
     position-try-fallbacks: var(--tt-fallbacks, flip-block, flip-inline);
     inset: auto;
     margin: var(--tt-gap, 0.5rem);
+    justify-self: anchor-center;
     translate: none;
     transform-origin: center;
   }

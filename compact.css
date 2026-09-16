@@ -37,6 +37,7 @@
     position-try-fallbacks: flip-block, flip-inline;
     inset: auto;
     margin: 0.5rem;
+    justify-self: anchor-center;
     translate: none;
     transform-origin: center;
   }
