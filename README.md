@@ -185,7 +185,7 @@ Example:
 
 ## Compact version
 
-If you prefer not to use CSS variables and want the smallest possible footprint, the project provides a compact variant ([compact.css](compact.css) / `compact.min.css`) that retains automatic positioning via CSS Anchor Positioning alongside the fallback for unsupported browsers.
+If you prefer not to use CSS variables and want the smallest possible footprint, the project provides a compact variant (`compact.css` / `compact.min.css`) that retains automatic positioning via CSS Anchor Positioning alongside the fallback for unsupported browsers.
 
 Given how small it is (~1 KB unminified / ~800 B minified), we recommend copying the contents of [compact.css](compact.css) directly into your project's stylesheet instead of adding it as an external dependency. This gives you direct and complete control over the tooltip styles in CSS without going through variables.
 
